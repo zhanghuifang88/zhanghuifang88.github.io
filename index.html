@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>百度音乐</title>
+<style>
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+input {
+	margin: 8px 0 0 10px;
+}
+a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 3px 10px;
+	border: 1px solid #ccc;
+	margin-right: 10px;
+	color: #000;
+}
+#list li {
+	width: 500px;
+	height: 30px;
+	font-size: 12px;
+	line-height: 30px;
+	margin-bottom: 2px;
+}
+#list span:nth-of-type(1) {
+	display: inline-block;
+	margin-left: 15px;
+}
+#list span:nth-of-type(2) {
+	float: right;
+	margin-right: 10px;
+}
+#box {
+	border-top: 1px solid #ccc;
+	height: 30px;
+	width: 500px;
+	font-size: 14px;
+	color: #C39;
+}
+#box  span {
+	display: inline-block;
+	margin-right: 20px;
+}
+</style>
+<script>
+window.onload = function(){
+	var list = document.getElementById("list");
+	var allLi = list.getElementsByTagName("li");
+	var allInput = list.getElementsByTagName("input");
+	var btn = document.getElementById("btn");
+
+	//li隔行变色
+	for( var i = 0;i < allLi.length; i++ ){
+		if(i%2==0){
+			allLi[i].style.background = "#f7ffff";
+		}else{
+			allLi[i].style.background = "#fff";
+		}
+	}
+		//
+	for( var a = 0;a < allLi.length; a++ ){
+		allLi[a].status = true;//为li和input设置状态，默认状态为真
+		allLi[a].index = a;//保存li的下标
+		//当鼠标移入li的时候，让背景颜色改变，
+		allLi[a].onmouseover = function(){
+			console.log(this.status);
+			this.style.background = "#efefef";
+		}
+	  /*
+	  鼠标离开的时候判断离开时是否为点击状态，如果离开时鼠标是点击的状态，就让li变成移入时的颜色，否则就是原来隔行变色的颜色
+	  */
+		allLi[a].onmouseout = function(){
+			if( this.status ){//鼠标移出时没有发生input点击操作，让li的颜色还为原来的颜色
+				if(this.index%2==0){
+					this.style.background = "#f7ffff";
+				}else{
+					this.style.background = "#fff";
+				}
+			}else{//如果移入时点击了input，那么当前li的颜色变为移入时的颜色
+				this.style.background = "#efefef";
+			}
+		}
+		allInput[a].index = a;//保存input的下标，用于判断点击时与li之间的状态
+		allInput[a].onclick = function(){
+			/*
+				点击input的时候，if点击了input ，li颜色改变 ；else，li颜色为隔行变色颜色；
+							   if所有的input都点击了，全选按钮也点击；else 全选按钮不点击
+								
+			*/
+			if( this.checked ){//如果checked＝ true，为点击，li颜色发生变化
+				var m = 0;//为input设置变量
+				//当点击每一个input的时候
+				for( var x = 0; x < allInput.length; x++ ){
+				/*
+				if input为点击的,每点击一个input  m++，背景颜色变为移入时的颜色，
+				else 当再点击取消input的时候  m——，li的颜色变为隔行变色时候的颜色
+				*/
+					if( allInput[x].checked ){
+						m++;
+						allLi[x].style.background = "#efefef";
+					}else{
+						m--;
+						if(x%2==0){
+							allLi[x].style.background = "#f7ffff";
+						}else{
+							allLi[x].style.background = "#fff";
+						}
+					}
+				};
+				if( m == allInput.length ){//如果input的长度等于m值，让全选的按钮为选中状态
+				   btn.checked = true; 
+				}
+	  			allLi[this.index].status = false;//让li的状态变为false,当鼠标移开后，li的颜色不会再变回去
+			}else{
+				btn.checked = false;
+				allLi[this.index].status = true;
+			}
+				
+		};
+		/*
+			点击全选按钮的时候  if全选点击，li的颜色全都改变 让li的状态变为假,保证鼠标再次移入再移开到li的时候不保存点击后的颜色
+							else全选不点击的时候，li的颜色为隔行变色时的颜色，再次改变li的状态为真
+		*/
+		btn.onclick = function(){
+			for( var x = 0; x < allInput.length; x++ ){//让所有的按钮状态都走一边全选按钮状态
+				allInput[x].checked = this.checked;//如果全选按钮的状态为选中，那么其他所有按钮的状态为选中
+				
+				if(this.checked){
+					allLi[x].style.background = "#efefef";
+					allLi[x].status = false;
+					
+				}else{
+					if(x%2==0){
+						allLi[x].style.background = "#f7ffff";
+					}else{
+						allLi[x].style.background = "#fff";
+					}
+					allLi[x].status = true;
+				}
+			}
+			 
+	
+/*			if( this.checked ){
+				m = allInput.length
+			}else{
+				m = 0;
+			}
+*/		}
+	}
+	
+	
+}
+</script>
+</head>
+
+<body> 
+<ul id="list">
+    <li>
+    	<input type="checkbox" />
+        <span>不为谁而作的歌</span>
+        <span>林俊杰</span>
+    </li>
+    <li>
+    	<input type="checkbox" />
+    	<span>背对背拥抱</span>
+        <span>林俊杰</span>
+    </li>
+    <li>
+    	<input type="checkbox" />
+        <span>红玫瑰</span>
+        <span>陈奕迅</span>
+    </li>
+    <li>
+        <input type="checkbox" />
+    	<span>孤独患者</span>
+        <span>陈奕迅</span>
+    </li>
+    <li>
+        <input type="checkbox" />
+        <span>阴天快乐</span>
+        <span>陈奕迅</span>
+    </li>
+    <li>
+        <input type="checkbox" />
+       	<span>莎士比亚的天份</span>
+        <span>林俊杰</span>
+    </li>
+</ul>
+<div id="box">
+    <input type="checkbox" id="btn"/> 
+    <span>全选</span>
+    <a href="#">收藏</a>
+    <a href="#">添加</a>
+    <a href="#">删除</a>
+</div>
+</body>
+</html>
