@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>字符串</title>
+<script>
+
+console.log("----------str.charAt()--------------")
+/*
+	str.charAt(): 
+	作用：
+		返回字符串中指定位置的字符 || 通过下标找字符
+	兼容：
+		在高版本浏览器下直接使用str[indedx]就可以找到指定位置的字符
+		但是在IE6中为undefined
+	参数：
+		默认为0
+		如果参数小于0或者大于字符串.length-1,会返回一个空字符串
+
+*/
+
+var str = "abcdasf2xcb"
+console.log(str.charAt(0));//  ---a--
+console.log(str.charAt(6));// ---f---
+console.log(str.charAt(100));//---空字符串---
+console.log(str.charAt(-2));//---空字符串---
+
+console.log("----------str.charCodeAt()--------------")
+/*
+	str.charCodeAt()
+	作用：
+		返回指定索引处字符的Unicode 数值 ||  通过下标找字符的Unicode数值
+	语法：
+		number str.charCodeAt(index)
+	返回值：
+		返回指定索引处字符的Unicode 数值（number类型）
+		如果传入的参数小于 0 || 大于str.length-1 ，返回值为NaN
+		
+	常用Unicode数值
+	a-z   97-122
+	A-Z   65-90
+	0-9   48-57
+*/
+var str1 = "hkf8hjfyf";
+console.log(str1.charCodeAt(5));//----106-----
+console.log(str1.charCodeAt(3));//----56-----
+console.log(str1.charCodeAt(100));//----NaN-----
+console.log(str1.charCodeAt(-5));//----NaN-----
+
+console.log("----------str.indexOf()--------------")
+/*
+	str.indexOf()
+		返回指定字符在整个字符串首次出现的位置  || 要找的字符首次出现的位置（返回的是下标）
+	作用：
+		返回指定值在调用该方法的字符串中首次出现的位置
+	语法：
+		number string.indexOf(要找的字符，首次出现的位置)
+	参数：
+		searchValue 要找的字符
+		fromIndex
+			开始查找的位置，默认值为0
+			如果传入的数字为负数，那么自动转成从0开始找
+	返回值：
+		返回数字
+		如果存在就是返回位置，如果不存在，返回-1
+		如果传入的第二个参数大于字符串的长度-1，也返回-1
+*/
+var str3 = "kd87hddsd92";
+console.log(str3.indexOf("k",0));// ---0----
+console.log(str3.indexOf("d",0));//从下标为0的位置开始找，找到的d的下标为1-------结果是1-------
+console.log(str3.indexOf("d",5));//从下标为5的位置开始找，找到的d的下标为5-------结果是5-------
+console.log(str3.indexOf("d",-3));//从负数的位置开始找时，默认是从下标为0开始找，-----结果是1-----
+console.log(str3.indexOf("d",100));//当从大于str3.length-1的位置开始找的时候，找不到-------结果都是-1----
+ 
+console.log("----------str.lastIndexOf()--------------")
+ /*
+ 	str.lastIndexOf()
+	作用：
+		返回指定值在调用该方法的字符串中最后出现的位置 
+		从前往后找，返回的是从前往后数 
+	语法：
+		number string.lastIndexOf(searchValue [, fromIndex]);
+	参数：
+		searchValue
+			一个字符串表示被查找的值
+		fromIndex
+			开始查找的位置，默认值是str.length-1 从后往前找
+	返回值：
+		返回数字
+		如果存在，就返回返回位置，如果不存在返回-1
+		如果第二个参数为负数，那么转成0；
+		如果第二个参数比str.length-1 还长，会转成str.length-1 
+ */
+var str4 = "hnd46dnsbinnf";
+console.log(str4.lastIndexOf("n",0));//先找到位置是从0开始倒着往前找的，结果找不到----结果是-1-----
+console.log(str4.lastIndexOf("n",3));//先找到下标为3，从下标为3的地方开始往前找，找到n在下标为1的位置----结果是1-----
+console.log(str4.lastIndexOf("n",-1));//把负数转成0，再从0的位置倒着往前找，找不到，------结果是-1---------
+console.log(str4.lastIndexOf("n",100));//先找到length-1 的位置，倒着往回找，找到下标为11的位置是n -------结果是11----
+
+
+console.log("----------str.slice()--------------")
+/*
+	str.slice()	
+	作用（截取字符串）
+		提取字符串的一部分并返回这个新的字符串
+	语法：
+		string string.slice(beginSlice[, endSlice])
+	参数：
+		beginSlice   起始位置
+		endSlice     结束位置默认为最后一个字符的位置---如果写了结束位置，不包括结束位置
+			也可以接受负数，-1为整个字符串的最后一个，别的负数以此类推
+			如果负数超过字符串的长度值，这个时候返回空字符串
+			如果传入的数字，超过了字符串的length，返回整个字符串
+	返回值
+		返回截取后的字符串
+		起始位置小于结束位置才能截取到，不然为空
+*/
+var str5 = "ndakajfasdsa";
+console.log(str5.slice(4));// 只写一个值，默认是起始位置到最后，返回字符串 ----ajfasdsa-----
+console.log(str5.slice(4,8));//一个是起始位置，一个是终止位置，不包括终止位置的值 返回字符串-------ajfa-------
+console.log(str5.slice(2,-3));//-----akajfas-----
+console.log(str5.slice(0,100));//截取全部字符串 -------ndakajfasdsa--------
+console.log(str5.slice(-1,100));//----a----
+console.log(str5.slice(-1,8));//---空字符串----
+console.log(str5.slice(-1,-3));//----空字符串-----
+console.log(str5.slice(-3,-1));//起始位置小于结束位置才能截取到-----ds-------
+
+console.log("----------str.split()--------------")
+/*
+	str.split()
+		作用： 
+			通过一个指定的字符（串），把原字符串分割成一个数组
+		语法
+			array string.split([separator] [, limit])
+		参数：
+			separator  分隔符
+			limit  指定最多分割的数量，默认为全部（保留几个）
+		返回值
+			返回一个数组   当没有分隔符的时候，整个字符串将作为一个整体保存到数组
+
+*/
+var str6 = "dfheudfdfafa";
+console.log(str6.split("f"));//Array [ "d", "heud", "d", "a", "a" ]
+console.log(str6.split("f",3));//Array [ "d", "heud", "d" ]
+console.log(str6.split(''));//Array [ "d", "f", "h", "e", "u", "d", "f", "d", "f", "a", 等 2 项… ]
+var str7 = "bc poiad";
+console.log(str7.split(' '));//Array [ "bc", "poiad" ]
+var str8 = "";
+console.log(str8.split(''));//Array [  ]
+var str9 = " ";
+console.log(str9.split(' '));//Array [ "", "" ]
+
+console.log("----------str.substring()--------------")
+/*
+	substring()
+	作用：
+		截取指定位置之间的字符串
+	语法：
+		string string.substring(indexStart [, indexEnd])
+	参数：
+		indexStart   截取的起始位置
+		indexEnd     截取的结束位置，默认为最后一个字符的位置
+	注意：
+		如果第一个参数比第二个参数大，那么把这两个参数调换位置，然后再截取，(如果第一个参数为负数，则转换成0)
+*/
+var str0 = "shdhdah8hasg"; 
+console.log(str0.substring(2));//  一个参数默认是开始的位置，结束位置默认是最后 ------dhdah8hasg--------
+console.log(str0.substring(2,6));// ------dhda-------
+console.log(str0.substring(6,2)); // 位置调换------dhda-------
+console.log(str0.substring(0,-1));//-------空字符串----------
+console.log(str0.substring(4,-1));//????第一个参数大于第二个参数，先调换位置，再从0开始截-------shdh---------
+console.log(str0.substring(3,-5));//先调换位置再从0开始截-----shd------
+console.log(str0.substring(-1,8));//负数在前面默认是从0的位置开始截  ------shdhdah8--------
+
+console.log("----------str.substr()--------------")
+/*
+	str.substr()
+	作用：
+		截取指定起始位置和长度的子字符串  || 从哪里开始截，长度是几
+	语法：
+		string string.substr(start [, length])
+	参数：
+		start   截取的起始位置
+		length
+			截取的字符串长度，默认为起始位置到最后一个字符串的长度
+			如果截取的个数超过了余下的长度，默认截到最后一个
+		返回值：
+			返回截取后的字符串
+*/
+var str10 = "dhahjfhfad";
+console.log(str10.substr(2,4));//从2的位置开始截，截4个----ahjf----
+console.log(str10.substr(2,0));//------空字符串-----
+console.log(str10.substr(-1,4));//------d-------
+
+console.log("----------str.trim()--------------")
+/*
+	str.trim()兼容到 IE9+
+	作用： 
+		去掉字符串首尾的全部空格
+	语法：
+		string string.trim()
+	返回值：
+		返回去除首尾全部空格后的字符串
+
+*/
+var stra = " miaov ";
+console.log(stra.length);//没有去掉空格之前 length为7
+var strb = stra.trim();
+console.log(strb.length)//去掉空格之后   length为5
+
+console.log(stra.trim());//前后空字符都去掉 -----miaov-----
+
+console.log("----------str.toLowerCase()--------------")
+/*
+	toLowerCase
+	作用：
+		把字符串全部转成小写
+	语法：
+		string string.toLowerCase()
+	返回值：
+		返回转成小写的字符串
+*/
+var stra = "ASDE";
+console.log(stra.toLowerCase());//------asde-------
+
+console.log("----------str.toUpperCase()--------------")
+/*
+	toUpperCase()
+	作用：
+		把字符串全部转成大写
+	语法：
+		string string.toUpperCase()
+	返回值：
+		返回转成大写的字符串
+
+*/
+var strb = "jklsfj"
+console.log(strb.toUpperCase());//-----JKLSFJ------
+console.log(Math)
+
+/*
+ 通过下标找字符   charAt（）
+ 				charCoadAt();
+ 截取字符串  
+ * 		slice
+ * 		substring
+ * 		substr
+ * */
+
+//	function fn(){
+//		var a = b = 10;
+//	}
+//	alert(b)//报错
+	
+	function fn(){
+		var a = b = 10;
+		alert(a)//10
+	}
+	fn();
+	//alert(a)//报错
+	alert(b)//10  全局
+	
+</script>
+
+
+<body>
+</body>
+</html>
