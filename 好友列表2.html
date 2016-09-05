@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>好友列表</title>
+<style>
+div {
+	border: 1px solid #000;
+	width: 200px;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 200px;
+	display: none;
+}
+p {
+	margin: 0;
+	width: 200px;
+	height: 30px;
+	font: 16px/30px "宋体";
+	text-align: center;
+	background: #63f7ff;
+	
+}
+li {
+	height: 30px;
+	width: 200px;
+	font: 16px/30px "宋体";
+	border-bottom: 1px solid #000;
+}
+p.bg {
+	background: #f7f794;
+}
+li.red {
+	background: #F36;
+}
+li.onRed {
+	background: red;
+}
+</style>
+<script>
+	/*
+	需求：
+		1.点击标题，使标题背景颜色发生改变，同时让标题下的内容显示
+		2.再次点击标题的时候，标题背景演的变回原来的，同时让里面的内容隐藏
+		3.点击li时，背景颜色发生变化，点击其他的li时，上一个背景颜色消失
+	*/
+	window.onload = function(){
+		//获取元素
+		var mune = document.getElementsByTagName("p");
+		var list = document.getElementsByTagName("ul");
+		var allLi = document.getElementsByTagName("li");
+		//给每一个p标签添加点击处理
+		for( var i = 0; i < mune.length; i++ ){
+			mune[i].rel = i;//定义一个属性，保存下标
+			mune[i].pick = true;//
+			mune[i].onclick = function(){//点击标题显示内容
+				if( this.pick ){//如果当前的状态为真，执行if里的代码
+					for( var j = 0; j < mune.length; j++ ){
+						//清空每一个p
+						mune[j].className = "";
+						//清除每一个ul
+						list[j].style.display = "none";
+						//mune[j].pick = true;
+					}
+					//点击的时候得出当前点击p的下标
+					this.className = "bg";
+					//通过找到p的下标，显示相对应的ul，ul的下标和当前p的下标时一致的
+					list[this.rel].style.display = "block";
+					this.pick = false;//让当前状态为false，执行else里面的代码
+				}else{
+					this.className = "";//当前标题背景颜色为空
+					list[this.rel].style.display = "none";//当前ul的内容为隐藏
+					this.pick = true;
+				}
+			};
+		}
+		//点击li时，让每一个li的添加背景
+		for( var i = 0; i < allLi.length; i++ ){
+			//添加自定义属性
+			allLi[i].other = true;//添加自定义属性
+			allLi[i].onclick = function(){//点击li
+			//清空每一个li的背景颜色
+				if( this.other ){//如果当前的状态为真
+				//清空li的背景颜色
+					for( var j = 0; j < allLi.length; j++ ){
+						allLi[j].className = "";
+						allLi[j].other = true;
+					}
+					//点击时显示当前的li的背景颜色
+					this.className = "onRed";
+					this.other = false;
+				}else {
+					this.className = "";
+					this.other = true;
+				}
+			};
+			/*
+			1，当鼠标移入的时候判断当前的状态是否为点击的，
+			2，鼠标点击一次之后当前的状态为false。再鼠标移入，移入时之前的状态为false，
+				所以让li的状态走else：为点击时的状态
+			3，同理鼠标移出	
+			*/
+			allLi[i].onmouseover = function(){
+				if( this.other ){
+					this.className = "red";
+				}else{
+					this.className = "onRed";
+				}
+			}
+			allLi[i].onmouseout = function(){
+				if( this.other ){
+					this.className = "";
+				}else{
+					this.className = "onRed";
+				}
+			}
+		};
+	}
+</script>
+</head>
+
+<body>
+<div>
+    <p>我的好友</p>
+    <ul>
+        <li>谷歌</li>
+        <li>火狐</li>
+        <li>IE</li>
+        <li>火狐</li>
+        <li>IE</li>
+    </ul>
+    <p>陌生人</p>
+    <ul>
+        <li>QQ</li>
+        <li>微博</li>
+        <li>爱奇艺</li>
+    </ul>
+    <p>黑名单</p>
+    <ul>
+        <li>淘宝</li>
+        <li>视频</li>
+        <li>游戏</li>
+        <li>淘宝</li>
+        <li>视频</li>
+        <li>游戏</li>
+    </ul>
+</div>
+</body>
+</html>
