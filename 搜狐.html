@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style>
+section {
+	width: 268px;
+	height: 396px;
+	margin: 50px auto;
+	background: #dee7e7;
+}
+.top {
+	width: 268px;
+	height: 37px;
+	border-bottom: 2px solid #94bdd6;
+}
+.top h2 {
+	margin: 0;
+	font: 18px/37px "宋体";
+	color: #103142;
+	margin-left: 10px;
+	float: left;
+}
+nav {
+	float: right;
+	padding-top: 10px;
+	margin-right: 10px;
+}
+a {
+	text-decoration: none;
+	float: left;
+	padding: 0 5px;
+	font: 14px/27px "宋体";
+	border: 1px solid #000;
+	margin-right: -1px;
+	border-bottom: none;
+}
+.active {
+	color: #000;
+	background: #fff;
+	margin-bottom: -2px;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	padding: 0 5px;
+	display: none;
+}
+p {
+	margin: 0;
+	font: 12px/27px "宋体";
+}
+img {
+	border: none;
+	vertical-align: top;
+	display: none;
+}
+ul li {
+	text-align: center;
+	border-bottom: 1px solid #eee;
+}
+</style>
+<script>
+	function $(id){//通过id获取到ul
+		return document.getElementById(id);
+	}
+	//封装函数，函数名（形参）
+	function tab(obj){
+		var allLI = obj.getElementsByTagName("li");//获取到li
+		var text = obj.getElementsByTagName("p");//获取到text
+		var img = obj.getElementsByTagName("img");//获取到img
+		//为鼠标移入每一个li添加时间处理
+		for(var i = 0; i < allLI.length; i++){
+			allLI[i].index = i;//保存li的下标
+			allLI[i].onmouseover = function(){//当鼠标移入li的时候，text内容隐藏，img显示，当移入下一个的时候，之前的text内容显示，img隐藏
+				for(var j = 0; j < allLI.length; j++){//清空上一次操作
+					text[j].style.display = "block";
+					img[j].style.display = "none";
+				}
+				//显示当前移入的内容
+				text[this.index].style.display = "none";
+				img[this.index].style.display = "block";
+			}
+		}
+	}
+
+window.onload = function(){
+	
+	var box1 = $("box1");//获取到ul的id
+	tab(box1);//调用函数
+	var box2 = $("box2");
+	tab(box2);
+	var box3 = $("box3");
+	tab(box3);
+	//获取元素
+	var nav = document.getElementById("nav");
+	var allA = nav.getElementsByTagName("a");
+	var allUl = document.getElementsByTagName("ul");
+	//为导航的每一个a标签添加点击事件
+	for(var i = 0; i < allA.length; i++){
+		allA[i].index = i;//保存a的下标
+		//当点击a标签时，当前的显示样式，并且让每个a标签显示对应的内容
+		allA[i].onclick = function(){
+			for(var j = 0; j < allA.length; j++){
+				allA[j].className = "";
+				allUl[j].style.display = "none";
+			}
+			this.className = "active";
+			allUl[this.index].style.display = "block";
+		}
+	}
+}
+
+</script>
+</head>
+
+<body>
+<section>
+	<div class="top">
+        <h2>观看排行榜</h2>
+        <nav id="nav">
+            <a href="#" class="active">每日</a><a href="#">每周</a><a href="#">全部</a>
+        </nav>
+    </div>
+    <ul style="display:block" id="box1">
+        <li>
+            <p style="display:none">1、解密：关于地球和人类的一千零一问</p>
+            <img src="img/45hdf.png"style="display:block"/>
+        </li>
+        <li>
+            <p>2、解密：关于地球和人类的一千零一问</p>
+            <img src="img/ico.png"/>
+        </li>
+        <li>
+            <p>3、解密：关于地球和人类的一千零一问</p>
+            <img src="img/wew.png"/>
+        </li>
+        <li>
+            <p>4、解密：关于地球和人类的一千零一问</p>
+            <img src="img/iujgfi.png"/>
+        </li>
+        <li>
+            <p>5、解密：关于地球和人类的一千零一问</p>
+            <img src="img/l9.png"/>
+        </li>
+        <li>
+            <p>6、解密：关于地球和人类的一千零一问</p>
+            <img src="img/dg7.png"/>
+        </li>
+        <li>
+            <p>7、解密：关于地球和人类的一千零一问</p>
+            <img src="img/45hdf.png"/>
+        </li>
+        <li>
+            <p>8、解密：关于地球和人类的一千零一问</p>
+            <img src="img/er543.png"/>
+        </li>
+        <li>
+            <p>9、解密：关于地球和人类的一千零一问</p>
+            <img src="img/334f.png"/>
+        </li>
+        <li>
+            <p>10、解密：关于地球和人类的一千零一问</p>
+            <img src="img/jdsf0.png"/>
+        </li>
+    </ul>
+    <ul id="box2">
+        <li>
+            <p style="display:none">1、解密：关于地球和人类的一千零一问</p>
+            <img src="img/45hdf.png"style="display:block"/>
+        </li>
+        <li>
+            <p>2、解密：关于地球和人类的一千零一问</p>
+            <img src="img/ico.png"/>
+        </li>
+        <li>
+            <p>3、解密：关于地球和人类的一千零一问</p>
+            <img src="img/wew.png"/>
+        </li>
+        <li>
+            <p>4、解密：关于地球和人类的一千零一问</p>
+            <img src="img/iujgfi.png"/>
+        </li>
+        <li>
+            <p>5、解密：关于地球和人类的一千零一问</p>
+            <img src="img/l9.png"/>
+        </li>
+        <li>
+            <p>6、解密：关于地球和人类的一千零一问</p>
+            <img src="img/dg7.png"/>
+        </li>
+        <li>
+            <p>7、解密：关于地球和人类的一千零一问</p>
+            <img src="img/45hdf.png"/>
+        </li>
+    </ul>
+    <ul id="box3">
+        <li>
+            <p style="display:none">1、解密：关于地球和人类的一千零一问</p>
+            <img src="img/45hdf.png"style="display:block"/>
+        </li>
+        <li>
+            <p>2、解密：关于地球和人类的一千零一问</p>
+            <img src="img/ico.png"/>
+        </li>
+        <li>
+            <p>3、解密：关于地球和人类的一千零一问</p>
+            <img src="img/wew.png"/>
+        </li>
+        <li>
+            <p>4、解密：关于地球和人类的一千零一问</p>
+            <img src="img/iujgfi.png"/>
+        </li>
+        <li>
+            <p>5、解密：关于地球和人类的一千零一问</p>
+            <img src="img/l9.png"/>
+        </li>
+    </ul>
+</section>
+</body>
+</html>
