@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			p {
+				-margin: 0;
+				display: none;
+			}
+			#div1,#div2 {
+				margin-bottom: 10px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<input type="button" value="第一张" style="background: yellow;"/>
+			<input type="button" value="第二张"/>
+			<input type="button" value="第三张"/>
+			<p style="display: block;">第一张</p>
+			<p>第二张</p>
+			<p>第三张</p>
+		</div>
+		<div id="div2">
+			<input type="button" value="第一张" style="background: yellow;"/>
+			<input type="button" value="第二张"/>
+			<input type="button" value="第三张"/>
+			<p style="display: block;">第一张</p>
+			<p>第二张</p>
+			<p>第三张</p>
+		</div>
+		<input type="button" value="第一个自动播放" id="btn1"/>
+		<input type="button" value="第二个停止自动播放" id="btn2"/>
+		<input type="button" value="二个翻转播放" id="btn3"/>
+		<script>
+			//
+			function Tab(parent){
+				this.allInput = parent.getElementsByTagName("input");//调用函数对象下的
+				this.allP = parent.getElementsByTagName("p");
+				//console.log(this); //指tab1和tab2
+				this.len = this.allInput.length;
+				this.timer = null;
+
+				this.n = 0;
+			};
+			//公共的方法放在原型身上
+			//初始化函数 ，每个input添加点击处理
+			Tab.prototype.init = function(){
+				var _this = this;//指tab1和tab2  调用函数的这个对象
+				for (var i = 0; i < this.len; i++) { 
+					this.allInput[i].index = i;//某个对象下input的下标
+					this.allInput[i].onclick = function(){
+						_this.play(this.index);//调用函数的对象，使用这个属性
+						//this.index 指的是this.allInput的下标
+					}
+				}
+				
+			};
+			//点击切换的函数
+			Tab.prototype.play = function(index){
+				for (var i = 0; i < this.len; i++) {
+					this.allInput[i].style.background = "";
+					this.allP[i].style.display = "none";
+				}
+				//this指向的是触发这个onclick事件的input
+				this.allInput[index].style.background = "yellow";
+				this.allP[index].style.display = "block";
+				this.n = index;//自动播放或停的时候，下标从播放或停的位置开始
+			};
+			
+			Tab.prototype.autoPlay = function(){
+				var _this = this;
+				//保存一个变量，否则定时器里的this指向的是window
+				if(this.timer){//清除点击播放的按钮连续点击
+					return;
+				}
+				
+				this.timer = setInterval(function(){
+					_this.n++;//记录input加加
+					if( _this.n > _this.len -1  ){
+						_this.n = 0;
+					}	
+					_this.play(_this.n);
+				},1000)
+			}
+			//停止自动播放的函数
+			Tab.prototype.stop = function(){
+				clearInterval(this.timer);//清除这个函数调用的定时器
+				this.timer = null;
+			}
+			//是否正在播放 正在播放返回true，否则返回fale
+			Tab.prototype.playStatus = function (){
+				return !!this.timer;
+			};
+			var div1 = document.getElementById("div1");
+			var div2 = document.getElementById("div2");
+			var tab1 = new Tab(div1);//tab1是创建的一个实例、对象
+			tab1.in
+			var tab2 = new Tab(div2);
+			tab2.autoPlay();
+			tab2.init();
+			//console.log(tab1);
+			//console.log(tab2);
+			var btn1 = document.getElementById("btn1");
+			//第一项自动播放
+			btn1.onclick = function(){
+				tab1.autoPlay();
+			}
+			//第二个停止自动播放
+			btn2.onclick = function(){
+				tab2.stop();
+			}
+			//二个翻转播放
+			btn3.onclick = function(){
+				if(tab1.playStatus()){
+					tab1.stop();
+				}else{
+					tab1.autoPlay();
+				}
+				if(tab2.playStatus()){
+					tab2.stop();
+				}else{
+					tab2.autoPlay();
+				}
+			}
+		</script>
+	</body>
+</html>
