@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: deepskyblue;
+			}
+			#box2 {
+				top: 200px;
+				background: hotpink;
+			}
+		</style>
+		<script>
+			function Drag(element){
+				//隐藏的对象 obj
+				this.element = element;
+				this.init();//初始化事件
+				this.disX = 0;//鼠标到元素的左侧的位置
+				this.disY = 0;//鼠标到元素顶部的位置
+			}
+
+			Drag.prototype.init = function (){
+				// this -> obj
+				var _this = this;
+				this.element.onmousedown = function (ev){//对象下的元素鼠标按下的时候
+					//把事件对象传进去
+					_this.downFn(ev);	
+					ev.preventDefault();
+				}	
+			};
+
+			Drag.prototype.downFn = function (ev){
+				// this -> element
+				this.disX = ev.clientX - this.element.offsetLeft;
+				this.disY = ev.clientY - this.element.offsetTop;
+				var _this = this;
+				document.onmousemove = function (ev){
+					_this.moveFn(ev);//元素移动的时候
+				};
+				document.onmouseup = this.upFn//鼠标抬起的时候，清掉元素身上的事件
+			};
+
+			Drag.prototype.moveFn = function (ev){
+				// this -> obj
+				this.element.style.left = ev.clientX - this.disX + 'px';	
+				this.element.style.top = ev.clientY - this.disY + 'px';	
+			};
+			Drag.prototype.upFn = function (){
+				//鼠标抬起的时候，清掉移动和抬起事件
+				document.onmousemove = document.onmouseup = null;	
+			};
+
+			//可以限制范围 拥有拖拽的功能
+			function DragRange(element){
+				Drag.call(this,element);//通过call的方法改变Drag下的this指向DragRange下的对象
+			}
+			//遍历Drag.prototype，Drag下面的属性方法也让DragRange这个函数存在
+			for( var attr in Drag.prototype ){
+				if( Drag.prototype.hasOwnProperty(attr) ){//不去找Drag.prototype的原型链上的属性
+					DragRange.prototype[attr] = Drag.prototype[attr];//把Drag身上的属性赋值给DragRange
+				}
+			}
+			//在DragRange的原型上添加一个方法
+			DragRange.prototype.moveFn = function (ev){
+				//this->obj
+				var l = ev.clientX - this.disX;//保存元素移动的left值
+				var t = ev.clientY - this.disY;//保存元素移动的top值
+
+				if( l < 0 ) l = 0;//小于左边，等于左边
+				if( t < 0 ) t = 0;//小于上边，等于上边
+				//元素移动的left值得位置最大到document的宽度减去元素的宽度
+				if( l > document.documentElement.clientWidth - this.element.offsetWidth ) {
+					l = document.documentElement.clientWidth - this.element.offsetWidth
+				}
+				//元素移动的top值得位置最大到document的宽度减去元素的高度
+				if( t > document.documentElement.clientHeight - this.element.offsetHeight ) {
+					t = document.documentElement.clientHeight - this.element.offsetHeight
+				}
+
+				//对象下元素的left值和top值
+				this.element.style.left = l + 'px';	
+				this.element.style.top = t + 'px';	
+			};
+			window.onload = function(){
+				var box1 = document.getElementById("box1");
+				var box2 = document.getElementById("box2");
+
+				new Drag(box1);//box1使用这个构造函数
+				new DragRange(box2);//box2使用这个构造函数
+			};
+		</script>
+	</head>
+	<body>
+		<div id="box1" class="box"></div>
+		<div id="box2" class="box"></div>
+	</body>
+</html>
