@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+				float: left;
+				width: 30px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+			}
+			#date{
+				width: 210px;
+			}
+			#date div{
+				
+			}
+			#date div span{
+				width: 30px;
+				height: 30px;
+				float: left;
+				text-align: center;
+				line-height: 30px;
+			}
+			#date div span.active{
+				background: #f00;
+				color: #fff;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var div=document.querySelector("#date div");
+				var time=document.getElementById('time');
+				var oTime=document.getElementById('oTime');
+				var btn1=document.getElementById('btn1');
+				var btn2=document.getElementById('btn2');
+				//获取某个月的最后一天
+				function getEndDay(year,month){
+					return new Date(year,month,0).getDate();
+				}	
+				//获取某个月第一天是周几
+				function getFirstWeek(year,month){
+					return new Date(year,month,1).getDay();
+				}
+				//两位数
+				function zero(v){
+					return v<10?'0'+v:v;
+				}
+//				 初始化当前的年月日时间
+				var d=new Date();				
+				var curMonth=d.getMonth()+1;//当前的月
+				var curyear=d.getFullYear();//当前的年
+				var date = d.getDate();//当前的日期
+				div.innerHTML = fun(d.getFullYear(),d.getMonth()+1,d.getDate());
+				time.innerHTML = d.getFullYear()+'年'+(d.getMonth()+1)+'月';
+				timer()
+				var timr=setInterval(timer,1000)
+				function timer(){
+					var d=new Date();
+					oTime.innerHTML = zero(d.getHours())+':'+zero(d.getMinutes())+':'+zero(d.getSeconds());
+				};
+				
+				//定义M
+				var M=d.getMonth()+1; 
+//				 点击上个月
+				btn1.onclick=function(){
+				 	M--;
+					if( M < 1 ){
+						d.setMonth(-1); //设置到上一年
+						M = 12;
+					}
+					//如果切换到当前这个月，把日期设置到当前日期，如果不是当前的月份，默认都为1号
+					var ddd = 1;//假定日期
+					console.log( M , curMonth );
+					if( M === curMonth && d.getFullYear() === curyear ){
+						ddd = date
+					}
+				    time.innerHTML = d.getFullYear()+'年'+M+'月';
+					div.innerHTML = fun(d.getFullYear(),M,ddd);
+					
+				}
+				 //点击下个月
+				 btn2.onclick=function(){
+				 	M++;
+				 	if(M>12){
+				 		d.setMonth(M);//设置到上一年
+				 		M=1;
+				 	}
+				 	console.log( M , curMonth );
+				 	var ddd=1;//假定日期
+				 	if(M===curMonth && d.getFullYear()===curyear){
+				 		ddd=date;
+				 	}
+				 	time.innerHTML = d.getFullYear()+'年'+M+'月';
+				 	div.innerHTML = fun(d.getFullYear(),M,ddd);
+				 	
+				 }
+				 
+//				 封装函数
+				function fun( year,month,Dd){
+					//上个月最后一天
+					var lstEndDay = getEndDay(year,month);
+					//这个月第一天是周几
+					var week = getFirstWeek(year,month);
+					//本月的最后一天
+					var curEndDay = getEndDay(year,month+1);
+					
+					var nextDay=0;
+					var html='';//装日期的str
+					week=week==0?7:week;	//如果当月第一天是周日，需要把它变成7，让第一行显示上个月的7天
+					for(var i=0;i<42;i++){
+						if(i<week){
+							html='<span style="color:#ccc">'+(lstEndDay--)+'</span>'+html;
+						}else if(i>=curEndDay+week){							
+							html+='<span style="color:#ccc">'+(++nextDay)+'</span>';
+						}else{
+							//本月日期
+							//(i-week+1)	当前循环到的日期
+							var cl=(i-week+1)==Dd?'active':'';
+							html+='<span class="'+cl+'">'+(i-week+1)+'</span>';
+						}
+					}
+					
+					return html;
+				}//封装结束
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<p id="oTime"></p>
+		<p id="time"></p>
+		<div>
+			<input type="button" / value="上个月" id="btn1">
+			<input type="button" / value="下个月" id="btn2">
+		</div>
+	    <div id="date">
+	    	<ul>
+	    		<li>日</li>
+	    		<li>一</li>
+	    		<li>二</li>
+	    		<li>三</li>
+	    		<li>四</li>
+	    		<li>五</li>
+	    		<li>六</li>
+	    	</ul>
+	    	<div></div>
+	    </div>
+	</body>
+</html>
