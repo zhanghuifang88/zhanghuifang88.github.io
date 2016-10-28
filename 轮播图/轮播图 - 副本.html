@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            margin: 100px auto 0;
+            width: 520px;
+            height: 280px;
+            border: 1px solid #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        #list {
+            list-style: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        li {
+            float: left;
+        }
+        img {
+            display: block;
+        }
+
+        #prev, #next {
+            position: absolute;
+            width: 30px;
+            height: 60px;
+            background: #000000;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 60px;
+            text-align: center;
+            top: 110px;
+            cursor: pointer;
+        }
+        #prev {
+            left: 0;
+        }
+        #next {
+            right: 0;
+        }
+    </style>
+    <script src="tools.js"></script>
+    <script src="mTween.js"></script>
+    <script>
+        /*
+            需求：
+                点击右边按钮，让图片向左运动
+                点击左边按钮，让图片向右运动
+
+            步骤：
+                1. 点击右边的按钮
+                    改变ul的left值
+                        -left
+                2. 点击左边的按钮
+
+        */
+        window.onload = function() {
+			var list = $("#list");
+			var allLi = $("li",list);
+			var prev = $("#prev");			
+			var next = $("#next");
+			
+			var liW = parseInt(getComputedStyle(allLi[0]).width);
+			var len = allLi.length;
+			
+			list.style.width = liW*len+"px";
+			
+			var n = 0;
+			next.onclick = function(){
+				n++;
+				if(n>len-1){
+					n = 0;
+				}
+				var l = liW*n;
+				MTween(list,"left",1000,-l);
+				
+			}
+			prev.onclick = function(){
+				n--;
+				if(n<0){
+					n=len - 1;
+				}
+				var l = liW*n;
+				MTween(list,"left",1000,-l);
+			}
+
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul id="list">
+            <li><img src="images1/1.jpg" ></li>
+            <li><img src="images1/2.jpg" ></li>
+            <li><img src="images1/3.jpg" ></li>
+            <li><img src="images1/4.jpg" ></li>
+            <li><img src="images1/5.jpg" ></li>
+        </ul>
+        <span id="prev"> < </span>
+        <span id="next"> > </span>
+    </div>
+</body>
+</html>
