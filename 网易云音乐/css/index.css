@@ -1,0 +1,1028 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+	margin: 0;
+	background: #f5f5f5;
+	min-width: 982px;
+}
+a {
+	text-decoration: none;
+}
+img {
+	border: none;
+	vertical-align: top;
+}
+form {
+	border: none;
+	margin: 0;
+} 
+p {
+	margin: 0;
+}
+h3,
+h1,
+h4 {
+	margin: 0;
+}
+input {
+	border: none;
+	padding: 0;
+	outline: none;
+}
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+em {
+	font-style: normal;
+}
+.clearFix {
+	zoom: 1;
+}
+.clearFix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.wrap {
+	width: 980px;
+	margin: 0 auto;
+}
+#header {
+	background: url(../img%20/bgpic.png) repeat-x 0 -338px;
+	height: 70px;
+}
+.logo {
+	float: left;
+	height: 0;
+	width: 162px;
+	overflow: hidden;
+	padding-top: 29px;
+	background: url(../img%20/picbg.png) no-repeat;
+	margin-top: 23px;
+}
+.nav {
+	position: relative;
+	width: 980px;
+}
+.navLeft {
+	float: left;
+	padding-left: 16px;
+	font: 14px/30px "宋体";
+	color: #030303;
+}
+.navLeft a {
+	position: relative;
+	display: inline-block;
+	color: #cccccc;
+	padding: 22px 16px 17px 17px;
+}
+.rightLine {
+	position: absolute;
+	-width: 2px;
+	height: 12px;
+	margin: 10px 0 0 19px;
+	background: url(../img%20/line.png) no-repeat;
+}
+/*.navLeft .navC {
+	float: left;
+	margin: 0 19px 0 21px;
+}
+*//*.navLeft .navL {
+	float: left;
+	width:2px;
+	height: 70px;
+	background: url(../img%20/L.png) no-repeat ;
+	display: none;
+}
+.navLeft .navR {
+	display: none;
+	float: right;
+	width: 2px;
+	height: 70px;
+	background: url(../img%20/R.png) no-repeat ;
+	display: none;
+}
+.navLeft a:hover .navL {
+	margin-right: -2px;
+	display: block;
+}
+.navLeft a:hover .navR {
+	margin-right: -2px;
+	display: block;
+}
+.navLeft a:hover {
+	background: url(../img%20/C.png) repeat-x ;
+}
+
+*/.navIco {
+	position: absolute;
+	right: 430px;
+	top: 23px; 
+	width: 26px;
+	height: 17px;
+	background: url(../img%20/picbg.png) no-repeat 0 -31px;
+}
+.navRight {
+	float: right;
+	height: 49px;
+	padding-top: 20px;
+}
+.form {
+	position: relative;
+	float: left;
+}
+.input {
+	width: 210px;
+	height: 31px;
+	border-radius: 15px;
+	text-indent: 33px;
+	margin-right: 15px;
+	color: #9b9b9b;
+	background: #eaeaea;
+}
+.inputIco {
+	position: absolute;
+	top: 9px;
+	left: 13px;
+	width: 12px;
+	height: 12px; 
+	background: url(../img%20/picbg.png) no-repeat -30px -31px;
+}
+.enter {
+	position: relative;
+	float: right;
+	height: 28px;
+	width: 46px;
+}
+.enter a {
+	 display: block;
+	 font: 12px/28px "宋体";
+	 color: #787878;
+	 padding: 4px 22px 0 0;
+}
+.enterIco {
+	position: absolute;
+	right: 0;
+	top: 15px;
+	width: 12px;
+	height: 7px;
+	background: url(../img%20/picbg.png) no-repeat 0 -51px;
+}
+.enter:hover .mune {
+	display: block;
+}
+.enter:hover .enterIco1{
+	display: block;
+}
+.mune {
+	display: none;
+	position: absolute;
+	bottom: -202px;
+	left: -98px; 
+	width: 160px;
+	height: 194px;
+	padding-top: 7px;
+	background: url(../img%20/mune.png) no-repeat;
+	z-index: 1;
+}
+.mune p {
+	position: relative;	
+	font: 12px "宋体";
+	margin-left: 20px;
+	text-indent: 27px;
+	height: 38px;
+}
+.mune a {
+	color: #FFF;
+	line-height: 38px;
+}
+.mune span {
+	position: absolute;
+	top: 15px;
+	left: 0;
+	width: 17px;
+	height: 15px;
+	background: url(../img%20/phone.png) no-repeat;
+}
+.enterIco1 {
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 15px;
+	width: 12px;
+	height: 7px;
+	background: url(../img%20/picbg.png) no-repeat -14px -51px;
+}
+.navList {
+	background: url(../img%20/bgpic.png) repeat-x 0 -410px;
+	height: 27px;
+	padding-top: 8px;
+}
+.subNavWrap {
+	width: 786px;
+	margin: 0 auto;
+}
+.subNav {
+	position: relative;
+	font: 12px/20px "宋体";
+	padding-left: 194px;
+}
+.navListIco {
+	position: absolute;
+	width: 14px;
+	height: 9px;
+	top: -14px;
+	left: 215px;
+	background: url(../img%20/picbg.png) no-repeat -36px -62px;
+}
+.subNav a {
+	display: inline-block;
+	color: #fff;
+	margin-right: 36px;
+}
+.subNav a:hover .btnL {
+	float: left;
+	background: url(../img%20/bgpic.png) no-repeat 0 -452px;
+}
+.subNav a:hover .btnC {
+	float: left;
+	background: url(../img%20/bgpic.png) repeat-x 0 -476px;
+}
+.btnR {
+	float: left;
+	padding: 1px 13px 4px;
+	height: 16px;
+}
+.subNav a:hover .btnR {
+	background: url(../img%20/bgpic.png) no-repeat right -499px;
+}
+#banner {
+	background: url(../img%20/bgpic.png) repeat-x;
+	height: 336px;
+}
+.bannerWrap {
+	width: 982px;
+	margin: 0 auto;
+}
+.bannerCenter {
+	position: relative;
+}
+.centerPic {
+	display: block;
+	height: 336px;
+	width: 729px;
+	background: url(../img%20/banner.png) no-repeat;
+}
+.bannerCenterLeft {
+	position: absolute;
+	width: 19px;
+	height: 37px;
+	left: -52px;
+	top: 149px;
+	background: url(../img%20/picbg.png) no-repeat 0 -127px;
+}
+.circle1 span {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	bottom: 13px;
+	left: 280px;
+	background: url(../img%20/picbg.png) no-repeat -29px -51px;
+}
+.circle2 {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	bottom: 13px;
+	left: 303px;
+	background: url(../img%20/picbg.png) no-repeat -29px -51px;
+}
+.circle3 {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	bottom: 13px;
+	left: 326px;
+	background: url(../img%20/picbg.png) no-repeat -29px -51px;
+}
+.circle4 {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	bottom: 13px;
+	left: 349px;
+	background: url(../img%20/picbg.png) no-repeat -29px -51px;
+}
+.circle5 {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	bottom: 13px;
+	left: 371px;
+	background: url(../img%20/picbg.png) no-repeat -29px -51px;
+}
+.circle6 span {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	bottom: 13px;
+	left: 394px;
+	background: url(../img%20/picbg.png) no-repeat -29px -51px;
+}
+.circle6 span:hover{
+	background: url(../img%20/picbg.png) no-repeat -39px -51px;
+}
+.bannerRight {
+	position: relative;
+	background: url(../img%20/banner-r.png) no-repeat right;
+	height: 336px;
+	margin-top: -336px;
+}
+.bannerCenterRight {
+	position: absolute;
+	width: 19px;
+	height: 37px;
+	right: -52px;
+	top: 149px;
+	background: url(../img%20/picbg.png) no-repeat -32px -127px;
+}
+.button {
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+}
+.button a {
+	position: absolute;
+	right: 19px;
+	top: 212px;
+	background: url(../img%20/picbg.png) no-repeat 0 -293px;
+	height: 56px;
+	width: 215px;
+}
+.button a:hover {
+	background: url(../img%20/picbg.png) no-repeat 0 -352px;
+}
+.button p {
+	position: absolute;
+	right: 14px;
+	top: 276px;
+	font: 12px/22px "宋体";
+	color: #8d8d8d;
+	height: 22px;
+}
+.contentWrap {
+	width: 980px;
+	margin: 0 auto;
+	background: #FFF;
+	border-left: 1px solid #d3d3d3;
+	border-right: 1px solid #d3d3d3;
+}
+#main {
+	float: left;
+	padding: 17px 20px 0 20px;
+	width: 689px;
+	border-right: 1px solid #d4d4d4;
+	background: #FFF;
+} 
+.mainTopTitle {
+	position: relative;
+	border-bottom: 2px solid #c10d0c;
+	height: 36px;
+}
+.mainTopTitle h3 {
+	float: left;
+	font: 20px/34px "宋体";
+	padding-bottom: 2px;
+	text-indent: 34px;
+}
+.mainTopTitle h3 a {
+	color: #000; 
+}
+.mainTopTitleIco {
+	position: absolute;
+	bottom: 11px;
+	left: 10px;
+	width: 14px;
+	height: 14px;
+	background: url(../img%20/picbg.png) no-repeat 0 -62px;
+}
+.mainTopNav {
+	float: left;
+	margin-left: 8px
+} 
+.mainTopNav a {
+	font: 12px/36px "宋体";
+	color: #666;
+	margin: 0 11px 0 12px;
+}
+.mainTopNav a:hover{
+	text-decoration: underline;
+}
+.more {
+	display: block;
+	float: right;
+	margin-right: 26px;
+	font: 12px/32px "宋体"; 
+}
+.more a {
+	color: #666;
+}
+.more a:hover {
+	text-decoration: underline;
+}
+.more span {
+	position: absolute;
+	top: 14px;
+	right: 12px;
+	width: 8px;
+	height: 6px;
+	background: url(../img%20/picbg.png) no-repeat -48px -31px;
+}
+.recommend {
+	margin-left: -39px;
+	padding-bottom: 38px;
+}
+.recommend li {
+	float: left;
+	width: 140px;
+	margin: 20px 3px 10px 39px;
+}
+.recommendPic {
+	position: relative;
+	width: 140px;
+	height: 140px;
+}
+.recommendPic img {
+	width: 140px;
+	height: 140px;
+}
+.mask {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 140px;
+	height: 27px;
+	background: #000;
+	opacity: .5;
+}
+.text {
+	position: absolute;
+	left: 29px;
+	bottom: 0;
+	font: 12px/22px "宋体";
+	color: #cccccc;
+}
+.ico1 {
+	position: absolute;
+	width: 14px;
+	height: 10px;
+	left: 10px;
+	bottom: 8px;
+	background: url(../img%20/picbg.png) no-repeat -39px -105px;
+}
+.ico2 {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	right: 10px;
+	bottom: 6px;
+	background: url(../img%20/picbg.png) no-repeat -20px -105px;
+}
+.ico2:hover {
+	background: url(../img%20/picbg.png) no-repeat -56px -105px;
+}
+.recommend p {
+	position: relative;
+	margin-top: 8px;
+	font: 14px/19px "宋体";
+}
+.recommend p a {
+	color: #000;
+}
+.recommend p span {
+	position: absolute;
+	left: 0;s
+	top: 1px;
+	width: 35px;
+	height: 15px;
+	background: url(../img%20/picbg.png) no-repeat -55px -62px;
+}
+.recommend a:hover {
+	text-decoration: underline;
+}
+.recommendTitle {
+	text-indent: 42px;
+}
+.mainTopAd {
+	width: 689px;
+	height: 75px;
+}
+.mainCenterTop {
+	position: relative;
+	margin-top: 36px;
+	height: 32px;
+	border-bottom: 2px solid #c10d0c;
+}
+.mainCenterTop h3 {
+	float: left;
+	position: absolute;
+	left: 34px;
+	top: 3px;
+	width: 80px;
+	height: 20px;
+	height: 0;
+	padding-top: 20px;
+	overflow: hidden;
+	background: url(../img%20/picbg.png) no-repeat  -73px -105px;
+}
+.mainCenterNew {
+	margin-top: 20px;
+	border: 1px solid #d3d3d3;
+}
+.new {
+	position: relative;
+	margin: 1px;
+	background: #f5f5f5;
+	padding-left: 15px;
+}
+.new li {
+	float: left;
+	margin: 28px 0 13px 12px;
+}
+.newPic {
+	position: relative;
+	width: 117px;
+	height: 100px;
+}
+.newPic img {
+	width: 117px;
+	height: 100px;
+}
+.broadcast {
+	display: none;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 73px; 
+	bottom: 6px;
+	background: url(../img%20/picbg.png) no-repeat -48px -79px;
+}
+.newPic:hover .broadcast {
+	display: block;
+}
+.broadcast1 {
+	display: none;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 0; 
+	bottom: 0;
+	background: url(../img%20/picbg.png) no-repeat -25px -79px;
+}
+.newPic .broadcast:hover .broadcast1 {
+	display: block;
+}
+.album {
+	margin-top: 7px;
+	font: 12px/18px "宋体";
+}
+.album a {
+	color: #000;
+}
+.album:hover a {
+	text-decoration: underline;
+}
+.singer {
+	font: 12px/18px "宋体";
+}
+.singer a {
+	color: #666;
+}
+.singer:hover a {
+	text-decoration: underline;
+}
+.newIco1 {
+	position: absolute;
+	width: 7px;
+	height: 13px;
+	left: 8px;
+	top: 72px;
+	background: url(../img%20/picbg.png) no-repeat -84px -31px;
+}
+.newIco2 {
+	position: absolute;
+	width: 7px;
+	height: 13px;
+	right: 11px;
+	top: 72px;
+	background: url(../img%20/picbg.png) no-repeat -95px -31px;
+}
+.mainBottomTop {
+	position: relative;
+	margin-top: 38px;
+	height: 32px;
+	border-bottom: 2px solid #c10d0c;
+}
+.mainBottomTop h3 {
+	float: left;
+	position: absolute;
+	left: 34px;
+	top: 3px;
+	width: 40px;
+	height: 20px;
+	height: 0;
+	padding-top: 20px;
+	overflow: hidden;
+	background: url(../img%20/picbg.png) no-repeat -96px -62px;
+}
+.mainBottomWrap {
+	padding: 18px 0 40px;
+}
+.mainBottomList {
+	border: 1px solid #d3d3d3;
+	border-left: none;
+}
+.mainBottomList .list {
+	float: left;
+	width: 228px;
+	border-left: 1px solid #d3d3d3;
+} 
+#listCenter {
+	width: 229px;
+}
+.mainBottomListTitle {
+	position: relative;
+	height: 96px;
+	margin: 1px 1px 0;
+	background: #f4f4f4;
+	padding: 18px 0 4px 8px;
+}
+.introduce h4:hover {
+	text-decoration: underline;
+}
+.introduce img {
+	float: left;
+	width: 96px;
+	height: 96px;
+}
+.introduce h4 {
+	float: left;
+	font: 14px/28px "宋体";
+	text-indent: 4px;
+	color: #333;
+}	
+.play {
+	position: absolute;
+	top: 50px;
+	left: 108px;
+	width: 22px;
+	height: 22px;
+	background: url(../img%20/picbg.png) no-repeat 0 -79px;
+}
+.collect {
+	position: absolute;
+	top: 52px;
+	left: 140px;
+	width: 20px;
+	height: 19px;
+	background: url(../img%20/picbg.png) no-repeat -60px -31px;
+}
+.rank li {
+	position: relative;
+	height: 32px;
+	font: 12px/32px "宋体";
+}
+.odd {
+	padding: 0 1px 0 1px;
+	border-left: 1px solid #f1f1f1;
+	border-right: 1px solid #f1f1f1;
+	background: #e8e8e8;
+}
+.even {
+	padding: 0 1px 0 1px;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	background: #f4f4f4;
+}
+.nub {
+	margin-left: 28px;
+	display: block;
+	float: left;
+	color: #66667a;
+}
+.digital {
+	color: #c80d0c;
+}
+.song {
+	display: block;
+	float: left;
+	margin-left: 15px;
+	overflow:hidden;
+	white-space: nowrap;
+	color: #000;
+	max-width: 96px;
+}
+.song span {
+	max-width: 96px;
+}
+.song:hover {
+	text-overflow: ellipsis;
+}
+.mainBottomListMore {
+	padding: 1px 1px 1px;
+	height: 28px;
+	font: 12px/28px "宋体";
+	border: 1px solid #f1f1f1;
+	border-top: none;
+	background: #e8e8e8;
+	text-indent: 142px;
+}
+.mainBottomListMore a {
+	color: #000;
+}
+.mainBottomListMore:hover a {
+	text-decoration: underline;
+}
+.play1 {
+	display: none;
+	position: absolute;
+	top: 7px;
+	right: 63px;
+	width: 17px;
+	height: 17px;
+	background: url(../img%20/picbg.png) no-repeat 0 -105px;
+}
+.odd:hover .play1 {
+	display: block;
+}
+.odd:hover .add {
+	display: block;
+}
+.odd:hover .collect1 {
+	display: block;
+}
+.odd:hover a {
+	text-decoration: underline;
+}
+.even:hover .play1 {
+	display: block;
+}
+.even:hover .add {
+	display: block;
+}
+.even:hover .collect1 {
+	display: block;
+}
+.even:hover a {
+	text-decoration: underline;
+}
+.add {
+	display: none;
+	position: absolute;
+	top: 9px;
+	right: 40px;
+	width: 13px;
+	height: 13px;
+	background: url(../img%20/picbg.png) no-repeat -108px -31px;
+}
+.collect1 {
+	display: none;
+	position: absolute;
+	top: 9px;
+	right: 14px;
+	width: 16px;
+	height: 14px;
+	background: url(../img%20/picbg.png) no-repeat -125px -31px;
+}
+#aside {
+	float: right;
+	width: 250px;
+}
+.asideTopWrap {
+	padding: 0 1px 1px;
+	width: 248px;
+}
+.asideTop {
+	position: relative;
+	padding: 16px 23px 0 21px;
+	height: 106px;
+	background: #e6e6e6;
+}
+.asideTopIntroduce {
+	font: 12px/22px "宋体";
+	height: 44px;
+	color: #666;
+}
+.asideTop .user {
+	font: 12px/30px "宋体";
+	text-align: center;
+	padding: 17px 0 15px;
+}
+.asideTop .user  span{
+	position: absolute;
+	top: 76px;
+	left: 74px;
+	width: 100px;
+	height: 31px;
+	background: url(../img%20/picbg.png) no-repeat 0 -193px;
+}
+.asideTop .user  span:hover {
+	background: url(../img%20/picbg.png) no-repeat -102px -193px;
+}
+.asideTop .user a {
+	color: #FFF;
+}
+.asideCenter {
+	background: url(../img%20/ico29.png) repeat-x #FFF;
+	padding: 0 20px 12px;
+}
+.asideCenterTitle {
+	height: 30px;
+	padding-top: 11px;
+	font: 12px/30px "宋体";
+	border-bottom: 1px solid #ccc;
+}
+.asideCenterTitle h4 {
+	float: left;
+	color: #333;
+}
+.asideCenterTitle em {
+	float: right;
+	display: block;
+}
+.asideCenterTitle em a {
+	color: #666;
+}
+.asideCenterTitleList {
+	padding-top: 20px;
+}
+.asideCenterTitleList li {
+	margin-bottom: 14px;
+}
+.asideCenterTitleList .img {
+	width: 62px;
+	height: 62px;
+	display: block;
+	float: left;
+}
+.asideCenterTitleList .right {
+	float: right;
+	width: 133px;
+	border: 1px solid #e9e9e9;
+	border-left: none;
+	background: #fafafa;
+	padding: 0 0 6px 14px;
+}
+.asideCenterTitleList .right a {
+	display: block;
+}
+.asideCenterTitleList .right .singer {
+	font: bold 14px/32px "宋体";
+	color: #333;
+}
+.asideCenterTitleList .right .introduce {
+	font: 12px/22px "宋体";
+	color: #666;
+}
+.apply {
+	position: relative;
+	width: 210px;
+	height: 31px;
+}
+.apply a {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 210px;
+	height: 31px;
+	background: url(../img%20/picbg.png) no-repeat 0 -226px;
+}
+.apply a:hover {
+	background: url(../img%20/picbg.png) no-repeat 0 -258px;
+}
+.asideBottom {
+	background:  #FFF;
+	padding: 0 20px;
+}
+.asideBottomTitleList {
+	padding-top: 20px;
+}
+.asideBottomTitleList li {
+	margin-bottom: 10px;
+}
+.asideBottomTitleList .img {
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+}
+.asideBottomTitleList .right {
+	position: relative;
+	float: left;
+	margin-left: 10px;
+}
+.asideBottomTitleList .right span {
+	position: absolute;
+	width: 11px;
+	height: 12px;
+	top: 6px;
+	left: 27px;
+	background: url(../img%20/picbg.png) no-repeat -20px -62px;
+}
+.asideBottomTitleList .right a {
+	display: block;
+}
+.asideBottomTitleList .right .singer {
+	font: 12px/24px "宋体";
+	color: #333;
+}
+.asideBottom .singer:hover {
+	text-decoration: underline;
+}
+.asideBottomTitleList .right em {
+	font: 12px/14px "宋体";
+	margin-top: 2px;
+	color: #666;
+}
+.footerWrap {
+	border-top: 1px solid #d8d8d8;
+}
+.footerSection {
+	padding: 29px 0 52px 4px;
+	width: 982px;
+	margin: 0 auto;
+}
+.recruit {
+	height: 44px;
+	position: relative;
+	float: left;
+	padding-left: 3px;
+	width: 295px;
+}
+.recruit .img {
+	position: absolute;
+	left: 5px;
+	top: 3px;
+	width: 37px;
+	height: 38px;
+	background: url(../img%20/picbg.png) no-repeat -55px -127px;
+}
+.recruit a .plan {
+	display: block;
+	font: 12px/22px "宋体";
+	color: #666;
+	margin-left: 49px;
+}
+.recruit a .join {
+	font: 12px/22px "宋体";
+	color: #999;
+	margin-left: 49px;
+}
+.contact {
+	float: right;
+	width: 382px;
+	height: 44px;
+}
+.contact a:hover {
+	text-decoration: underline;
+}
+.copyright {
+	font: 12px/22px "宋体";
+	color: #999;
+}
+.copyright a {
+	color: #999;
+}
+.permit {
+	font: 12px/22px "宋体";
+	color: #999;
+}
+.permit a {
+	color: #999;
+}
+.idea {
+	margin-left: 56px;
+	position: relative;
+}
+.idea span {
+	position: absolute;
+	width: 20px;
+	height: 16px;
+	bottom: 2px;
+	right: 52px;
+	background: url(../img%20/picbg.png) no-repeat -96px -127px;
+}
+.feedback {
+	color: #999;
+}
+.backTop a {
+	position: fixed;
+	right: 165px;
+	top: 70%;
+	width: 47px;
+	height: 43px;
+	background: url(../img%20/picbg.png) no-repeat -98px -146px;
+}

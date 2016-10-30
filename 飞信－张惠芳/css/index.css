@@ -1,0 +1,280 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	margin: 0;
+	min-width:930px;
+}
+a {
+	text-decoration: none;
+}
+h3,
+p {
+	margin: 0;
+}
+img {
+	border: none;
+	vertical-align: top;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+dl,
+dd {
+	margin: 0;
+	padding: 0;
+}
+.clearFix {
+	zoom: 1;
+}
+.clearFix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+a:hover {
+	text-decoration: underline;
+}
+.wrap {
+	margin: 0 auto;
+	width: 930px;
+}
+#header {
+	background: url(../img/icoa.png) repeat-x;
+	height: 31px;
+}
+.nav {
+	height: 31px;/*缩放到90%，谷歌下回多出1px*/
+}
+.navLeft {
+	float: left;
+	background: url(../img/ico3.png) no-repeat 12px 3px;
+	font-size: 14px;
+	color: #c1ffc1;
+	text-indent: 118px;
+}
+.navLeft a {
+	padding-top: 1px;
+	color: #FFF;
+	font: 12px/30px "宋体";
+}
+.navLeft span {
+	padding: 0 11px 0 9px;
+}
+.navRight {
+	height: 28px;
+	float: right;
+	font: 12px/28px "宋体";
+	padding: 3px 5px 0 0;
+	background: url(../img/ico.png) no-repeat 100px 9px;
+}
+.navRight a {
+	color: #FFF;
+	padding-right: 11px;
+}
+.room {
+	margin-left: 25px;/*内嵌标签margin*/
+}
+.picBgright {
+	background: url(../img/bgb.png) repeat-x;
+	height: 372px;
+}
+.picBgleft {
+	background: url(../img/bga.png) repeat-x;
+	height: 372px;
+	width: 50%;
+}
+.picCenter {
+	margin:0 auto;
+	display: block;
+	margin-top: -372px;
+	background: url(../img/picbg.png) no-repeat center 0;
+	height: 372px;
+}
+.button {
+	position: absolute;
+	top: 211px;
+	left: 387px;
+	background: url(../img/btn.png) no-repeat;
+	width: 199px;
+	height: 57px;
+}
+.buttonWrap {
+	position: relative;
+	width: 930px;
+	margin: 0 auto;
+}
+#banner {
+	background: url(../img/kkr.png) repeat-x;
+	height: 64px;
+}
+.bannerR {
+	background: url(../img/kkl.png) repeat-x;
+	width: 50%;
+	height: 64px;
+}
+.bannerCon {
+	margin: 0 auto;
+	display: block;
+	margin-top: -64px;
+	background: url(../img/title.png) no-repeat center 0;
+	height: 64px;
+}
+.content {
+	padding-top: 38px;
+}
+.main {
+	width: 674px;
+	float: left;
+	background: url(../img/tm1.png) no-repeat 0 0;
+	height: 384px;
+}
+.mainTitle {
+	position: relative;
+}
+.mainTitle h3 {
+	font: 18px/50px "微软雅黑";
+	text-indent: 89px;
+}
+.mainTitle img {
+	position: absolute;
+	left: 31px;
+	top: -11px;
+	width: 48px;
+	height: 64px;
+}
+.contentMain img {
+	float: left;
+	width: 203px;
+	height: 320px;
+	padding: 1px 0 0 35px;
+}
+.contentMain dl {
+	float: left;
+	padding-left: 28px;
+	width: 408px;
+}
+.contentMain dt {
+	text-indent: 31px;
+	background:url(../img/xx.png) no-repeat 0 4px;
+}
+.contentMain dt a {
+	font: 18px/26px "微软雅黑";
+	color: #352f2a;
+}
+.contentMain dd {
+	font: 12px/18px "宋体";
+	color: #666666;
+}
+.dd1 {
+	padding-bottom: 13px;
+}
+.dd2 {
+	padding-bottom: 21px;
+}
+.dd3 {
+	padding-bottom: 14px;
+}
+.side {
+	position: relative;/*子元素有定位，父级加相对定位*/
+	float: right;
+	width: 240px;
+}
+.sideTitle {
+	position: relative;
+	width: 240px;
+	height: 40px;
+}
+.sideTitle h3 {
+	background:url(../img/title-a.png) no-repeat;
+	height: 40px;
+	font: 18px/38px "微软雅黑";
+	text-indent: 16px;
+	color: #352f2a;
+	padding-top: 2px; 
+}
+.sideTitle img {
+	position: absolute;
+	right: 30px;
+	bottom: 0;
+	width: 50px;
+	height: 57px;
+}
+.side .list {
+	height: 251px;
+	background: url(../img/tm4.png) no-repeat 0 2px;
+	padding: 11px 14px 3px 18px;
+}
+.side li {
+	width: 208px;
+	height: 22px;
+	padding-top: 3px;
+	font: 12px/22px "宋体";
+	text-indent: 11px;
+	border-bottom: 1px dashed #9d9d9d;
+	background: url(../img/title-b.png) no-repeat 0 12px;
+}
+.side li a {
+	color: #666;
+}
+.side .sideLi {
+	border-bottom: none;
+}
+.side .more {
+	height: 42px;
+	font: bold 14px/42px "宋体";
+}
+.side .more a {
+	color: #386584;
+}
+.sideFooter {
+	padding-top: 11px;
+	width: 240px;
+	height: 69px;
+}
+.sideFooter img {
+	width: 240px;
+	height: 69px;
+}
+.choose {
+	padding: 33px 0 24px;
+	border-bottom: 2px solid #f8f8f8;
+	margin-right: -22px;
+	position: relative;
+	
+}
+.choose li {
+	display: inline;/*margin双边距问题*/
+	float: left;
+	padding-bottom: 9px;
+	margin-right: 22px;
+}
+.choose li img {
+	width: 210px;
+	height: 98px;
+	padding: 2px;
+	border: 1px solid #d6d5d4;
+}
+.footer {
+	padding: 32px 0 74px 0;
+	background: url(../img/footer.png) no-repeat right 21px;
+}
+.footer nav {
+	font: bold 12px/20px "宋体";
+	height: 20px;
+	text-indent: 237px;
+	letter-spacing: 1px;
+}
+.footer nav a {
+	color: #919191;
+	margin-right: 12px;
+}
+.footer p {
+	font: 12px/22px "宋体";
+	height: 22px;
+	color: #919191;
+	text-indent: 287px;
+	letter-spacing: 1px;
+}

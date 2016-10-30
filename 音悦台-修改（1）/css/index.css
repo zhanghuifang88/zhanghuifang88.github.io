@@ -1,0 +1,1049 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	margin: 0;
+	font: 12px Tahoma,"微软雅黑";
+}
+h1,
+p,
+h2,
+h3,
+h4 {
+	margin: 0;
+}
+form {
+	border: none;
+	margin: 0;
+}
+input {
+	border: none;
+	padding: 0;
+	outline: none;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+em {
+	font-style: normal; 
+}
+img {
+	border: none;
+	vertical-align: top;
+}
+.clearFix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.wrap {
+	width: 1425px;
+	margin: 0 auto;
+}
+/* start----header*/
+#header {
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	height: 41px;
+	background: url(../img/bg.png) repeat-x;
+	z-index: 3;
+}
+.nav {
+	position: absolute;
+}
+.nav .title {
+	position: absolute;
+	left: 20px;
+	top: 4px;
+	width: 90px;
+	height: 33px;
+	background: url(../img/headerone.png) no-repeat;
+}
+.nav .title h1 {
+	height: 0;
+	padding-top: 33px;
+	overflow: hidden;
+}
+.navLeft {
+	float: left;
+	line-height: 40px;
+	height: 40px;
+	margin-left: 131px;
+	width: 745px;
+}
+.navLeft  a {
+	color: #ccc;
+}
+.navLeft li {
+	display: inline-block;
+	float: left;
+}
+.navLeft li:hover {
+	background: #050505;
+}
+.navLeftCon {
+	padding: 1px 12px 0 13px;
+	position: relative;
+}
+.navLeftCon span {
+	position: absolute;
+	width: 7px;
+	height: 4px;
+	top: 8px;
+	right: 11px;
+	background: url(../img/headerone.png) no-repeat -92px 0;
+}
+.list .navLeftCon {
+	padding: 1px 21px 0 13px;
+}
+.navLeftCon:hover {
+	color: #ccff99;
+}
+.navLeftCon:hover span {
+	background: url(../img/headerone.png) no-repeat -100px 0;
+}
+.list {
+	position: relative;
+}
+.navMore {
+	display: none;
+	position: absolute;
+	width: 80px;
+	height: 99px;
+	bottom: -99px;
+	left: 0px;
+	background: url(../img/headerone.png) no-repeat 0 -34px;
+	z-index: 1;
+}
+.list:hover .navMore {
+	display: block;
+}
+.navMore a {
+	color: #ccc;
+	display: block;
+	padding-top: 3px;
+	line-height: 30px;
+	padding-left: 9px; 
+}
+.navMore a:hover {
+	background: #5a840a;
+}
+.list1 {
+	position: relative;
+}
+.navLast {
+	position: absolute;
+	width: 5px;
+	height: 10px;
+	right: 0px;
+	bottom: 16px;
+	background: url(../img/headerone.png) no-repeat -92px -6px;
+}
+.list1:hover .navLast {
+	background: url(../img/headerone.png) no-repeat -100px -6px;
+}
+#listNew {
+	position: relative;
+}
+.navNew {
+	position: absolute;
+	top: 2px;
+	right: 1px;
+	width: 23px;
+	height: 17px;
+	background: url(../img/headerone.png) no-repeat -109px 0;
+}
+.navRight {
+	width: 548px;
+	float: left;
+	height: 41px;
+}
+.form {
+	float: left;
+	position: relative;
+	width: 215px;
+	height: 29px;
+	margin:  7px 0 5px 83px;
+}
+.form input {
+	width: 215px;
+	color: #adadad;
+	background: #d8d8d8;
+	line-height: 28px;
+	padding-bottom: 1px;
+	border-radius: 13px;
+	text-indent: 15px;
+}
+.form a {
+	position: absolute;
+	width: 16px;
+	height: 17px;
+	top: 6px;
+	right: 13px;
+	background: url(../img/headerone.png) no-repeat -133px 0;
+}
+.register {
+	float: left;
+	margin-left: 98px;
+}
+.register a {
+	color: #ccc9c5;
+	margin-right: 7px;
+	padding-top: 3px;
+	line-height: 38px;
+}
+.register span {
+	margin-left: 7px;
+	height: 16px;
+	border-left: 1px solid #666; 
+}
+.register span a {
+	padding-left: 15px;
+}
+.register a:hover {
+	color: #ccff99;
+}
+/* end---header*/
+/* start--banner*/
+.banner {
+	padding-top: 41px;
+	position: relative;
+	width: 1425px;
+	height: 534px;
+}
+.banner img {
+	width: 1425px;
+	height: 534px;
+}
+.bannerLeft {
+	position: absolute;
+	width: 29px;
+	height: 53px;
+	top: 242px;
+	left: 51px;
+	background: url(../img/headerone.png) no-repeat 0 -136px;
+}
+.bannerLeft:hover {
+	position: absolute;
+	width: 72px;
+	height: 72px;
+	top: 231px;
+	left: 29px;
+	background: url(../img/headerone.png) no-repeat -82px -34px;
+}
+.bannerRight {
+	position: absolute;
+	width: 29px;
+	height: 53px;
+	top: 242px;
+	right: 51px;
+	background: url(../img/headerone.png) no-repeat -43px -136px;
+}
+.bannerRight:hover {
+	position: absolute;
+	width: 72px;
+	height: 72px;
+	top: 231px;
+	right: 31px;
+	background: url(../img/headerone.png) no-repeat -82px -108px;
+}
+.bannerCircle {
+	position: absolute;
+	bottom: 35px;
+	left: 613px;
+	height: 14px;
+}
+.circle {
+	float: left;
+	font-size: 28px;
+	opacity: .5;
+	color: #FFF;
+	margin-right: 22px;
+}
+.circle:hover {
+	color: #87ab08;
+}
+/* end--banner*/
+
+.content {
+	padding: 0 23px 0 92px;
+	background: #f2f2f2;
+}
+/*content*/
+/*首播*/ 
+.contentTop {
+	padding-top: 30px;
+}
+.broadcast {
+	position: relative;
+	height: 40px;
+}
+.broadcast h2 {
+	float: left;
+	position: absolute;
+	width: 118px;
+	height: 40px;
+	top: 0;
+	left: 0;
+	padding-top: 40px;
+	overflow: hidden;
+	height: 0;
+	background: url(../img/shouyepic.png) no-repeat;
+}
+.broadcastNav {
+	float: right;
+	padding-top: 10px;
+	font: 14px/28px "微软雅黑";
+	margin-right: 58px;
+}
+.broadcastNav a {
+	position: relative;
+	display: inline-block;
+	padding: 0 2px 0 1px;
+	color: #666666;
+	margin: 0 14px 0 17px;
+}
+.broadcastNav a:hover {
+	border-bottom: 2px solid #669900;
+}
+.bottomLine {
+	border-bottom: 2px solid #669900;
+}
+.broadcastNav .rightLine:after {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 19px;
+	top: 11px;
+	right: -14px;
+	background: url(../img/shouyepic.png) no-repeat -120px 0;
+}
+.pic {
+	margin: 10px 0 0 11px;
+}
+.picLeft {
+	float: left;
+	position: relative;
+	width: 468px;
+	border:  1px solid #e8e8e8;
+	padding: 2px;
+	background: #FFF;
+}
+.picLeft:hover {
+	border-color: #ccff91;
+	box-shadow: 0 0 4px  #ccff91;
+}
+.picLeft a:hover .ico {
+	display: block;
+}
+.picLeft a .song {
+	color: #fff;
+}
+.picLeft a .singer {
+	color: #aef899;
+}
+.picLeft img {
+	width: 468px;
+	height: 273px;
+}
+.song {
+	position: absolute;
+	font: 12px/18px Tahoma;
+	left: 12px;
+	top: 85px;
+} 
+.singer {
+	position: absolute;
+	font: 12px/18px Tahoma;
+	left: 12px;
+	top: 103px;
+}
+.picRight {
+	position: relative;
+	float: left;
+	width: 744px;
+}
+.picRight li {
+	position: relative;
+	float: left;
+	width: 224px;
+	height: 128px;
+	margin: 0 0 19px 22px;
+}
+.picRight li:hover {
+	border-color: #bdd098;
+	border-bottom: none;
+	box-shadow: 0 0 4px #bdd098;
+}
+.picRight li:hover .describe {
+	border: #bdd098;
+	box-shadow: 0 0 4px #bdd098;
+	display: block;
+}
+.describe {
+	display: none;
+	height: 148px;
+	width: 224px;
+	border: 1px solid #e8e8e8;
+	border-top: none;
+	margin-top: -2px;
+	position: relative;
+	z-index: 1;
+}
+.describe h4 {
+	font: 12px/28px Tahoma;
+	color: #ccc;
+	background: #fff;
+	padding-left: 2px;
+}
+.describe h4 a {
+	color: #9d9d6e;
+}
+.describe p:nth-child(2) {
+	padding-left: 2px;
+	position: relative;
+	background: #fff;
+	height: 14px;
+	padding: 1px 0 9px 26px;
+	color: #a6a19d;
+}
+.describe .video {
+	font: 12px/14px Tahoma;
+}
+.video:before {
+	content: "";
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	top: 3px;
+	left: 10px;
+	background: url(../img/shouyepic.png) no-repeat -122px 0;
+}
+.comment {
+	margin-left: 31px;
+}
+.comment:before {
+	content: "";
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	top: 0;
+	left: 67px;
+	background: url(../img/shouyepic.png) no-repeat -122px -15px;
+}
+.VIP {
+	margin-left: 36px;
+}
+.VIP:before {
+	content: "";
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	top: 0;
+	left: 111px;
+	background: url(../img/shouyepic.png) no-repeat -122px -32px;
+}
+.VIP:after {
+	content: "";
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	top: 6px;
+	margin-left: 2px;
+	background: url(../img/shouyepic.png) no-repeat -138px 0;
+}
+.describe p:nth-child(3) {
+	padding-left: 2px;
+	padding-top: 11px;
+	font: 14px/20px Tahoma;
+	color: #666666;
+	padding: 11px 0 6px 7px;
+	letter-spacing: -1px;
+	background: #f6f9f1;
+}
+.picRight .play {
+	display: none;
+	position: absolute;
+	width: 53px;
+	height: 53px;
+	top: 27px;
+	left: 86px;
+	background: url(../img/shouyepic.png) no-repeat -145px 0;
+}
+.picRight li:hover .play {
+	display: block;
+}
+.picRight li img {
+	width: 220px;
+	height: 124px;
+	padding: 2px;
+	background: #f6f9f1;
+	border:  1px solid #e8e8e8;
+}
+.picRight a .song {
+	color: #fff;
+}
+.picRight a .singer {
+	color: #aef899;
+}
+.picRightIco {
+	position: absolute;
+	width: 17px;
+	height: 34px;
+	top: 121px;
+	right: -64px;
+	background: url(../img/shouyepic.png) no-repeat -145px -55px;
+}
+
+/*－－－end－－－mv首播*/
+/* 正在流行*/
+.contentCenter {
+	margin-top: 60px;
+}
+.popular {
+	position: relative;
+	height: 40px;
+}
+.popular h2 {
+	float: left;
+	position: absolute;
+	width: 137px;
+	height: 40px;
+	top: 0;
+	left: 0;
+	padding-top: 40px;
+	overflow: hidden;
+	height: 0;
+	background: url(../img/shouyepic.png) no-repeat 0 -49px;
+}
+.introduce {
+	float: left;
+	position: relative;
+	width: 718px;
+	border:  1px solid #e8e8e8;
+	padding: 2px 0 2px 2px;
+	background: #FFF;
+}
+.introduce:hover {
+	border-color: #ccff91;
+	box-shadow: 0 0 4px  #ccff91;
+}
+.introduce a .song {
+	color: #fff;
+}
+.introduce a .singer {
+	color: #aef899;
+}
+.introduce img {
+	float: left;
+	width: 468px;
+	height: 273px;
+}
+.ico {
+	display: none;
+	position: absolute;
+	width: 53px;
+	height: 53px;
+	top: 102px;
+	left: 210px;
+	background: url(../img/shouyepic.png) no-repeat -145px 0;
+}
+.introduce a:hover .ico{
+	display: block;
+}
+.introduceRight {
+	float: left;
+	width: 217px;
+	padding: 7px 18px 0 15px;
+}
+.introduceRight h3 {
+	font: 20px/38px Tahoma;
+	letter-spacing: -1px;
+}
+.introduceRight h3 a {
+	color: #333;
+}
+.introduceRight h3 a:hover {
+	color: #ccff91;
+}
+.introduceRight p {
+	font: 12px/20px Tahoma;
+	letter-spacing: -1px;
+	color: #666666;
+}
+.popularRight {
+	position: relative;
+	float: left;
+	width: 496px;
+}
+.popularRight li {
+	position: relative;
+	float: left;
+	width: 224px;
+	height: 128px;
+	margin: 0 0 19px 22px;
+}
+.popularRight li:hover {
+	border-color: #bdd098;
+	border-bottom: none;
+	box-shadow: 0 0 4px #bdd098;
+}
+.popularRight li:hover .describe {
+	border: #bdd098;
+	box-shadow: 0 0 4px #bdd098;
+	display: block;
+}
+
+.popularRight .play {
+	display: none;
+	position: absolute;
+	width: 53px;
+	height: 53px;
+	top: 27px;
+	left: 86px;
+	background: url(../img/shouyepic.png) no-repeat -145px 0;
+}
+.popularRight li:hover .play {
+	display: block;
+}
+/* jia-----------------*/
+.popularRight li img {
+	width: 220px;
+	height: 124px;
+	padding: 2px;
+	background: #f6f9f1;
+	border:  1px solid #e8e8e8;
+}
+.popularRight a .song {
+	color: #fff;
+}
+.popularRight a .singer {
+	color: #aef899;
+}
+/*end----正在流行*/
+/* start---音悦资讯*/
+.contentCenter {
+	margin-top: 60px;
+}
+.information {
+	position: relative;
+	height: 40px;
+}
+.information h2 {
+	float: left;
+	position: absolute;
+	width: 144px;
+	height: 40px;
+	top: 0;
+	left: 0;
+	padding-top: 40px;
+	overflow: hidden;
+	height: 0;
+	background: url(../img/shouyepic.png) no-repeat 0 -92px;
+}
+.musical {
+	margin: 10px 0 0 11px;
+}
+.musicalLeft {
+	float: left;
+	position: relative;
+	width: 474px;
+	background: #FFF;
+}
+.musicalLeft:hover {
+	box-shadow: 0 0 5px #ccff91;
+}
+.musicalLeft a:hover .ico {
+	display: block;
+}
+.musicalLeft a .song {
+	color: #fff;
+}
+.musicalLeft a .singer {
+	color: #aef899;
+}
+.musicalLeft img {
+	width: 474px;
+	height: 278px;
+}
+.song {
+	position: absolute;
+	font: 12px/18px Tahoma;
+	left: 12px;
+	bottom: 29px;
+} 
+.singer {
+	position: absolute;
+	font: 12px/18px Tahoma;
+	left: 12px;
+	bottom: 10px;
+}
+
+.informationRight {
+	position: relative;
+	float: left;
+	width: 744px;
+}
+.informationRight li {
+	position: relative;
+	float: left;
+	width: 224px;
+	border:  1px solid #e8e8e8;
+	padding-top: 2px;
+	margin: 0 0 19px 22px;
+	background: #FFF;
+}
+.informationRight li:before {
+	content: "";
+	position: absolute;
+	width: 34px;
+	height: 24px;
+	top: 2px;
+	left: 7px;
+	background: url(../img/shouyepic.png) no-repeat -164px -55px;
+}
+.informationRight li:hover {
+	border-color: #ccff91;
+	box-shadow: 0 0 4px #ccff91;
+}
+.informationRight li img {
+	width: 220px;
+	height: 124px;
+	margin: 0 2px 0 2px;
+}
+.informationSong {
+	font: 12px/28px Tahoma;
+	position: absolute;
+	left: 18px;
+	top: 98px;
+}
+.informationRight a .informationSong {
+	color: #fff;
+}
+.informationList {
+	font: 12px/28px Tahoma;
+	padding-top: 6px;
+}
+.informationList p {
+	border-top: 1px solid #f1f1f1;
+	text-indent: 7px;
+}
+.informationList p:hover {
+	background: #c9ff99;
+}
+.informationList p a {
+	color: #333;
+}
+#p {
+	border-top: none;
+}
+/* end---音乐资讯*/
+.contentCenter {
+	margin-top: 60px;
+}
+.fine {
+	position: relative;
+	height: 40px;
+}
+.fine h2 {
+	float: left;
+	position: absolute;
+	width: 180px;
+	height: 40px;
+	top: 0;
+	left: 0;
+	padding-top: 40px;
+	overflow: hidden;
+	height: 0;
+	background: url(../img/shouyepic.png) no-repeat 0 -135px;
+}
+
+/* start---精品悦单*/
+.fineCon {
+	margin: 10px 0 0 11px;
+}
+.fineCon ul {
+	position: relative;
+	width: 1253px;
+}
+.fineCon li {
+	position: relative;
+	float: left;
+	width: 220px;
+	border:  1px solid #e8e8e8;
+	padding: 2px 2px 0 2px;
+	margin: 0 22px 64px 0;
+	background: #FFF;
+}
+.fineCon li:hover {
+	border-color: #669900;
+	box-shadow: 0 0 4px #669900;
+}
+.fineCon .img  img{
+	width: 220px;
+	height: 220px;
+}
+.fineConIco {
+	position: absolute;
+	width: 17px;
+	height: 34px;
+	top: 121px;
+	right: -22px;
+	background: url(../img/shouyepic.png) no-repeat -145px -55px;
+}
+.webFriend {
+}
+.webFriendPic {
+	background: #FFF;
+	position: absolute;
+	left: 10px;
+	top: 196px;
+	width: 40px;
+	height: 40px;
+	padding: 2px;
+	border: 1px solid #cccccc;
+	box-shadow: 0 0 8px #ccc;
+}
+.webFriendPic img {
+	width: 40px;
+	height: 40px;
+}
+.webFriend .name {
+	display: inline-block;
+	text-indent: 64px;
+	font: 12px/22px Tahoma;
+	color: #cc0000;
+}
+.webFriend .name span {
+	position: absolute;
+	top: 226px;
+	right: 98px;
+	width: 19px;
+	height: 14px;
+	background: url(../img/shouyepic.png) no-repeat -145px -90px;
+}
+.webFriendInformation {
+	position: absolute;
+	top: 248px;
+	left: 58px;
+	width: 316px;
+	border: 1px solid #e5e5e5;
+	border-radius: 7px;
+}
+.top {
+	height: 67px;
+	padding: 7px 0 0 8px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.top a:nth-child(1) {
+	float: left;
+	display: block;
+	width: 60px;
+	height: 60px;
+}
+.topRight {
+	float: left;
+	width: 196px;
+	margin-left: 15px;
+}
+
+/*.topIco {
+	position: relative;
+	font: 12px/18px Tahoma;
+}
+.topIco a {
+	color: #cc003f;
+}
+.topIco .ico1 {
+	position: absolute;
+	width: 16px;
+	height: 17px;
+	right: -20px;
+	top: -1px;
+	background: url(../img/ico16.png) no-repeat;
+}
+.topIco .ico2 {
+	position: absolute;
+	width: 19px;
+	height: 15px;
+	right: -45px;
+	top: 3px;
+	background: url(../img/shouyepic.png) no-repeat -145px -90px;
+}
+.radio {
+	
+}
+*/.message {
+	font: 12px/40px Tahoma;
+	text-indent: 10px;
+	color: #333;
+}
+/* end----精品悦单*/
+
+/* start--猜你喜欢*/
+.likeSection {
+	background: #f2f2f2;
+}
+.like {
+	border-top: 1px solid #dcdcdc;
+	border-bottom: 1px solid #dcdcdc;
+	background: #FFF;
+}
+.contentBottom {
+	padding: 30px 23px 0 92px;
+}	
+.likeTitle {
+	position: relative;
+	height: 40px;
+}
+.likeTitle h2 {
+	float: left;
+	position: absolute;
+	width: 192px;
+	height: 40px;
+	top: 0;
+	left: 0;
+	padding-top: 40px;
+	overflow: hidden;
+	height: 0;
+	background: url(../img/shouyepic.png) no-repeat 0 -178px;
+}
+.picLike {
+	position: relative;
+	width: 1253px;
+	padding: 10px 0 19px 11px;
+}
+.picLike li {
+	position: relative;
+	float: left;
+	width: 220px;
+	height: 124px;
+	border:  1px solid #e8e8e8;
+	padding: 2px;
+	margin-right: 22px;
+}
+.picLike li:hover {
+	border-color: #669900;
+	box-shadow: 0 0 4px #669900;
+}
+.picLike .play {
+	display: none;
+	position: absolute;
+	width: 53px;
+	height: 53px;
+	top: 27px;
+	left: 86px;
+	background: url(../img/shouyepic.png) no-repeat -145px 0;
+}
+.picLike li:hover .play {
+	display: block;
+}
+.picLike li img {
+	width: 220px;
+	height: 124px;
+}
+.picLike a .song {
+	color: #fff;
+}
+.picLike a .singer {
+	color: #aef899;
+}
+
+.enter {
+	padding-top: 2px;
+	height: 126px;
+	text-align: center;
+	font: 24px/126px Tahoma;
+	color: #666;
+}
+.enter a {
+	color: #669900;
+}
+/* end--猜你喜欢*/
+/* start--footer*/
+.footer {
+	position: relative;
+	margin-top: 30px;
+	text-align: center;
+	padding: 20px 247px 25px 245px;
+}
+.footer:after {
+	content: "";
+	position: absolute;
+	width: 40px;
+	height: 48px;
+	bottom: 27px;
+	right: 240px; 
+	background: url(../img/shouyepic.png) no-repeat -31px -220px;
+}
+.footer a:hover {
+	color:  #669900;
+}
+.footerNav {
+	font: 14px/60px Tahoma;
+}
+.footerNav a {
+	position: relative;
+	color: #666;
+	padding: 0 13px 0 13px;
+}
+.footerNav .line:before {
+	content: "";
+	position: absolute;
+	width: 2px;
+	height: 12px;
+	top: 4px;
+	left: 0;
+	background: url(../img/shouyepic.png) no-repeat -145px -106px;
+}
+.copy {
+	position: relative; 
+	color: #666;
+	font: 12px/24px Tahoma;
+}
+.copy p:before {
+	content: "";
+	position: absolute;
+	width: 23px;
+	height: 24px;
+	top: 0;
+	left: 50px;
+	background: url(../img/shouyepic.png) no-repeat 0 -220px;
+}
+.copy a {
+	color: #666;
+}
+.permit {
+	position: relative; 
+	color: #666;
+	font: 12px/24px Tahoma;
+}
+.permit p:before {
+	content: "";
+	position: absolute;
+	width: 18px;
+	height: 20px;
+	top: 1px;
+	left: 12px;
+	background: url(../img/shouyepic.png) no-repeat 0 -245px;
+}
+.permit a {
+	color: #666;
+}
+
+
+
+
+
+/* end--footer*/
+
+
+

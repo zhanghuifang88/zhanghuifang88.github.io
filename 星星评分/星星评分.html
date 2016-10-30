@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>评论</title>
+<style>
+section {
+	margin: 50px auto;
+	height: 60px;
+	width: 510px;
+	text-align: center;
+}
+p {
+	margin: 5px 10px 0 0;
+	float: left;
+}
+p span {
+	color: red;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	width: 140px;
+	height: 50px;
+}
+li {
+	width: 20px;
+	height: 22px;
+	padding-right: 5px;
+	float: left;
+	background: url(img/ico1.png) no-repeat;
+}
+#judge {
+	float: left;
+	color: #ef7300;
+	font: 16px/30px "宋体";
+}
+div {
+	float: right;
+	margin-right: 20px;
+	width: 240px;
+	height: 40px;
+	background: url(img/ico4.png) no-repeat ;
+}
+.bg1 {
+	background: url(img/ico3.png) no-repeat;
+}
+.bg {
+	background: url(img/ico2.png) no-repeat;
+}
+</style>
+<script>
+	/*
+		需求： 1，当鼠标移入图片时，提示消失
+			  2，移入第一颗星，灰色，很差
+			  3，移入第二颗星，灰色，较差
+			  4，移入第三颗星，黄色，还行
+			  5，移入第四颗星，黄色，推荐
+			  6，移入第五颗星，黄色，力推
+		 	  7，当鼠标点击时，星星出现对应状态，鼠标离开，当鼠标再次移入的时候可以重新评分
+			  
+			  
+			  
+	*/
+	window.onload = function(){
+		var div = document.getElementsByTagName("div")[0];
+		var allLi = document.getElementsByTagName("li");
+		var judge = document.getElementById("judge");
+		var arr = ["很差","较差","还行","推荐","力推"];
+		/*
+		为每一个li添加移入效果处理,
+			1、鼠标移入li时div内容消失
+			2、if鼠标移入前两颗星星的时候，颜色为灰色，否则为背景颜色
+			   if鼠标移入大于前两颗星星，移入的星星都变为黄色的星星，否则为背景色
+		
+		*/
+		var m = -1;
+		for( var i = 0; i < allLi.length; i++ ){
+			allLi[i].index = i;
+			allLi[i].onmouseover = function(){
+				for(var j = 0; j < allLi.length; j++){
+					if(j<= this.index){
+						if(this.index<2){
+							allLi[j].className = "bg1";
+							judge.innerHTML = arr[j];
+						}else{
+							allLi[j].className = "bg";
+							judge.innerHTML = arr[j];
+						}
+					}else{
+						allLi[j].className = "";
+					}
+					
+				}
+				div.style.display = "none";
+			}
+			allLi[i].onmouseout = function(){
+				//移出某一个星星的时候，让所有的星星和内容都消失
+				for( var j = 0; j < allLi.length; j++ ){
+						div.style.display = "block";
+						judge.innerHTML = "";
+						allLi[j].className = "";
+				}//判断是否有被点击
+				for(var i = 0; i <=m; i++){
+					allLi[i].className = "bg1";
+					judge.innerHTML = arr[i];
+					
+					if(m>1){
+						allLi[i].className = "bg";
+						judge.innerHTML = arr[i];	
+					}
+					div.style.display = "none";
+				}
+				if(m<0){//
+					div.style.display = "block";
+				}else{
+					judge.innerHTML = arr[m];
+				}
+			}
+			//鼠标点击星星的时候
+			allLi[i].onclick = function(){
+
+				m = this.index;//保存下标
+			};
+			
+			
+		}
+		
+		
+		
+	};
+</script>
+</head>
+
+<body>
+<section>
+    <p><span>＊</span>总体评价：</p>
+    <ul id="box">
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    </ul>
+    <span id="judge"></span>
+    <div></div>
+</section>
+</body>
+</html>

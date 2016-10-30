@@ -1,0 +1,761 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	margin: 0;
+	font: 12px Tahoma;
+}
+h1,
+p,
+h2,
+h3,
+h4 {
+	margin: 0;
+}
+form {
+	border: none;
+	margin: 0;
+}
+input {
+	border: none;
+	padding: 0;
+	outline: none;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+dl dd {
+	margin: 0;
+	padding: 0;
+}
+em {
+	font-style: normal; 
+}
+img {
+	border: none;
+	vertical-align: top;
+}
+.clearFix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.wrap {
+	width: 1425px;
+	margin: 0 auto;
+}
+.conWrap {
+	width: 1200px;
+	margin: 0 auto;
+}
+/* start----header*/
+#header {
+	width: 100%;
+	position: fixed;
+	height: 41px;
+	background: #000;
+	box-shadow: 0 0 4px #d9d9d9;
+	z-index: 3;
+}
+.nav {
+	position: absolute;
+}
+.nav .title {
+	position: absolute;
+	left: 20px;
+	top: 4px;
+	width: 90px;
+	height: 33px;
+	background: url(../img/headerone.png) no-repeat;
+}
+.nav .title h1 {
+	height: 0;
+	padding-top: 33px;
+	overflow: hidden;
+}
+.navLeft {
+	float: left;
+	line-height: 40px;
+	height: 40px;
+	margin-left: 131px;
+	width: 745px;
+}
+.navLeft  a {
+	color: #ccc;
+}
+.navLeft li {
+	display: inline-block;
+	float: left;
+}
+.navLeft li:hover {
+	background: #050505;
+}
+.navLeftCon {
+	padding: 1px 12px 0 13px;
+	position: relative;
+}
+.navLeftCon span {
+	position: absolute;
+	width: 7px;
+	height: 4px;
+	top: 8px;
+	right: 11px;
+	background: url(../img/headerone.png) no-repeat -92px 0;
+}
+.list .navLeftCon {
+	padding: 1px 21px 0 13px;
+}
+.navLeftCon:hover {
+	color: #ccff99;
+}
+.navLeftCon:hover span {
+	background: url(../img/headerone.png) no-repeat -100px 0;
+}
+.list {
+	position: relative;
+}
+.navMore {
+	display: none;
+	position: absolute;
+	width: 80px;
+	height: 99px;
+	bottom: -99px;
+	left: 0;
+	background: url(../img/headerone.png) no-repeat 0 -34px;
+	z-index: 1;
+}
+.list:hover .navMore {
+	display: block;
+}
+.navMore a {
+	color: #ccc;
+	display: block;
+	padding-top: 3px;
+	line-height: 30px;
+	padding-left: 9px; 
+}
+.navMore a:hover {
+	background: #5a840a;
+}
+.list1 {
+	position: relative;
+}
+.navLast {
+	position: absolute;
+	width: 5px;
+	height: 10px;
+	right: 0px;
+	bottom: 16px;
+	background: url(../img/headerone.png) no-repeat -92px -6px;
+}
+.list1:hover .navLast {
+	background: url(../img/headerone.png) no-repeat -100px -6px;
+}
+#listNew {
+	position: relative;
+}
+.navNew {
+	position: absolute;
+	top: 2px;
+	right: 1px;
+	width: 23px;
+	height: 17px;
+	background: url(../img/headerone.png) no-repeat -109px 0;
+}
+.navRight {
+	width: 548px;
+	float: left;
+	height: 41px;
+}
+.form {
+	float: left;
+	position: relative;
+	width: 215px;
+	height: 29px;
+	margin:  7px 0 5px 83px;
+}
+.form input {
+	width: 215px;
+	color: #adadad;
+	background: #d8d8d8;
+	line-height: 28px;
+	padding-bottom: 1px;
+	border-radius: 13px;
+	text-indent: 15px;
+}
+.form a {
+	position: absolute;
+	width: 16px;
+	height: 17px;
+	top: 6px;
+	right: 13px;
+	background: url(../img/headerone.png) no-repeat -133px 0;
+}
+.register {
+	float: left;
+	margin-left: 98px;
+}
+.register a {
+	color: #ccc9c5;
+	margin-right: 7px;
+	padding-top: 3px;
+	line-height: 38px;
+}
+.register span {
+	margin-left: 7px;
+	height: 16px;
+	border-left: 1px solid #666666;
+}
+.register span a {
+	padding-left: 15px;
+}
+.register a:hover {
+	color: #ccff99;
+}
+/* end---header* width: 1200px; height: 408px;/
+/* start---mv*/
+.mvNav{
+	padding-top: 41px;
+	height: 84px;
+}
+.mvNavLeft {
+	float: left;
+	padding-top: 2px;
+	font: 18px/82px Tahoma;
+}
+.mvNavLeft a {
+	color: #27d5c4;
+}
+.mvNavRight {
+	float: right;
+	padding-top: 33px;
+	font: 12px/26px Tahoma;
+}
+.mvNavRight a {
+	display: inline-block;
+	padding: 0 3px 0 4px;
+	margin-left: 41px;
+	color: #27d5bf;
+} 
+.mvNavRight a:hover {
+	border-bottom: 1px solid #27d5bf;
+}
+.mvConLeft {
+	position: relative;
+	float: left;
+	width: 880px;
+	height: 410px; 
+}
+.mvPic {
+	display: block;
+	width: 880px;
+	height: 410px; 
+}
+.mvPic img {
+	display: block;
+	width: 880px;
+	height: 410px;
+}
+.mvPic:before {
+	content: "";
+	position: absolute;
+	top: 171px;
+	left: 0px;
+	width: 32px;
+	height: 68px;
+	background: url(../img/mvpic.png) no-repeat;
+}
+.mvPic:hover:before {
+	background: url(../img/mvpic.png) no-repeat -70px 0;
+}
+.mvPic:after {
+	content: "";
+	position: absolute;
+	top: 171px;
+	right: 0px;
+	width: 32px;
+	height: 68px;
+	background: url(../img/mvpic.png) no-repeat -35px 0;
+}
+.mvPic:hover:after {
+	background: url(../img/mvpic.png) no-repeat -105px 0;
+}
+.circle1 {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	left: 607px;
+	bottom: 35px;
+	background: url(../img/mvpic.png) no-repeat -100px -111px;
+}
+.circle1:hover {
+	background: url(../img/mvpic.png) no-repeat -85px -111px;
+}
+.circle2 {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	left: 632px;
+	bottom: 35px;
+	background: url(../img/mvpic.png) no-repeat -100px -111px;
+}
+.circle2:hover {
+	background: url(../img/mvpic.png) no-repeat -85px -111px;
+}
+.circle3 {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	left: 657px;
+	bottom: 35px;
+	background: url(../img/mvpic.png) no-repeat -100px -111px;
+}
+.circle3:hover {
+	background: url(../img/mvpic.png) no-repeat -85px -111px;
+}
+.circle4 {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	left: 682px;
+	bottom: 35px;
+	background: url(../img/mvpic.png) no-repeat -100px -111px;
+}
+.circle4:hover {
+	background: url(../img/mvpic.png) no-repeat -85px -111px;
+}
+.circle5 {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	left: 707px;
+	bottom: 35px;
+	background: url(../img/mvpic.png) no-repeat -100px -111px;
+}
+.circle5:hover {
+	background: url(../img/mvpic.png) no-repeat -85px -111px;
+}
+.circle6 {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	left: 732px;
+	bottom: 35px;
+	background: url(../img/mvpic.png) no-repeat -100px -111px;
+}
+.circle6:hover {
+	background: url(../img/mvpic.png) no-repeat -85px -111px;
+}
+.mvConRight {
+	float: left;
+	margin-left: 10px;
+	width: 310px;
+	height: 410px; /**/
+}
+.mvConNav {
+	border-top: 2px solid #e4e4e4;
+}
+.mvConNav a {
+	display: inline-block;
+	width: 57px;
+	padding: 3px 49px 0 49px;
+	font: 14px/32px Tahoma;
+	color: #66667d;
+	font-family: 'Microsoft yahei';	/**/
+}
+.mvConNav a.active {	/**/
+	background: #e4e4e4;
+	color: #a7a7a7;
+}
+.mvConNav a:hover {
+	background: #e4e4e4;
+	color: #a7a7a7;
+}
+.example {} /**/
+.example li {
+	position: relative;
+	border-bottom: 1px solid #e4e4e4;
+	/*padding-top: 2px;*/
+	height: 48px;
+	line-height: 48px;
+}
+/*
+	
+.exampleList 等价于 .example li
+
+.exampleList {	 
+	position: relative;
+	border-bottom: 1px solid #e4e4e4;
+	padding-top: 2px;
+	height: 46px;
+} 
+
+*/
+.exampleSong {
+	float: left;
+	width: 226px;		/**/
+	padding-left: 4px;	/**/
+	font: 12px/48px "微软雅黑";	/**/
+	color: #333;
+}
+.exampleSinger {
+	float: left;
+	font: 12px/48px "微软雅黑"; /**/
+	color: #27d5bf;
+}
+.details {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 18px 0 18px 5px;
+	z-index: 1;
+}
+.detailsLeft {
+	float: left;
+	display: block;
+	width: 160px;
+	height: 90px;
+}
+.detailsLeft img {
+	width: 160px;
+	height: 90px;
+}
+.detailsRight {
+	float: left;
+	width: 130px;
+	margin-left: 15px;
+	font: 12px/20px Tahoma;
+}
+.detailsRight .song a {
+	color: #333;
+}
+.detailsRight .singer a {
+	color: #27d5bf;
+}
+.exampleList:hover .details {
+	display: block;
+}
+.exampleList:hover {	/**/ 
+	height: 126px;
+}
+.exampleList.list_active {	/**/
+	height: 126px;
+}
+.exampleList.list_active div {	/**/
+	display: block;
+}
+.exampleList.list_active .exampleSong {	/**/
+	display: none;
+}
+.exampleList.list_active .exampleSinger {	/**/
+	display: none;
+}
+
+/* end--mv频道*/
+
+/* start--台哥推荐*/
+.recommend {
+	position: relative;
+	padding-top: 53px;
+	border-bottom: 1px solid #eee;
+}
+.recommend .btn {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 155px;
+	right: -58px;
+	background: url(../img/mvpic.png) no-repeat -140px 0;
+}
+.recommend .line {
+	display: block;
+	margin-left: 72px;
+	border-bottom: 1px solid #eee;
+}
+.recommend h2 {
+	position: relative;
+	padding-top: 39px;
+	height: 0;
+	width: 72px;
+	overflow: hidden;
+	background: url(../img/mvpic.png) no-repeat 0 -70px;
+}
+.recommendList {
+	padding: 20px 7px 26px 0;
+	margin-left: -22px;
+	height: 181px;
+}
+.recommendList li {
+	float: left;
+	margin-left: 22px;
+	width: 221px;
+}
+.recommendList li a {
+	display: block;
+	position: relative;
+}
+.recommendList li img {
+	width: 221px;
+	height: 124px;
+}
+.recommendList a:after {
+	display: none;
+	content: "";
+	position: absolute;
+	width: 52px;
+	height: 52px;
+	top: 36px;
+	left: 84px;
+	background: url(../img/mvpic.png) no-repeat -140px -53px;
+}
+.recommendList a:hover:after {
+	display: block;
+}
+.recommendList a:hover {
+	background: #000;
+	opacity: .8;
+}
+.recommendList .songs {
+	position: absolute;
+	font: 12px Tahoma;
+	left: 10px;
+	top: 89px;
+	color: #fff;
+}
+.recommendList .singers {
+	position: absolute;
+	font: 12px Tahoma;
+	left: 10px;
+	top: 107px;
+	color: #26d0bb;
+}
+.introduce {
+	width: 193px;
+	padding: 11px 16px 9px 10px;
+	border: 1px solid #f7f7f7;
+	border-top: none;
+	font: 12px/18px Tahoma;
+	height: 36px;
+}
+/* end---台哥推荐*/
+/* start---华语*/
+.chinese {
+	position: relative;
+	padding-top: 53px;
+}
+.chinese h2 {
+	padding-top: 39px;
+	height: 0;
+	width: 48px;
+	overflow: hidden;
+	background: url(../img/mvpic.png) no-repeat -77px -70px;
+}
+.chinese .btn {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 275px;
+	right: -58px;
+	background: url(../img/mvpic.png) no-repeat -140px 0;
+}
+.chinese .line {
+	display: block;
+	margin-left: 50px;
+	border-bottom: 1px solid #eee;
+}
+.chineseCon {
+	padding: 20px 7px 4px 0;
+	height: 392px;
+	border-bottom: 1px solid #eee;
+}
+.chineseConLeft {
+	float: left;
+	width: 464px;
+}
+.chineseConLeft a {
+	display: block;
+	position: relative;
+	width: 464px;
+	height: 262px;
+}
+.chineseConLeft img {
+	width: 464px;
+	height: 262px;
+}
+.chineseConLeft a:after {
+	display: none;
+	content: "";
+	position: absolute;
+	top: 90px;
+	left: 191px;
+	width: 83px;
+	height: 83px;
+	background: url(../img/mvpic.png) no-repeat 0 -111px;
+	z-index: 2;
+}
+.chineseConLeft a:hover:after {
+	display: block;
+}
+.chineseConLeft a:hover {
+	background: #000;
+	opacity: .8;
+}
+.chineseConLeftBottom {
+	padding: 0 0 53px 10px;
+	width: 452px;
+	border: 1px solid #eee;
+	border-top: none;
+}
+.album {
+	font: 16px/46px Tahoma;
+	color: #666;
+}
+.album span {
+	color: #62d2bb;
+}
+.albumIntroduce {
+	font: 12px/16px Tahoma;
+	color: #999;
+}
+.chineseConRight {
+	float: left;
+	width: 729px;
+}
+.chineseConRight li {
+	float: left;
+	margin: 0 0 15px 22px;
+	width: 221px;
+}
+.chineseConRight li a {
+	display: block;
+	position: relative;
+}
+.chineseConRight li img {
+	width: 221px;
+	height: 124px;
+}
+.chineseConRight a:hover {
+	background: #000;
+	opacity: .8;
+}
+.chineseConRight a:after {
+	display: none;
+	content: "";
+	position: absolute;
+	width: 52px;
+	height: 52px;
+	top: 36px;
+	left: 84px;
+	background: url(../img/mvpic.png) no-repeat -140px -53px;
+	z-index: 2;
+}
+.chineseConRight a:hover:after {
+	display: block;
+}
+.chineseConRight .songs {
+	position: absolute;
+	font: 12px Tahoma;
+	left: 10px;
+	top: 89px;
+	color: #fff;
+}
+.chineseConRight .singers {
+	position: absolute;
+	font: 12px Tahoma;
+	left: 10px;
+	top: 107px;
+	color: #26d0bb;
+}
+.introduce {
+	width: 193px;
+	padding: 11px 16px 9px 10px;
+	border: 1px solid #f7f7f7;
+	border-top: none;
+	font: 12px/18px Tahoma;
+	height: 36px;
+}
+/* end---华语*/
+/* start--footer*/
+.footer {
+	position: relative;
+	margin-top: 30px;
+	text-align: center;
+	padding: 20px 247px 25px 245px;
+	background: #000;
+}
+.footer:after {
+	content: "";
+	position: absolute;
+	width: 40px;
+	height: 48px;
+	bottom: 27px;
+	right: 240px; 
+	background: url(../img/shouyepic.png) no-repeat -31px -220px;
+}
+.footer a:hover {
+	color:  #669900;
+}
+.footerNav {
+	font: 14px/60px Tahoma;
+}
+.footerNav a {
+	position: relative;
+	color: #666;
+	padding: 0 13px 0 13px;
+}
+.footerNav .line:before {
+	content: "";
+	position: absolute;
+	width: 2px;
+	height: 12px;
+	top: 4px;
+	left: 0;
+	background: url(../img/shouyepic.png) no-repeat -145px -106px;
+}
+.copy {
+	position: relative; 
+	color: #666;
+	font: 12px/24px Tahoma;
+}
+.copy p:before {
+	content: "";
+	position: absolute;
+	width: 23px;
+	height: 24px;
+	top: 0;
+	left: 50px;
+	background: url(../img/shouyepic.png) no-repeat 0 -220px;
+}
+.copy a {
+	color: #666;
+}
+.permit {
+	position: relative; 
+	color: #666;
+	font: 12px/24px Tahoma;
+}
+.permit p:before {
+	content: "";
+	position: absolute;
+	width: 18px;
+	height: 20px;
+	top: 1px;
+	left: 12px;
+	background: url(../img/shouyepic.png) no-repeat 0 -245px;
+}
+.permit a {
+	color: #666;
+}
+
+
+
+
+
+/* end--footer*/
+

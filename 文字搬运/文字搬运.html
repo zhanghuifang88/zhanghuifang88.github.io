@@ -1,0 +1,146 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>split方法</title>
+<style>
+*{ margin:0; padding:0; list-style:none}
+#box{ 
+	margin:30px auto; 
+	width:980px; 
+	background-color:#FFFBF9; 
+	border:5px solid #BCC1C4; 
+	height:310px;
+}
+.fl{ 
+	float:left; 
+	margin:5px; 
+	border:1px dotted #c90; 
+	height:300px;
+}
+.one{ 
+	background-color: #F0EED7; 
+	width:380px;
+}
+textarea{ 
+	background-color: #F0EED7; 
+	width:380px; 
+	height:300px; 
+	outline:none; 
+	resize:none;
+}
+.two{
+	width:160px;
+}
+.two input{
+	width:100px; 
+	height:30px; 
+	line-height:30px; 
+	text-align:center;
+}
+.two p{
+	margin:10px 0;
+	text-align:center;
+}
+.three{ 
+	background-color: #FAF5C6; 
+	width:380px;
+}
+#speedLi{ 
+	height:10px; 
+	width:140px; 
+	margin:10px auto;
+	height:10px; 
+	-display:none;
+	opacity: 0;
+}
+#speedLi li{
+	width:10px; 
+	height:10px;
+	margin:0 2px; 
+	background:#ccc; 
+	float:left;
+}
+#speedLi li .active{
+	background: #f90;
+}
+</style>
+<script src="js/MTween.js"></script>
+<script src="js/tools.js"></script>
+<script>
+/*
+	需求：
+		点击开始的时候，左边的文本，从头依次到右边的div中，
+			左边计算++ 走了几个了  ，右边先显示出总数
+			下面的小方块显示，开始运动，文字走完后，小方块小时
+*/
+window.onload = function(){
+	var text = $("#text");
+	var btn = $("#btn");
+	var numtex = $("#numtex");
+	var speedLi = $("#speedLi");
+	var allLi = $("li",speedLi);
+	var showTex = $("#showTex");
+	var timer1 = null;
+	
+	btn.onclick = function(){
+		showTex.innerHTML = "";
+		var val = text.value;
+		var len = val.length;		
+		var n = 0;
+		numtex.innerHTML = 0+'/'+0;
+		MTween(speedLi,'opacity',500,1,'linear');
+		timer1 = setInterval(function(){	
+			for(var i = 0; i < allLi.length;i++ ){
+				allLi[i].style.background = '';
+			}
+			allLi[n%allLi.length].style.background = '#f90';
+
+			if(n<len){	
+				var str = val.substr(n,1);//截掉的内容
+				n++;
+				numtex.innerHTML = n+'/'+len;
+				showTex.innerHTML += str;
+				text.value = val.substring(n+1);				
+			}else {
+				clearInterval(timer1);
+				timer1 = "";
+				n = 0;
+				MTween(speedLi,'opacity',500,0,'linear');
+				//speedLi.style.display = 'none';
+			}
+			
+		},100)		 
+	}
+	
+	
+}
+</script>
+</head>
+<body>
+
+<div id="box">
+	<div class="fl one">
+		<textarea name="" id="text" cols="30" rows="10">《泱泱大唐》是黄昏前面所写的网络小说，连载于起点中文网。作品简介：长安月下，美人如梦；宫阙殿里，意气如风；</textarea>
+	</div>
+	<div class="fl two">
+		<p><input type="button" value="start" id="btn"/></p>
+		<p id="numtex">0/0</p>
+		<div></div>
+		<ul id="speedLi">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="fl three" id="showTex"></div>
+</div>
+</body>
+</html>

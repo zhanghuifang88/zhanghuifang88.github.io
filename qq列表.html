@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>好友列表</title>
+<style>
+div {
+	border: 1px solid #000;
+	width: 200px;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 200px;
+	display: none;
+}
+p {
+	margin: 0;
+	width: 200px;
+	height: 30px;
+	font: 16px/30px "宋体";
+	text-align: center;
+	background: #63f7ff;
+	
+}
+li {
+	height: 30px;
+	width: 200px;
+	font: 16px/30px "宋体";
+	border-bottom: 1px solid #000;
+}
+p.bg {
+	background: #f7f794;
+}
+li.red {
+	background: #F36;
+}
+li.onRed {
+	background: red;
+}
+</style>
+<script>
+window.onload = function(){
+	var text = document.getElementsByTagName("p");
+	var allUL = document.getElementsByTagName("ul");
+	var allLi = document.getElementsByTagName("li");
+	
+	//点击p的时候。当前的ul展开，其他隐藏
+	for( var i = 0; i < text.length; i++){
+		text[i].index = i;//保存p的下标，让点击p的时候。当前的ul和p保持一致
+		text[i].onOff = true;// 自定义一个开关，当点击ul的时候，出现相对应的内容，并且把当前的状态设为假，再次点击当前的ul的时候，关闭ul的内容
+		text[i].onclick =function(){
+			if(this.onOff){//当前ul的内容是展开的，内容展示出来
+				for(var i = 0; i < text.length; i++){
+					text[i].className = "";
+					allUL[i].style.display = "none";
+					text[i].onOff = true;//把之前的p内容变为关闭的状态
+				}
+				this.className = "bg";
+				allUL[this.index].style.display = "block";
+				this.onOff = false;//把当前的状态改为打开的状态,保证在次点击当前列表的时候能够关闭
+			}else{
+				this.className = "";
+				allUL[this.index].style.display = "none";
+				this.onOff = true;
+			}
+		}
+	}
+	//当点击li的时候背景颜色为red ，，点击另外一个li的时候，清空上一个背景颜色
+	for(var i = 0; i < allLi.length; i++){
+		allLi[i].status = true;
+		allLi[i].onclick = function(){
+			if(this.status){
+				for(var i = 0; i < allLi.length; i++){
+					allLi[i].className = "";
+					allLi[i].status = true;
+				}
+				this.className = "onRed";
+				this.status = false;//当前的状态改变，保证再次点击当前li的时候，取消点击颜色
+			}else{
+				this.className = "";
+				this.status = true;
+			}
+		}
+		//鼠标移入每个li的时候颜色变为onRed，判断移入时鼠标是否为点击的状态，若是点击则为点击的颜色，否则为移入的颜色
+		allLi[i].onmouseover = function(){
+			if(this.status){
+				this.className = "red";
+			}else{
+				this.className = "onRed";
+			}
+		}
+		//鼠标移出每个li的时候颜色变为red，判断移出时鼠标是否为点击的状态，若是点击则鼠标移出时为点击的颜色，否则移出时没有颜色
+		allLi[i].onmouseout = function(){
+			if(this.status){
+				this.className = "";
+			}else{
+				this.className = "onRed";
+			}
+		}
+	}
+	
+	
+}
+
+
+</script>
+</head>
+
+<body>
+<div>
+    <p>我的好友</p>
+    <ul>
+        <li>谷歌</li>
+        <li>火狐</li>
+        <li>IE</li>
+        <li>火狐</li>
+        <li>IE</li>
+    </ul>
+    <p>陌生人</p>
+    <ul>
+        <li>QQ</li>
+        <li>微博</li>
+        <li>爱奇艺</li>
+    </ul>
+    <p>黑名单</p>
+    <ul>
+        <li>淘宝</li>
+        <li>视频</li>
+        <li>游戏</li>
+        <li>淘宝</li>
+        <li>视频</li>
+        <li>游戏</li>
+    </ul>
+</div>
+</body>
+</html>

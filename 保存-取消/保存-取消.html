@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>保存-取消</title>
+<style>
+section {
+	width: 500px;
+	height: 500px;
+	margin: 50px auto;
+}
+h2{
+	margin: 0;
+	width: 500px;
+	height: 30px;
+	background: #6ba542;
+	font-size: 16px;
+	line-height: 30px;
+	color: #fff;
+	text-indent: 2em;
+}
+img {
+	float: left;
+	border: none;
+	vertical-align: top;
+	margin-top: 7px;
+	margin-left: 10px;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+ul li {
+	width: 500px;
+	height: 30px;
+	font-size: 14px;
+	line-height: 30px;
+	border-bottom: 1px solid #eee;
+}
+li span {
+	float: left;
+	color: #6ba542;
+	margin-left: 10px;
+	display: none;
+}
+p {
+	margin: 0;
+	float: left;
+	border: none;
+	font-size: 14px;
+	margin-left: 20px;
+}
+input {
+	float: left;
+	font-size: 14px;
+	margin-left: 20px;
+	margin-top: 3px;
+}
+</style>
+<script>
+	function $(id){
+		return document.getElementById(id);
+	}
+	function tab(obj){
+		var input = obj.getElementsByTagName("input")[0];
+		var content = obj.getElementsByTagName("p")[0];
+		var img = obj.getElementsByTagName("img")[0];
+		var allSpan = obj.getElementsByTagName("span");
+		
+		function change1(){
+			img.style.display = "block";
+			allSpan[0].style.display = "none";
+			allSpan[1].style.display = "none";
+			input.style.display = "none";
+			content.style.display = "block";
+		}
+		img.onclick = function(){
+			content.style.display = "none";
+			allSpan[0].style.display = "block";
+			allSpan[1].style.display = "block";
+			input.style.display = "block";
+			img.style.display = "none";
+		}
+		//点击保存
+		allSpan[0].onclick = function(){
+			if(input.value == ""){//判断输入的内容不能为空
+				alert("请输入内容");
+				return;
+			}
+			content.innerHTML = input.value;
+			change1();
+		}
+		//点击取消的时候，输入的内容不出来，还为原来输入的内容
+		allSpan[1].onclick = function(){
+			if(input.value == ""){//判断输入的内容不能为空
+				alert("请输入内容");
+				return;
+			}
+			input.value = content.innerHTML;
+			change1();
+		}
+	}
+	window.onload = function(){
+		
+		var list1 = $("list1");
+		tab(list1);
+		var list2 = $("list2");
+		tab(list2);
+		var list3 = $("list3");
+		tab(list3);
+	}
+
+
+</script>
+</head>
+
+<body>
+<section>
+    <h2>分类名称</h2>
+    <ul>
+        <li id="list1">
+            <p>秒味实体课程</p>
+            <input type="text" value="秒味实体课程"style="display:none"/>
+            <img src="img/ico.png"/>
+            <span>保存</span>
+            <span>取消</span>
+        </li>
+        <li id="list2">
+            <p>秒味实体课程</p>
+            <input type="text" value="秒味实体课程"style="display:none"/>
+            <img src="img/ico.png"/>
+            <span>保存</span>
+            <span>取消</span>
+        </li>
+        <li id="list3">
+            <p>秒味实体课程</p>
+            <input type="text" value="秒味实体课程"style="display:none"/>
+            <img src="img/ico.png"/>
+            <span>保存</span>
+            <span>取消</span>
+        </li>
+    </ul>
+</section>
+</body>
+</html>

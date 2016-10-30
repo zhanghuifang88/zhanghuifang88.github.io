@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    .clearfix {
+        zoom: 1;
+    }
+    
+    #main {
+        width: 800px;
+        height: 800px;
+        border: 1px dashed #000;
+        margin: 0 auto;
+    }
+    
+    #pageBox span,
+    #pageBox a {
+        width: 50px;
+        height: 20px;
+        text-align: center;
+        background-color: #666;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    
+    #pageBox span {
+        display: inline-block;
+    }
+    
+    #pageBox span.actColor {
+        background-color: red;
+    }
+    
+    #pageBox a {
+        float: left;
+        color: #fff;
+    }
+    
+    #pages {
+        float: left;
+    }
+    
+    #info .block span {
+        padding: 20px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    #info .gays {
+        padding: 20px;
+        color: #666;
+    }
+    
+    #info .gays a {
+        font-size: 12px;
+        padding: 10px;
+        color: #328fbe;
+    }
+    
+    #leftBox {
+        width: 100px;
+        float: left;
+        text-align: center;
+    }
+    
+    #leftBox a {
+        display: block;
+        line-height: 50px;
+        background-color: #ccc;
+        margin-bottom: 10px;
+    }
+    
+    #leftBox a.red {
+        background-color: red;
+        color: #fff;
+    }
+    
+    #rightBox {
+        width: 700px;
+        float: right;
+    }
+    
+    #rightBox h3 {
+        line-height: 50px;
+        background-color: yellow;
+        width: 100px;
+        text-align: center;
+    }
+    </style>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="getTag.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="leftBox">
+            <a href="?world">社会招聘</a>
+            <a href="?school">校园招聘</a>
+        </div>
+        <div id="rightBox">
+            <h3></h3>
+            <div id="info"></div>
+            <div id="pageBox" class="clearfix">
+                <a href="javascript:;" id="prev">prev</a>
+                <div id="pages"></div>
+                <a href="javascript:;" id="next">next</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    /*
+        需求：
+            1. 根据search值找到对应的数据先渲染出5条信息
+            2. 根据数据计算出页数
+            3. 可以翻页
+            4. 根据hash值来定位对应的页数上
+
+        步骤：
+
+    */
+
+    //1. 先要得到地址栏中的search值和hash值，目的是：通过search值和hash值找到对应的数据和页数
+    var search = window.location.search;
+    var hash = window.location.hash;
+
+    // 1-1  search和hash值两种情况：1. 存在 2，不存在
+    /*
+        不存在 给一个默认值 社会招聘的信息 
+    */
+
+    if( search ){
+        search = search.slice(1);  // '?school'
+    }else{
+        search = 'world';
+    }
+
+    //3.处理一下页面中要添加的class和内容，处理一些细节
+    var leftBox = document.getElementById("leftBox");
+    var linkA = leftBox.getElementsByTagName("a");
+
+    //3-1 处理一下标题
+    var rightBox = document.getElementById("rightBox");
+    var h3 = rightBox.getElementsByTagName("h3")[0];
+
+    if( search === "world" ){
+        linkA[0].className = "red";
+        h3.innerHTML = "社会招聘";
+    }else if(search === "school"){
+        linkA[1].className = "red";
+        h3.innerHTML = "校园招聘";
+    }
+
+    
+
+
+    //1-2 通过search值，找到数据
+    var datas = data[search];
+
+    var len = datas.length;
+
+    var pageItem = 5;  //一页渲染的条数
+
+    //2.渲染数据 简单粗暴的渲染出所有的数据
+    var html = '';
+    for( var i = 0; i < pageItem; i++ ){
+        html += '<div><p class="block"><span>'+datas[i].num+'</span><span>职位需求：'+datas[i].job+'</span><span>需求人数：'+datas[i].pNum+'名</span><span>'+datas[i].data+'</span></p><p class="gays">'+datas[i].ask+'<a href="javascript:void(0);">【查看详情】</a></p></div>';
+    }
+
+    //放在容器中
+
+    var info = document.getElementById("info");
+
+    info.innerHTML = html;
+
+    //2-1 生成页数 根据总的数据的个数
+
+    var pageNum = Math.ceil(len/pageItem);
+
+    //2-2 根据页数要生成页码
+    var pageHTML = '';
+    for( var i = 0; i < pageNum; i++ ){
+        if( i === 0 ){
+            pageHTML += '<span class="actColor">'+(i+1)+'</span>';
+        }else{
+            pageHTML += '<span>'+(i+1)+'</span>';
+        }
+        
+    }
+
+    //获取页码的容器
+    var pages = document.getElementById("pages");
+
+    pages.innerHTML = pageHTML;
+    
+
+
+</script>
