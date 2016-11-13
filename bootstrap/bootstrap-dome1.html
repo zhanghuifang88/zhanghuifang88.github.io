@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--针对ie做的兼容-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--针对移动端做的适配-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>第一个页面</title>
+	<link href="dist/css/bootstrap.css" rel="stylesheet"/>
+	<!--h5标签语义化-->
+	<script src="js/html5shiv.min.js"></script>
+	<style>
+		.row div {
+			background: #66AFE9;
+			color: #fff;
+			border: 1px solid #0000FF;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	
+	<!--
+		栅格一共12列
+		row 行
+		col 列
+			col-lg-num    <1200
+			col-md-num    1200-992
+			col-sm-num    992-768
+			col-xs-num    <768
+	-->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-1">111</div>
+			<div class="col-lg-3">222</div>
+			<div class="col-lg-4">4333</div>
+			<div class="col-lg-2">555</div>
+			<div class="col-lg-2">4444</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">111</div>
+			<div class="col-md-4">222</div>
+			<div class="col-md-4">4333</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">111</div>
+			<div class="col-sm-2">222</div>
+			<div class="col-sm-2">4333</div>
+			<div class="col-sm-4">4333</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">dd</div>
+			<div class="col-xs-4">ddd2</div>
+			<div class="col-xs-2">dddd</div>
+			<div class="col-xs-2">dddd</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-3"></div>
+			<div class="col-lg-4 col-md-3"></div>
+			<div class="col-lg-4 col-md-3"></div>
+			<div class="col-lg-4 col-md-3"></div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+</html>

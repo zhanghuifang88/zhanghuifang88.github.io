@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--针对ie做的兼容-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--针对移动端做的适配-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bootstrap</title>
+	<link href="dist/css/bootstrap.css" rel="stylesheet"/>
+	<!--h5标签语义化-->
+	<script src="js/html5shiv.min.js"></script>
+	<style>
+		#login {
+			width: 500px;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		预定义样式风格：
+			primary（首选项）
+			success（成功）
+			info（一般信息）
+			warning（警告）
+			danger（危险）
+		bg | btn | text | alert | panel -预定义样式
+	-->
+	<div class="container">
+		<div class="panel panel-primary" id="login">
+			<div class="panel-heading">
+				login
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label>用户名：</label><input type="text" class="form-control">
+					<div class="alert alert-warning">用户名不对</div>
+					<label>密码：</label><input type="password" class="form-control">
+				</div>
+				<a href="#" class="text-primary">忘记密码？</a>
+				<div class="btn btn-primary pull-right">登录</div>
+				
+			</div>
+		</div>
+	
+	</div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+</html>

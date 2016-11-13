@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--针对ie做的兼容-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--针对移动端做的适配-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bootstrap</title>
+	<link href="dist/css/bootstrap.css" rel="stylesheet"/>
+	<!--h5标签语义化-->
+	<script src="js/html5shiv.min.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<!--
+		预定义样式风格：
+			primary（首选项）
+			success（成功）
+			info（一般信息）
+			warning（警告）
+			danger（危险）
+		bg | btn | text | alert | panel -预定义样式
+		按钮：
+			样式：btn-default  btn-link
+			大小：btn-lg  input-lg
+			状态：active  disabled
+			种类：a input button
+			块级：btn-block
+			
+		
+	-->
+	<div class="container">
+	</br>
+		<input type="button" value="默认" />
+		<input type="button" value="首选项" class="btn btn-primary"/>
+		<input type="button" value="成功" class="btn btn-success"/>
+		<input type="button" value="一般信息" class="btn btn-info"/>
+		<input type="button" value="警告" class="btn btn-warning"/>
+		<input type="button" value="危险" class="btn btn-danger"/>
+	</br></br>
+		<input type="button" value="按钮" class="btn">
+		<input type="button" value="按钮" class="btn btn-default">
+		<input type="button" value="按钮" class="btn btn-link">
+	</br></br>
+		<input type="button" value="按钮" class="btn-lg btn btn-primary">
+		<input type="text" class="form-control input-lg">
+		<input type="button" value="按钮" class=" btn btn-primary active">
+		<input type="button" value="按钮" class=" btn btn-primary disabled">
+		<a href="#" class="btn btn-primary">按钮</a>
+		<button class="btn btn-primary">按钮</button>
+		<button class="btn btn-primary btn-block">按钮</button>
+	</div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+</html>

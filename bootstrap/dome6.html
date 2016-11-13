@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--针对ie做的兼容-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--针对移动端做的适配-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bootstrap</title>
+	<link href="dist/css/bootstrap.css" rel="stylesheet"/>
+	<!--h5标签语义化-->
+	<script src="js/html5shiv.min.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<!--
+		预定义样式风格：
+			primary（首选项）
+			success（成功）
+			info（一般信息）
+			warning（警告）
+			danger（危险）
+		bg | btn | text | alert | panel -预定义样式
+	-->
+	<div class="container">
+	</br>
+		<input type="button" value="默认" />
+		<input type="button" value="首选项" class="btn btn-primary"/>
+		<input type="button" value="成功" class="btn btn-success"/>
+		<input type="button" value="一般信息" class="btn btn-info"/>
+		<input type="button" value="警告" class="btn btn-warning"/>
+		<input type="button" value="危险" class="btn btn-danger"/>
+	</br>
+		<p>默认样式</p>
+		<p class="bg-primary">首选项</p>
+		<p class="bg-success">成功</p>
+		<p class="bg-info">一般信息</p>
+		<p class="bg-warning">警告</p>
+		<p class="bg-danger">危险</p>
+	</br>
+		<span>默认</span>
+		<span class="text-primary">首选项</span>
+		<span class="text-info">一般信息</span>
+		<span class="text-success">成功</span>
+		<span class="text-warning">警告</span>
+		<span class="text-danger">危险</span>
+	</br>
+		<a href="#" >默认</a>
+		<a href="#" class="bg-primary">首选项</a>
+		<a href="#" class="text-success">成功</a>
+		<a href="#" class="btn btn-danger">危险</a>
+	</br></br>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4>我是面板头部</h4>
+			</div>
+			<div class="panel-body">
+				我是面板的内容
+			</div>
+		</div>
+	</br></br>
+		<div class="alert alert-danger">危险信息</div>
+		<div class="alert alert-success">成功信息</div>
+	</div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+</html>

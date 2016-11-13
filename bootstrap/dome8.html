@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--针对ie做的兼容-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--针对移动端做的适配-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bootstrap</title>
+	<link href="dist/css/bootstrap.css" rel="stylesheet"/>
+	<!--h5标签语义化-->
+	<script src="js/html5shiv.min.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<!--
+		预定义样式风格：
+			primary（首选项）
+			success（成功）
+			info（一般信息）
+			warning（警告）
+			danger（危险）
+		bg | btn | text | alert | panel -预定义样式
+		按钮：
+			样式：btn-default  btn-link
+			大小：btn-lg  input-lg
+			状态：active  disabled
+			种类：a input button
+			块级：btn-block
+			按钮组：btn-group  端点对齐btn-group-justified  btn-group-vertical
+			按钮组大小：btn-group-sm
+			按钮箭头：caret
+		
+	-->
+	<div class="container">
+	</br>
+		<input type="button" value="默认" />
+		<input type="button" value="首选项" class="btn btn-primary"/>
+		<a href="#" class="btn btn-success">按钮1</a>
+		<a href="#" class="btn btn-success">按钮1</a>
+		<a href="#" class="btn btn-success">按钮1</a>
+	</br></br>
+		<div class="btn-group">
+			<a href="#" class="btn btn-success">按钮1</a>
+			<a href="#" class="btn btn-success">按钮1</a>
+			<a href="#" class="btn btn-success">按钮1</a>
+		</div>
+		<div class="btn-group">
+			<button class="btn btn-success">按钮1</button>
+			<button class="btn btn-success">按钮1</button>
+			<button class="btn btn-success">按钮1</button>
+		</div>
+		<div class="btn-group">
+			<input type="button" value="按钮" class="btn btn-success">
+			<input type="button" value="按钮" class="btn btn-success">
+			<input type="button" value="按钮" class="btn btn-success">
+		</div>
+		</br></br>
+		<div class="btn-group-justified">
+			<a href="#" class="btn btn-success">按钮1</a>
+			<a href="#" class="btn btn-success">按钮1</a>
+			<a href="#" class="btn btn-success">按钮1</a>
+		</div>
+		<div class="btn-group-justified">
+			<div class="btn-group">
+				<button class="btn btn-success">按钮1</button>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-success">按钮1</button>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-success">按钮1</button>
+			</div>
+		</div>
+		<div class="btn-group-justified">
+			<div class="btn-group">
+				<input type="button" value="按钮" class="btn btn-success">
+			</div>
+			<div class="btn-group">
+				<input type="button" value="按钮" class="btn btn-success">
+			</div>
+			<div class="btn-group">
+				<input type="button" value="按钮" class="btn btn-success">
+			</div>
+		</div>
+		</br></br>
+		<div class="btn-group-vertical btn-group-lg">
+			<a href="#" class="btn btn-success">按钮1</a>
+			<a href="#" class="btn btn-success">按钮1</a>
+			<a href="#" class="btn btn-success">按钮1</a>
+		</div>
+		<div class="btn-group-vertical">
+			<div class="btn-group">
+				<button class="btn btn-success">按钮1</button>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-success">按钮1</button>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-success">按钮1</button>
+			</div>
+		</div>
+		<div class="btn-group-vertical ">
+			<div class="btn-group btn-group-sm">
+				<input type="button" value="按钮" class="btn btn-success">
+			</div>
+			<div class="btn-group btn-group-sm">
+				<input type="button" value="按钮" class="btn btn-success">
+			</div>
+			<div class="btn-group btn-group-sm">
+				<input type="button" value="按钮" class="btn btn-success">
+			</div>
+		</div>
+		<br><br>
+			<a href="#" class="btn btn-danger">按钮<span class="caret"></span></a>
+			<input type="button" value="按钮" class="btn btn-success"><span class="caret"></span>
+			<br><br>
+			<button class="btn btn-success">按钮1<span class="caret"></span></button>
+		<br><br>
+		<a href="#" class="btn btn-danger">按钮</a><a href="#" class="btn btn-danger"><span class="caret"></span></a>
+		<div class="btn-group dropup">
+			<a href="#" class="btn btn-info">按钮</a><a href="#" class="btn btn-info"><span class="caret"></span></a>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+</html>

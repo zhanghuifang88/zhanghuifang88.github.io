@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--针对ie做的兼容-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--针对移动端做的适配-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>第一个页面</title>
+	<link href="dist/css/bootstrap.css" rel="stylesheet"/>
+	<!--h5标签语义化-->
+	<script src="js/html5shiv.min.js"></script>
+</head>
+<body>
+	<!--
+		bootstrap栅格系统
+		概念：
+			分12列
+				row  行
+				col  列
+		容器：container-fluid
+			流体布局
+			适用于头部底部自适应宽度
+	-->
+	<div class="container-fluid">
+		ddddsdd
+	</div>
+	<!--
+		容器：container       阈值(分辨率)
+			固定             
+			1170px          1200>=
+			970px           992>=
+			750px           768>=
+			auto				768<	
+			固定布局适用于页面内容
+		如果内容宽度想要不随分辨率固定不变可以自定义,css样式：
+		.container {
+			width: 1000px !importent;
+		} 
+	-->
+	<div class="container">
+		fffff
+	</div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+</html>

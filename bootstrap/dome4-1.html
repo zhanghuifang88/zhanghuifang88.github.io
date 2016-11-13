@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--针对ie做的兼容-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--针对移动端做的适配-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bootstrap</title>
+	<link href="dist/css/bootstrap.css" rel="stylesheet"/>
+	<!--h5标签语义化-->
+	<script src="js/html5shiv.min.js"></script>
+	<style>
+		
+			
+			
+		
+		.tip1 {
+			width: 30px;
+			height: 400px;
+			background: #000;
+			right: 0;
+		}
+		.tip2 {
+			width: 30px;
+			height: 400px;
+			background: pink;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		针对不同的设备展示或隐藏页面内容
+		响应式工具
+			可见类：
+				visible-lg|md|ms|xs-num
+				block inline inline-block
+				hidden-lg|md|ms|xs
+			打印类：(在打印的状态下显示或隐藏)
+				visible-print-lg|md|ms|xs
+				hidden-print-lg|md|ms|xs
+		浮动：
+			pull-right    右浮动
+			pull-left     左浮动
+		固定定位：
+			affix
+	-->
+	<!--
+		使container-fluid里面的元素到可视区边界
+			1.可以在子元素外面包一层，使用<div class="row"></div>，可以去掉container-fluid左右padding
+			2.可以把里面的元素放到container-fluid，外面
+	-->
+	<!--<div class="container-fluid">
+		<div class="row">
+			<div class="tip1 pull-right visible-lg"></div>
+			<div class="tip2 pull-right hidden-lg"></div>
+		</div>
+		<div>jvnnvnvcccxc</div>
+	</div>-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="tip1 visible-lg affix"></div>
+			<div class="tip2 hidden-lg affix"></div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">cfjfjfjksdjsddsk</div>
+		</div>
+		
+	</div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+</html>
