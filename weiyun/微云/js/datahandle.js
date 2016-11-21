@@ -84,18 +84,18 @@ var dataAction = (function(){
             } 
         },
         getDataById:function (datas,id){
-        	for( var i = 0; i < datas.length; i++ ){
-        		if( datas[i].id == id ){
-        			return datas[i];
-        		}
-        	}
-
-        	return null;
+	        	for( var i = 0; i < datas.length; i++ ){
+	        		if( datas[i].id == id ){
+	        			return datas[i];
+	        		}
+	        	}
+	
+	        	return null;
         },
         getParent:function (datas,id){
-        	var parents = dataAction.getParentsById(datas,id);
-
-        	return parents[1];
+	        	var parents = dataAction.getParentsById(datas,id);
+	
+	        	return parents[1];
         }
 	}
 

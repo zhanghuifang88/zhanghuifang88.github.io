@@ -1,4 +1,6 @@
 ;(function(){
+	var content = tools.$("#content");
+	var header = tools.$("#header");
 	//下面区域
 	function views(){
 		return {
@@ -6,14 +8,13 @@
 			H: document.documentElement.clientHeight
 		}
 	}
-	var content = tools.$("#content");
-	var header = tools.$("#header");
 	//内容区域的高度自适应
 	content.style.height = views().H - header.offsetHeight + "px";
 	//绑定一个resize事件
 	window.addEventListener("resize",function(){
 		content.style.height = views().H - header.offsetHeight + "px";
-	},false)
+	},false);
+	
 	var mask = tools.$("#mask");//删除弹窗遮罩
 	var box = tools.$("#box");//删除提示框
 	var closes = tools.$(".closes")[0];//x号关闭按钮
@@ -151,7 +152,6 @@
 	},false)
 	//点击新建的时候
 	tools.addEvent(sets,"click",function(ev){
-		
 		if( sets.onOff ){
 			return;
 		}
@@ -193,6 +193,14 @@
 	        if(val === ""){//判断有没有输入内容
 	        		contentMuneFiles.removeChild(contentMuneFiles.firstElementChild);//没有就删除结构
 	        		empty.style.display = "block";
+	        		
+	        		if(contentMuneFiles.innerHTML == ""){
+					empty.style.display = "block";
+				}else {
+					empty.style.display = "none";
+				}
+	        		
+	        		
 				addEventFile();
 	    			moveEvent();
 				if(whoSelect().length === allLi.length){
@@ -277,6 +285,7 @@
 				if(val === ""){//判断有没有输入内容
 		        		contentMuneFiles.removeChild(contentMuneFiles.firstElementChild);//没有就删除结构
 					addEventFile();
+								
 		    			moveEvent();
 					if(whoSelect().length === allLi.length){
 						allCheckedSpan.className = "allCheckedActive";
@@ -325,7 +334,7 @@
 	                var nextUl = tree.nextElementSibling;
 	               	nextUl.innerHTML += view.createTreeLi(datas,newObj);
 	
-	             //要让有子数据的菜单有箭头
+	             	//要让有子数据的菜单有箭头
 	
 	              	tools.removeClass(tools.getTreeById("tree-title",pid),"tree-contro-none");
 	              	tools.addClass(tools.getTreeById("tree-title",pid),"tree-contro");
@@ -395,21 +404,20 @@
 	        			var idArr = [];
 	        			for(var i = 0; i < whoSelect().length; i++){
 	        				var fileId = whoSelect()[i].dataset.fileId;
-						var tree = tools.getTreeById("tree-title",fileId);
-                        
-                        //点击到里面没有内容的时候
-						if(!dataAction.hasChilds(datas,fileId)){
-							empty.style.display = "block";
-							
-					    }else {
-					    		empty.style.display = "none";
-					    }
-                        
+	        				var tree = tools.getTreeById("tree-title",fileId);
+	        				
                         contentMuneFiles.removeChild(whoSelect()[i]);//删除li
 						tree.parentNode.parentNode.removeChild(tree.parentNode);
 
                         idArr.push(fileId);
 						i--;
+						
+						
+						if(contentMuneFiles.innerHTML == ""){
+							empty.style.display = "block";
+						}else {
+							empty.style.display = "none";
+						}	
 		        		}
 	        			
 	        			dataAction.batchDelect(datas,idArr);   
@@ -1038,8 +1046,6 @@ var navMove = tools.$(".navMove")[0];//移动到
                     }
 
                     moveId = clickFileId;
-
-
                 } 
             })
 		}
