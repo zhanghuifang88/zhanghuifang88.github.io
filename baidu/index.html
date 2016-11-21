@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<script>
+//		(function(){
+//			document.addEventListener('touchstart', function(e) {
+//				e.preventDefault();
+//			});
+//		})();
+	
+		var scale = 1;
+		if(window.devicePixelRatio){
+			scale = scale / window.devicePixelRatio;
+		}
+		document.write('<meta name="viewport" content="initial-scale='+scale+',minimum-scale='+scale+',maximum-scale='+scale+',user-scalable=no" />');
+	</script>
+	<title>百度</title>
+	<script>
+		toSize ();
+		function toSize () {
+			var html = document.getElementsByTagName("html")[0];
+			var screenW = html.getBoundingClientRect().width; 
+			html.style.fontSize = screenW/18 + "px";
+		}
+		window.addEventListener(
+			"orientationchange",
+			function(){
+				toSize ();
+			},
+			false
+		);
+		window.addEventListener(
+			"resize",
+			function(){
+				toSize ();
+			},
+			false
+		);
+	</script>
+	<script src="js/m.touch.js"></script>
+	<link href="css/reset.css" rel="stylesheet" >
+	<link href="css/index.css" rel="stylesheet" >
+ 
+</head>
+
+<body>
+<section class="wrap">
+	<section class="wrapCon">
+    	<header class="header clearFix">
+        	<div class="headerLeft">
+            	<a href="#">
+                	<span class="headerPic"></span>
+                	<span class="deg">30&deg;</span>
+                <span class="area">北京</span>
+                <span class="air">空气&nbsp;128</span>
+                <span class="down"></span>
+            </a>
+        </div>
+            <div class="headerRight">
+            	<a href="login.html" class="user"></a>
+            	<a href="skin.html" class="skin"></a>
+            </div>
+        </header>
+        <h2 class="pic"><img src="img/banner.png"/></h2>
+        <form action="#" target="_blank" class="form">
+        	<input type="text"/>
+            <a href="#" class="search">百度一下</a>
+        </form>
+        <div class="meunCon">
+            <ul class="meun clearFix">
+                <li><a href="#" class="news"><img src="img/ico6.png" />新闻</a></li>
+                <li><a href="#" class="news"><img src="img/ico6.png" />新闻</a></li>
+                <li><a href="#" class="news"><img src="img/ico6.png" />新闻</a></li>
+                <li><a href="#" class="news"><img src="img/ico6.png" />新闻</a></li>
+                <li><a href="#" class="news"><img src="img/ico6.png" />新闻</a></li>
+                <p class="more"><a href="#"><img src="img/ico6.png" />更多</a></p>
+            </ul>
+        </div>
+        <nav class="navCon">
+        	<h2>我的导航<span></span></h2>
+        	<ul class="nav clearFix">
+            	<li><a href="#">资讯</a></li>
+            	<li><a href="#">hao123</a></li>
+            	<li><a href="#">图片</a></li>
+            	<li><a href="#">爱奇艺</a></li>
+            	<li><a href="#">美女</a></li>
+            	<li><a href="#">音乐</a></li>
+            	<li class="last"><a href="#">笑话</a><span></span></li>
+            </ul>
+        </nav>
+        <div class="hot">
+        	<div class="hotTitle clearFix">
+            	<h2>实时热点</h2>
+                <p class="change">
+                    <span class="forward"></span><a href="#">换一换</a><span class="backward"></span>
+                </p>
+            </div>
+            <span class="hotPic"></span>
+            <div class="hotList clearFix">
+            	<ul class="hotLeft">
+                	<li class="first"><a href="#">2016全国高考<span></span></a></li>
+                	<li><a href="#">2016全国高考<span></span></a></li>
+                	<li><a href="#">保剑锋为儿子过生日</a></li>
+                </ul>
+            	<ul class="hotRight">
+                	<li class="first"><a href="#">2016全国高考<span></span></a></li>
+                	<li><a href="#">2016全国高考</a></li>
+                	<li><a href="#">保剑锋为儿子过生日</a></li>
+                </ul>
+            </div>
+        <p class="rank"><a href="#">百度风云榜&gt;</a></p>
+        </div>
+        <div class="recommend hot">
+        	<div class="hotTitle clearFix">
+            	<h2>百度推荐</h2>
+                <p class="change">
+                    <span class="forward"></span><a href="#">换一换</a><span class="backward"></span>
+                </p>
+            </div>
+            <span class="hotPic"></span>
+            <ul class="recommendList clearFix">
+            	<li class="listFirst">
+                	<a href="#" class="clearFix">
+                    	<img src="img/pic1.png"/ class="img">
+                    	<span class="information">
+                            <span>湖南举报毒品违法犯罪最高奖30万元</span>
+                            <time>15:09</time>
+                        </span>
+                    </a>
+                </li>
+                <li class="recommendListCon"><a href="#">湖南举报毒品违法犯罪最高奖30万元奖30万元</a><time>16:28</time></li>
+                <li class="recommendListCon"><a href="#">湖南举报毒品违法犯罪最高奖30万元奖30万元</a><time>16:28</time></li>
+                <li class="recommendListCon"><a href="#">湖南举报毒品违法犯罪最高奖30万元奖30万元</a><time>16:28</time></li>
+            </ul>
+        <p class="rank"><a href="#">查看更多推荐&gt;</a></p>
+        </div>
+        <div class="service hot">
+        	<div class="hotTitle clearFix">
+            	<h2>生活服务</h2>
+            </div>
+            <span class="hotPic"></span>
+            <h3>点击定位，查看附近位置信息<a href="#" class="dingwei"></a></h3>
+            <ul class="serviceList clearFix">
+	            	<li><a href="#">电影</a></li>
+	            	<li><a href="#">电影</a></li>
+	            	<li><a href="#">电影</a></li>
+	            	<li><a href="#">电影</a></li>
+	            	<li><a href="#">电影</a></li>
+	            	<li><a href="#">电影</a></li>
+	            	<li><a href="#">电影</a></li>
+	            	<li><a href="#">电影</a></li>
+            </ul>
+        <p class="total"><a href="#">展示全部</a></p>
+        </div>
+        <div class="shopping hot">
+        	<div class="hotTitle clearFix">
+            	<h2>购物</h2>
+                <p class="change">
+                    <span class="forward"></span><a href="#">换一换</a><span class="backward"></span>
+                </p>
+            </div>
+            <span class="hotPic"></span>
+            <div class="shoppingList">
+            	<a href="#" class="goods clearFix">
+                	<img src="img/ico17.png" />
+                    <span class="goodsIntroduce">
+                        <span class="introduce">牙刷8支家庭装到手9.9元</span>
+                        <span class="price">￥9.9<span>￥19.9</span></span>
+                        <span class="jingdong">京东</span>
+                    </span>
+                </a>
+                <ul class="market">
+	                	<li><a href="#">京东商城</a></li>
+	                	<li><a href="#">京东商城</a></li>
+	                	<li><a href="#">京东商城</a></li>
+	                	<li><a href="#">京东商城</a></li>
+	                	<li><a href="#">京东商城</a></li>
+	                	<li><a href="#">京东商城</a></li>
+	                	<li><a href="#">京东商城</a></li>
+	                	<li><a href="#">京东商城</a></li>
+                </ul>
+                <p class="shoppingMore"><a href="#">查看更多&gt;</a></p>
+            </div>
+        </div>
+        <div class="traffic hot">
+        	<div class="hotTitle clearFix">
+            	<h2>交通路况</h2>
+            </div>
+            <span class="hotPic"></span>
+            <div class="trafficCon">
+                <p class="address"><a href="#">设置家和公司地址</a></p>
+                <p>随时随地，了解实时路况</p>
+            </div>
+        </div>
+        <p class="manage"><a href="#">管理我的卡片</a></p>
+        <ul class="help">
+	        	<li>百度浏览器，上网提速200%</li>
+	        	<li>手机百度，最省流量的极速搜索APP</li>
+	        	<li>百度推广，让有需求的客户找到你</li>
+        </ul>
+        <footer class="footer">
+        	<p class="feedback"><a href="#">用户反馈</a></p>
+            <p class="certificate">使用百度前必读Baidu 京ICP证130173号</p>
+            <p class="public">京公网安备11000002000001号</p>
+        </footer>
+    </section>
+</section>
+
+<!--<script src="js/main.js"></script>-->
+</body>
+</html>

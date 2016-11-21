@@ -1,0 +1,53 @@
+html {
+	height: 100%;
+}
+body {
+	position: relative;
+	height: 100%;
+	margin: 0;
+/*	overflow: hidden;
+*/	background: #efeff7;
+}
+a {
+	text-decoration: none;
+}
+
+p {
+	margin: 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h2,
+h3 {
+	margin: 0;
+}
+form {
+	border: none;
+	margin: 0;
+}
+input {
+	border: none;
+	padding: 0;
+	outline: none;
+}
+input,
+button,
+a
+{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+input,
+button {
+	-webkit-appearance:none; 
+}
+.clearFix:after {
+	content: "";
+	display: block;
+	clear: both;
+}

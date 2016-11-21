@@ -1,0 +1,93 @@
+
+/*皮肤*/
+.picture {
+	height: 100%;
+	background: #3a3a3a;
+	transition: 1s;
+	
+}
+.pictureHeader {
+	height: 4.2667rem;
+	
+	font: .8rem/2rem "宋体";
+	color: #fff;
+	text-align: center;
+}
+.headerInfo {
+	height: 2.5rem;
+	font: 0.95rem/2.5rem "宋体";
+	position: relative;
+}
+.headerInfo a {
+	position: absolute;
+	width: 2.6667rem;
+	height: 2.6667rem;
+	left: 0;
+	top: 0;
+}
+.headerInfo a img {
+	position: absolute;
+	width: 0.5rem;
+	height: 1rem;
+	left: .81666rem;
+	top: .76667rem;
+}
+.picNav {
+	background: #2b2b2b;
+	height: 1.75rem;
+}
+.picNav  li {
+	float: left;
+	font: .7rem/1.75rem "宋体";
+	color: #8197ac;
+	padding: 0 1.1667rem 0 1rem;
+}
+.liActive {
+	color: #4a97ff !important;
+}
+.main {
+	position: absolute;
+	left: 0;
+	top: 4.2667rem;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+	
+}
+.scroll {
+	position: relative;
+}
+.picList {
+	overflow: hidden;
+	padding: 0 .4rem;
+}
+.picList li {
+	border-radius: .5rem;
+	float: left;
+	width: 7.6rem;
+	margin: 0.75rem .5rem 0 .5rem;
+	background: url(../image/loadingImg.gif) no-repeat center center;
+}
+.picList li span {
+	display: block;
+	text-align: center;
+	font: .6rem/1rem "微软雅黑";
+	padding-top: 0.05rem;
+	color: #fff;
+}
+.picList img {
+	border-radius: .5rem;
+	width: 100%;
+	opacity: 0;
+	transition: 1s;
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width:100%;
+	margin-top: 1rem;
+	font: .6rem/2rem "宋体";
+	text-align: center;
+	display: none;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script>
+//		(function(){
+//			document.addEventListener('touchstart', function(e) {
+//				e.preventDefault();
+//			});
+//		})();
+	
+		var scale = 1;
+		if(window.devicePixelRatio){
+			scale = scale / window.devicePixelRatio;
+		}
+		document.write('<meta name="viewport" content="initial-scale='+scale+',minimum-scale='+scale+',maximum-scale='+scale+',user-scalable=no" />');
+	</script>
+	<title>百度</title>
+	<script>
+		toSize ();
+		function toSize () {
+			var html = document.getElementsByTagName("html")[0];
+			var screenW = html.getBoundingClientRect().width; 
+			html.style.fontSize = screenW/18 + "px";
+		}
+		window.addEventListener(
+			"orientationchange",
+			function(){
+				toSize ();
+			},
+			false
+		);
+		window.addEventListener(
+			"resize",
+			function(){
+				toSize ();
+			},
+			false
+		);
+	</script>
+	<script src="js/m.touch.js"></script>
+	<link href="css/reset.css" rel="stylesheet" >
+	<link href="css/skin.css" rel="stylesheet" >
+	
+</head>
+<body>
+ <section class="picture">
+	<div class="pictureHeader">
+		<header class="headerInfo">
+			<a href="index.html" class="pictureBack"><img src="img/arrow3.png"></a>
+			<h3>首页换肤</h3>
+		</header>
+		<ul class="picNav clearFix">
+			<li class="liActive">最新</li>
+			<li>游戏</li>
+			<li>动漫</li>
+			<li>星座</li>
+		</ul>
+	</div>
+	<article class="main">
+		<div class="scroll">
+			<ul class="picList clearFix">
+				<!--<li>
+					<a href="#">
+						<img src="image/1.jpg">
+					</a>
+					<span>谍影重重5</span>
+				</li>
+				<li>
+					<a href="#">
+						<img src="image/2.jpg">
+					</a>
+					<span>王牌逗王牌</span>
+				</li>-->
+			</ul>
+			<footer class="footer">正在加载皮肤</footer>
+		</div>
+		
+	</article>
+</section>
+</body>
+<script src="js/skin.js"></script>
+</html>

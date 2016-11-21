@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script>
+//		(function(){
+//			document.addEventListener('touchstart', function(e) {
+//				e.preventDefault();
+//			});
+//		})();
+	
+		var scale = 1;
+		if(window.devicePixelRatio){
+			scale = scale / window.devicePixelRatio;
+		}
+		document.write('<meta name="viewport" content="initial-scale='+scale+',minimum-scale='+scale+',maximum-scale='+scale+',user-scalable=no" />');
+	</script>
+	<title>百度</title>
+	<script>
+		toSize ();
+		function toSize () {
+			var html = document.getElementsByTagName("html")[0];
+			var screenW = html.getBoundingClientRect().width; 
+			html.style.fontSize = screenW/18 + "px";
+		}
+		window.addEventListener(
+			"orientationchange",
+			function(){
+				toSize ();
+			},
+			false
+		);
+		window.addEventListener(
+			"resize",
+			function(){
+				toSize ();
+			},
+			false
+		);
+	</script>
+	<script src="js/m.touch.js"></script>
+	<link href="css/reset.css" rel="stylesheet" >
+	<link href="css/register.css" rel="stylesheet" >
+	
+</head>
+<body>
+	<section class="register">
+		<section class="registerTitle clearFix">
+		<a href="login.html" class="registerBack">
+			<img src="img/back.png">
+		</a>
+		<h3>百度账号注册</h3>
+	</section>
+	<div class="bLogo">
+		<div class="logoPic"></div>
+	</div>
+	<div class="registerInput">
+		<input type="text" class="registerNum" placeholder="填写手机号">
+		<input type="button" value="获取手机验证码" class="registerBtn">
+		<div class="read">
+			<span>我已同意并阅读
+				<a href="#">百度用户协议</a>
+			</span>
+		</div>
+	</div>
+	<div class="explain">
+		<p>只需一个百度账号，即可通行所有产品/服务</p>
+		<img src="img/bottom_icon.png">
+	</div>
+</section>
+</body>
+<!--<script src="js/main.js"></script>-->
+</html>
