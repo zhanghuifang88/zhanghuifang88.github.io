@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--针对ie做的兼容-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--针对移动端做的适配-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bootstrap</title>
+	<link href="dist/css/bootstrap.css" rel="stylesheet"/>
+	<!--h5标签语义化-->
+	<script src="js/html5shiv.min.js"></script>
+	<style>
+		#watch {
+			margin-right: 5px;
+		}
+		.fork {
+			width: 12px;
+			height: 12px;
+			
+			background: url(img/bbe51c73df31c09da0e3e3f5c8acb3ff.jpg) no-repeat;
+			background-size: contain;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		预定义样式风格：
+			primary（首选项）
+			success（成功）
+			info（一般信息）
+			warning（警告）
+			danger（危险）
+		bg | btn | text | alert | panel -预定义样式
+		按钮：
+			样式：btn-default  btn-link
+			大小：btn-lg  input-lg
+			状态：active  disabled
+			种类：a input button
+			块级：btn-block
+			按钮组：btn-group  端点对齐btn-group-justified  btn-group-vertical
+			按钮组大小：btn-group-sm
+			按钮箭头：caret
+		例子
+	-->
+	<div class="container">
+		<div class="btn-group btn-group-sm" >
+			<button class="btn btn-default active">
+				<i class="glyphicon glyphicon-eye-open" id="watch"></i>watch
+				<span class="caret"></span>
+			</button>
+			<a href="#" class="btn btn-default">0</a>
+		</div>
+		<div class="btn-group btn-group-sm" >
+			<button class="btn btn-default active"><i class="glyphicon glyphicon-star"></i>star</button>
+			<a href="#" class="btn btn-default">0</a>
+		</div>
+		<div class="btn-group btn-group-sm" >
+			<button class="btn btn-default active"><i class="glyphicon fork"></i>fork</button>
+			<a href="#" class="btn btn-default">0</a>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+</html>

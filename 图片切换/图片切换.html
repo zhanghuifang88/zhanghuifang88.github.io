@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+	window.onload = function(){
+		//获取元素
+		var btn = document.getElementById("btn");
+		var pic = document.getElementById("pic");
+		var onOff = true;
+		btn.onclick = function(){
+			if( onOff ){
+				//利用变量存值进行判断
+				pic.src = "img/3.png";
+				onOff = false;
+			}else{
+				pic.src = "img/3ico11.png"; 
+				onOff = true;
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+<input type="button" id="btn" value="点击"/>
+<img src="img/3ico11.png" id="pic"/>
+</body>
+</html>

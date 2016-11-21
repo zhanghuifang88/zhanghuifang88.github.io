@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--针对ie做的兼容-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--针对移动端做的适配-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bootstrap</title>
+	<link href="dist/css/bootstrap.css" rel="stylesheet"/>
+	<!--h5标签语义化-->
+	<script src="js/html5shiv.min.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<!--
+		下拉菜单：
+			属性：
+				data-
+					data-toggle="dropdown"可以下拉菜单
+				aria-
+				role
+			open
+			dropdown-nume-right
+			dropdown-header
+			divider  分隔的链接
+			
+	-->
+	<div class="container">
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+				Dropdown
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+			</ul>
+		</div>
+		<ul class="nav nav-pills">
+			<li><a href="#">规则的链接</a></li>
+			<li class="dropdown" id="menutest1">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#menutest1">
+			    		下拉项
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu" >
+				    <li><a href="#">动作</a></li>
+				    <li><a href="#">另一个动作</a></li>
+				    <li><a href="#">其他</a></li>
+				    <li class="divider"></li>
+				    <li><a href="#">被间隔的链接</a></li>
+				</ul>
+			</li>
+		    <li class='active'>
+		        <a data-toggle="dropdown" href="#menutest1">点击我看看</a>
+		    </li>
+		</ul>
+		
+		
+		<div class="dropdown">
+			<button class="btn btn-primary" data-toggle="dropdown">
+				下拉菜单
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="#">第1项</a></li>
+				<li><a href="#">第2项</a></li>
+				<li><a href="#">第3项</a></li>
+				<li class="divider"></li>
+				<li><a href="#">另一个链接</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+</html>

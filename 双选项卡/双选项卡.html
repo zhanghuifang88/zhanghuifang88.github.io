@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>双选项卡</title>
+<style>
+body,p{
+	margin: 0;
+}
+section {
+	width: 970px;
+	height: 340px;
+	margin: 50px auto;
+	border: 1px solid #999;
+	background: #e7e7e7;
+}
+ul {
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 150px;
+}
+img {
+	display: none;
+	border: 0;
+	vertical-align: top;
+}
+.clearFix {
+	content: "";
+	display: block;
+	clear: both;
+}
+ul li {
+	font: 16px/82px "宋体";
+	color: #09F;
+	text-align: center;
+	border-bottom: 1px solid #999;
+	background: #e7e7e7;
+}
+div {
+	float: left;
+	position: relative;
+	display: none;
+}
+p {
+	position: absolute;
+	width: 810px;
+	height: 30px;
+	bottom: 0;
+	left: 0; 
+}
+p span {
+	font: 14px/30px "宋体";
+	color: #fff;
+	text-align: center;
+	width: 200px;
+	height: 30px;
+	float: left;
+	background: #000;
+	opacity: .5;
+	margin-right: 2px; 
+}
+.active {
+	background: #fff;
+}
+.change {
+	background: #999;
+}
+
+</style>
+<script>
+
+function $(id){//获取每个div 的id
+	return document.getElementById(id);
+	
+}
+function tab(obj){//函数封装，函数名（形参）
+	var allImg = obj.getElementsByTagName("img");	
+	var allSpan = obj.getElementsByTagName("span");
+	//为每一个span添加点击事件
+	for(var i = 0; i < allSpan.length; i++){
+		allSpan[i].index = i;
+		allSpan[i].onclick = function(){
+			for(var j = 0; j < allSpan.length; j++){
+				allSpan[j].className = "";
+				allImg[j].style.display = "none";
+			}
+			this.className = "change";
+			allImg[this.index].style.display = "block";
+		}
+		
+	}
+}
+
+window.onload = function(){
+	var list = document.getElementById("list");
+	var allLi = list.getElementsByTagName("li");
+	var allDiv = document.getElementsByTagName("div");
+	
+	var content1 = $("content1"); 
+	tab(content1);//函数调用 实参
+	var content2 = $("content2");
+	tab(content2);
+	var content3 = $("content3");
+	tab(content3);
+	var content4 = $("content4");
+	tab(content4);
+	//为每个li添加点击事件
+	for(var i = 0; i < allLi.length; i++){
+		allLi[i].index = i;
+		allLi[i].onclick = function(){
+			for(var j = 0; j < allLi.length; j++){
+				allLi[j].className = "";
+				allDiv[j].style.display = "none";
+			}
+			this.className = "active";
+			allDiv[this.index].style.display = "block"; 
+			
+		}
+	}
+
+
+	
+	
+}
+</script>
+</head>
+
+<body>
+<section class="clearFix">
+    <ul id="list">
+    	<li class="active">最热团购</li>
+    	<li>商城特惠</li>
+    	<li>名品推荐</li>
+    	<li>缤纷活动</li>
+    </ul>
+    <div id="content1" style="display:block">
+    	<img src="img/ico1.png" style="display:block"/>
+    	<img src="img/ico3.png"/>
+    	<img src="img/ico1.png"/>
+    	<img src="img/ico3.png"/>
+        <p id="name1">
+            <span class="change">肌研满150减30</span>
+            <span>肌研满150减30 150减30</span>
+            <span>肌研满150减30</span>
+            <span>肌研满150减30肌研</span>
+        </p>
+    </div>
+    <div id="content2">
+    	<img src="img/3445g.png" style="display:block"/>
+    	<img src="img/ico3.png"/>
+    	<img src="img/3445g.png"/>
+    	<img src="img/ico1.png"/>
+        <p id="name2">
+            <span class="change">肌研满150减30</span>
+            <span>肌研满150减30 150减30</span>
+            <span>肌研满150减30</span>
+            <span>肌研满150减30肌研</span>
+        </p>
+    </div>
+    <div id="content3">
+    	<img src="img/98dj.png" style="display:block"/>
+    	<img src="img/ico3.png"/>
+    	<img src="img/98dj.png"/>
+    	<img src="img/ico1.png"/>
+        <p id="name3">
+            <span class="change">肌研满150减30</span>
+            <span>肌研满150减30 150减30</span>
+            <span>肌研满150减30</span>
+            <span>肌研满150减30肌研</span>
+        </p>
+    </div>
+    <div id="content4">
+    	<img src="img/ico3.png" style="display:block"/>
+    	<img src="img/98dj.png"/>
+    	<img src="img/ico3.png"/>
+    	<img src="img/ico1.png"/>
+        <p id="name4">
+            <span class="change">肌研满150减30</span>
+            <span>肌研满150减30 150减30</span>
+            <span>肌研满150减30</span>
+            <span>肌研满150减30肌研</span>
+        </p>
+    </div>
+    
+</section>
+</body>
+</html>

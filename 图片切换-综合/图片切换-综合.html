@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图片切换-综合</title>
+<style>
+#box {
+	width: 520px;
+	height: 800px;
+	margin: 50px auto;
+	text-align: center;
+}
+#content {
+	width: 520px;
+	height: 280px;
+	position: relative;
+}
+#count {
+	position: absolute;
+	left: 250px;
+	top: 0;
+	font: 16px/30px "微软雅黑";
+	color: #fff;
+}
+#mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 520px;
+	height: 30px;
+	background: #000;
+	opacity: .5;
+}
+#text {
+	position: absolute;
+	left: 250px;
+	bottom: 0;
+	font: 16px/30px "微软雅黑";
+	color: #FFF;
+}
+#mask1 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 520px;
+	height: 30px;
+	background: #000;
+	opacity: .5;
+}
+#btn3 {
+	position: absolute;
+	left: 0;
+	top: 120px; 
+	background: #3C3;
+}
+#btn4 {
+	position: absolute;
+	right: 0;
+	top: 120px;
+	background: #3C3;
+}
+#imgs {
+	
+}
+</style>
+<script>
+	window.onload = function(){
+		var btn1 = document.getElementById("btn1");
+		var btn2 = document.getElementById("btn2");
+		var btn3 = document.getElementById("btn3");
+		var btn4 = document.getElementById("btn4");
+		var count = document.getElementById("count");
+		var text = document.getElementById("text");
+		var exple = document.getElementById("exple");
+		
+		var arr = ["picture/dvc.jpg","picture/ef.jpg","picture/rtg.jpg","picture/hn.jpg","picture/rth.jpg"];
+		var arr1 = ["新品","吃货","玩具","家具","茶叶"];
+		//数字发生变化
+		count.innerHTML = "1/"+arr.length;
+		
+		
+		var n = 0;
+		var onOff = true;//默认循环
+		//循环播放
+		btn1.onclick = function(){
+			exple.innerHTML = "图片可以从最后一张跳到第一张循环播放";
+			onOff = true;
+		}
+		//顺序播放
+		btn2.onclick = function(){
+			exple.innerHTML = "图片只能从最后一张或只能到第一张切换";
+			onOff = false;
+		}
+		//点击左侧按钮时 要么弹出提示，要么循环
+		btn3.onclick = function(){
+			n = n - 1;
+			if( n<0 ){
+				if( onOff ){
+					n = arr.length-1; // n=4 循环播放
+				}else{
+					n = 0;
+					alert("这是第一张");//顺序播放
+				}
+			}
+			imgs.src = arr[n];
+			text.innerHTML = arr1[n];
+			count.innerHTML = n+1+"/"+arr.length;
+		}
+		//点击右侧按钮时 要么弹出提示，要么循环
+		btn4.onclick = function(){
+			n = n + 1;
+			if( n>arr.length-1 ){//n>4
+				if( onOff ){
+					n = 0;//循环播放
+				}else{
+					n = arr.length-1;//n=4
+					alert("这是最后一张");//顺序播放	
+				}
+			}
+			imgs.src = arr[n];
+			text.innerHTML = arr1[n];
+			count.innerHTML = n+1+"/"+arr.length;
+		  }
+	  }
+/*		//循环播放
+		//点击左边的时候，播放上一张图片
+		btn3.onclick = function(){
+			n = n - 1;
+			if( n<0 ){
+				n = arr.length-1;
+			}
+			imgs.src = arr[n];
+			text.innerHTML = arr1[n];
+			count.innerHTML = n+1+"/"+arr.length;
+		}
+		//点击右边的时候播放下一张图片
+		btn4.onclick = function(){
+			n = n + 1;
+			if( n>arr.length-1 ){
+				n = 0;
+			}
+			imgs.src = arr[n];
+			text.innerHTML = arr1[n];
+			count.innerHTML = n+1+"/"+arr.length;
+		}
+		//顺序播放
+		//点击左边的是后播放
+		btn3.onclick = function(){
+			n = n - 1;
+			if( n<0 ){
+				n = 0;
+				alert("这是第一张");
+			}
+			imgs.src = arr[n];
+			text.innerHTML = arr1[n];
+			count.innerHTML = n+1+"/"+arr.length;
+		}
+		//点击右边的时候播放
+		btn4.onclick = function(){
+			n = n + 1;
+			if( n>arr.length-1 ){
+				n = arr.length-1;
+				alert("这是最后一张了");
+			}
+			imgs.src = arr[n];
+			text.innerHTML = arr1[n];
+			count.innerHTML = n+1+"/"+arr.length;
+		}
+*/	
+</script>
+</head>
+
+<body>
+<div id="box">
+    <input type="button" id="btn1" value="循环播放"/>
+    <input type="button" id="btn2" value="顺序播放"/>
+    <p id="exple">图片可以从最后一张跳到第一张循环播放</p>
+    <div id="content">
+        <img src="picture/dvc.jpg" id="imgs"/>
+        <span id="text">吃货</span>
+        <span id="mask"></span>
+        <span id="count">1/5</span>
+        <span id="mask1"></span>
+        <input type="button" id="btn3" value="左"/>
+        <input type="button" id="btn4" value="右"/>
+    </div>
+</div>
+</body>
+</html>
