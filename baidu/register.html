@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<script>
-//		(function(){
-//			document.addEventListener('touchstart', function(e) {
-//				e.preventDefault();
-//			});
-//		})();
+		(function(){
+			document.addEventListener('touchstart', function(e) {
+				e.preventDefault();
+			});
+		})();
 	
 		var scale = 1;
 		if(window.devicePixelRatio){
@@ -55,8 +55,10 @@
 		<div class="logoPic"></div>
 	</div>
 	<div class="registerInput">
-		<input type="text" class="registerNum" placeholder="填写手机号">
-		<input type="button" value="获取手机验证码" class="registerBtn">
+		<input type="tel" class="registerNum" placeholder="填写手机号">
+		<input type="password" class="registerPassword" placeholder="设置密码">
+		<p class="tip">密码必须是数字和字母组合，密码长度为6-12位</p>
+		<input type="button" value="注册" class="registerBtn">
 		<div class="read">
 			<span>我已同意并阅读
 				<a href="#">百度用户协议</a>
@@ -69,5 +71,5 @@
 	</div>
 </section>
 </body>
-<!--<script src="js/main.js"></script>-->
+<script src="js/register.js"></script>
 </html>

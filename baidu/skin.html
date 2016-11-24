@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<script>
-//		(function(){
-//			document.addEventListener('touchstart', function(e) {
-//				e.preventDefault();
-//			});
-//		})();
+		(function(){
+			document.addEventListener('touchstart', function(e) {
+				e.preventDefault();
+			});
+		})();
 	
 		var scale = 1;
 		if(window.devicePixelRatio){
@@ -47,7 +47,7 @@
  <section class="picture">
 	<div class="pictureHeader">
 		<header class="headerInfo">
-			<a href="index.html" class="pictureBack"><img src="img/arrow3.png"></a>
+			<a class="pictureBack"><img src="img/arrow3.png"></a>
 			<h3>首页换肤</h3>
 		</header>
 		<ul class="picNav clearFix">
@@ -59,7 +59,7 @@
 	</div>
 	<article class="main">
 		<div class="scroll">
-			<ul class="picList clearFix">
+			<ul class="picList clearFix list1">
 				<!--<li>
 					<a href="#">
 						<img src="image/1.jpg">
@@ -73,6 +73,9 @@
 					<span>王牌逗王牌</span>
 				</li>-->
 			</ul>
+			<ul class="picList clearFix lists2" style="display: none;">222</ul>
+			<ul class="picList clearFix list3" style="display: none;">3333334</ul>
+			<ul class="picList clearFix list4" style="display: none;">4444</ul>
 			<footer class="footer">正在加载皮肤</footer>
 		</div>
 		

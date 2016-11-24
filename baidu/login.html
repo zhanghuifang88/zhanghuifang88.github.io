@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<script>
-//		(function(){
-//			document.addEventListener('touchstart', function(e) {
-//				e.preventDefault();
-//			});
-//		})();
+		(function(){
+			document.addEventListener('touchstart', function(e) {
+				e.preventDefault();
+			});
+		})();
 	
 		var scale = 1;
 		if(window.devicePixelRatio){
@@ -45,7 +45,7 @@
 <body>
 <section class="login">
 	<section class="loginTitle clearFix">
-		<a href="index.html" class="loginBack" >
+		<a class="loginBack" >
 			<img src="img/back.png">
 		</a>
 		<h3>登录百度账号</h3>
@@ -54,21 +54,22 @@
 		<div class="logoPic"></div>
 	</div>
 	<div class="enter">
-		<input type="text" class="phNum" placeholder="手机号/邮箱/用户名">
+		<input type="text" class="phNum" placeholder="手机号">
 		<div class="password">
-			<input type="password"  placeholder="密码">
-			<span></span>
+			<input type="password"  placeholder="密码" class="passwords" />
+			<!--<span></span>-->
 		</div>
+		<p class="tips"></p>
 		<input type="button" value="登录" class="loginBtn">
 		<div class="qustion clearFix">
 			<a href="#">登录遇到问题</a>
 			<a href="#">其它登录方式</a>
 		</div>
 	</div>
-	<a href="register.html" class="goRegister">
+	<a class="goRegister">
 		立即注册
 	</a>
 </section>
 </body>
-<!--<script src="js/main.js"></script>-->
+<script src="js/login.js"></script>
 </html>

@@ -1,14 +1,60 @@
 ;(function(){
-//	document.addEventListener('touchstart', function(e) {
-//		e.preventDefault();
-//	});
+	function $(s){
+		return document.querySelector(s);
+	}
+	var picture = $(".picture");
+	console.log(picture);
+	
+	//css(picture,'translate',3);
+	
+	var pictureBack = $(".pictureBack");
+	pictureBack.addEventListener('touchstart', function(e) {
+		pictureBack.href="index.html";
+		e.stopPropagation();
+	});
+	
+	var list1 = $(".list1");
+	//fn(list1);
+	var list2 = $(".list2");
+	//fn(list2);
+	var list3 = $(".list3");
+	//fn(list3);/
+	var list4 = $(".list4");
+	//fn(list4);
+	//导航
+	var picNav = $(".picNav");
+	var allTitle = picNav.getElementsByTagName("li");
+	//所有的列表
+	var scroll = $(".scroll");
+	var allUl = scroll.getElementsByTagName("ul");
+	//为导航的每一个标签添加点击事件
+	for(var i = 0; i < allTitle.length; i++){
+		allTitle[i].index = i;//保存下标
+		//当点击标签时，当前的显示样式，并且让每个标签显示对应的内容
+		allTitle[i].addEventListener('touchstart', function(e) {
+			for(var j = 0; j < allTitle.length; j++){
+				allTitle[j].className = "";
+				allUl[j].style.display = "none";
+			}
+			this.className = "liActive";
+			allUl[this.index].style.display = "block";
+			
+			e.stopPropagation();
+		});
+			
+		
+	}
+	
+	
+	
+
 	var data = [];
 	for(var i = 0; i < 20; i++){
 		data.push("image/"+(i%20+1)+".jpg");
 	};
-	var footer = document.querySelector(".footer");
-	var main = document.querySelector(".main");
-	var picList = document.querySelector(".picList");
+	var footer = $(".footer");
+	var main = $(".main");
+	var picList = $(".picList");
 	var li = picList.getElementsByTagName("li");
 	var rem = document.documentElement.getBoundingClientRect().width/18;
 	var length = 8;
@@ -66,10 +112,6 @@
 	function createLi(url){
 		var li = document.createElement("li");
 		var a = document.createElement("a");
-		//a.href = "http://www.baidu.com";
-//		a.addEventListener("touchend",function(){
-//			window.location.href = a.href;
-//		});
 		li.dataset.src = url;
 		li.dataset.isShow = false; 
 		li.appendChild(a);
@@ -81,8 +123,8 @@
 			var rect = li[i].getBoundingClientRect();
 			var top = rect.top;
 			var bottom = top+rect.height;
-			if(top < main.offsetHeight + 5*rem
-			  && bottom > 5*rem
+			if(top < main.offsetHeight + 2*rem
+			  && bottom > 2*rem
 			  && li[i].dataset.isShow == "false"
 			  ){
 			  	li[i].dataset.isShow = true;
@@ -100,4 +142,7 @@
 			},50);
 		};
 	}
+	
+	
+	
 })();

@@ -3,11 +3,12 @@
 	<head>
 	<meta charset="UTF-8">
 	<script>
-//		(function(){
-//			document.addEventListener('touchstart', function(e) {
-//				e.preventDefault();
-//			});
-//		})();
+		(function(){
+			document.addEventListener('touchstart', function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+			});
+		})();
 	
 		var scale = 1;
 		if(window.devicePixelRatio){
@@ -41,13 +42,13 @@
 	<script src="js/m.touch.js"></script>
 	<link href="css/reset.css" rel="stylesheet" >
 	<link href="css/index.css" rel="stylesheet" >
- 
+ 	<script src="js/MTween.js"></script>
 </head>
 
 <body>
 <section class="wrap">
 	<section class="wrapCon">
-    	<header class="header clearFix">
+    		<header class="header clearFix">
         	<div class="headerLeft">
             	<a href="#">
                 	<span class="headerPic"></span>
@@ -58,24 +59,39 @@
             </a>
         </div>
             <div class="headerRight">
-            	<a href="login.html" class="user"></a>
-            	<a href="skin.html" class="skin"></a>
+	            	<a class="user"></a>
+	            	<a class="skin"></a>
             </div>
         </header>
         <h2 class="pic"><img src="img/banner.png"/></h2>
         <form action="#" target="_blank" class="form">
-        	<input type="text"/>
+        		<input type="text" class="searchBox"/>
             <a href="#" class="search">百度一下</a>
         </form>
         <div class="meunCon">
             <ul class="meun clearFix">
-                <li><a href="#" class="news"><img src="img/ico6.png" />新闻</a></li>
-                <li><a href="#" class="news"><img src="img/ico6.png" />新闻</a></li>
-                <li><a href="#" class="news"><img src="img/ico6.png" />新闻</a></li>
-                <li><a href="#" class="news"><img src="img/ico6.png" />新闻</a></li>
-                <li><a href="#" class="news"><img src="img/ico6.png" />新闻</a></li>
-                <p class="more"><a href="#"><img src="img/ico6.png" />更多</a></p>
+                <li>
+                		<a href="#" class="news"><img src="img/ico6.png" />新闻</a>
+               		<a href="#" class="news"><img src="img/ico6.png" />新闻</a>
+               		<a href="#" class="news"><img src="img/ico6.png" />新闻</a>
+               		<a href="#" class="news"><img src="img/ico6.png" />新闻</a>
+               		<a href="#" class="news"><img src="img/ico6.png" />新闻</a>
+               		<a href="#" class="news"><img src="img/ico6.png" />新闻</a>
+                </li>
+                <li>
+                		<a href="#" class="news"><img src="img/ico9.png" />网址</a>
+               		<a href="#" class="news"><img src="img/ico9.png" />网址</a>
+               		<a href="#" class="news"><img src="img/ico9.png" />网址</a>
+               		<a href="#" class="news"><img src="img/ico9.png" />网址</a>
+               		<a href="#" class="news"><img src="img/ico9.png" />网址</a>
+               		<a href="#" class="news"><img src="img/ico9.png" />网址</a>
+                </li>
+                
             </ul>
+            <div class="circle">
+            		<span class="sActive"></span>
+            		<span></span>
+            </div>
         </div>
         <nav class="navCon">
         	<h2>我的导航<span></span></h2>
@@ -206,7 +222,7 @@
         </footer>
     </section>
 </section>
-
-<!--<script src="js/main.js"></script>-->
+<script src="js/zepto.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

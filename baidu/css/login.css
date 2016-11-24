@@ -53,24 +53,29 @@
 .phNum {
 	width:100%;
 	height: 2.48333rem;
-	border:1px solid #cacaca;
+	border: .05rem solid #cacaca;
 	border-radius: .3rem .3rem 0 0; 
 	font: .6333rem/2.48333rem "微软雅黑";
 	text-indent: .75rem;
+	
 }
 .password {
 	width:100%;
 	height: 2.48333rem;
 	position: relative;
-	padding-bottom: 1.25rem;
+	padding-bottom: 0.25rem;
 }
 .password  input {
 	width:100%;
 	height: 2.48333rem;
-	border:1px solid #cacaca;
+	border: .05rem solid #cacaca;
 	border-radius: 0 0 .3rem .3rem ; 
 	font: .6333rem/2.48333rem "微软雅黑";
 	text-indent: .75rem;
+}
+.tips {
+	font: .6333rem/2.48333rem "微软雅黑";
+	color: #939393;
 }
 .password span {
 	width: .88333rem;
@@ -90,6 +95,7 @@
 	text-align: center;
 	color: #7cb3ff;
 	border-radius: .2rem;
+	margin-top: 0.25rem;
 }
 .qustion {
 	padding-top:1.05rem;
@@ -104,7 +110,7 @@
 	color: #94afcd;
 }
 .goRegister {
-	position: absolute;
+	display: block;
 	width: 5.5rem;
 	height: 2.25rem;
 	text-align: center;
@@ -112,7 +118,5 @@
 	color: #2d76ff;
 	border: .03333rem solid #2d76ff;
 	border-radius: .3rem;
-	left: 50%;
-	margin-left: -2.75rem;
-	bottom: 2.1rem;
+	margin : 8.1833rem auto 0;
 }
