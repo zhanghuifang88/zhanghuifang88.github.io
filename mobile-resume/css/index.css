@@ -1,0 +1,449 @@
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	height: 100%;
+	-position: relative;
+	background: url(../img/7-bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+p,
+h3 {
+	margin:0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+.clearFix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+/*    */
+.list {
+	height:100%;
+	width: 100%;
+	
+}
+.list li:nth-of-type(1) {
+	-display: none;
+	background: url(../img/1-bg.png) no-repeat;
+	background-size: 100% 100%;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	-webkit-perspective: 3000px;
+    -webkit-transform-style: preserve-3d;
+	
+}
+.header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50%;
+	margin: 20% 25% 10% 25%;
+	text-align: center;
+}
+.headerWrap {
+	margin: 25% 25% 10% 25%;
+	width: 5.6rem;
+	height: 5.6rem;
+	background: rgba(255,255,255,1);
+	border-radius: 2.8rem;
+	animation: a 1s ease-in both;
+	-webkit-animation: a 1s ease-in both;
+}
+@-webkit-keyframes a {
+	0% {
+		transform: rotate(0deg) scale(0);
+		-webkit-transform: rotate(0deg) scale(0);
+	}
+	100% {
+		transform: rotate(360deg) scale(1);
+		-webkit-transform: rotate(360deg) scale(1);
+	}
+}
+.header img {
+	width: 5.1rem;
+	height: 5.1rem;
+	margin: .216rem;
+	border-radius: 2.55rem;
+	animation: a_1 2s ease-in both 1s;
+	-webkit-animation: a_1 2s ease-in both 1s; 
+}
+@-webkit-keyframes a_1 {
+	0% {
+		transform: rotateY(0deg) scale(0);
+		-webkit-transform: rotateY(0deg) scale(0);
+	}
+	100% {
+		transform: rotateY(360deg) scale(1);
+		-webkit-transform: rotateY(360deg) scale(1);
+	}
+}
+
+.mane {
+	padding: 80% 20% 20% 30%;
+	width: 2rem;
+	height: 6rem;
+	font: 1.6rem/2rem "微软雅黑";
+	color: #fff;
+	animation: b 1.5s ease-in both ;
+	-webkit-animation: b 1.5s ease-in both ;
+	-webkit-transform-style: preserve-3d;
+}
+@-webkit-keyframes b {
+	0% {
+		transform: translateX(0)  rotateZ(0deg) ;
+		-webkit-transform: translateX(0)  rotateZ(0deg);
+	} 
+	25% {
+		transform: translateX(0.6rem)  rotateZ(0deg) ;
+		-webkit-transform: translateX(0.6rem)  rotateZ(20deg);
+		
+	}
+	50% {
+		transform: translateX(0.6rem)  rotateZ(0deg) ;
+		-webkit-transform: translateX(0.6rem)  rotateZ(-20deg);
+		
+	}
+	75% {
+		transform: translateX(0.6rem)  rotateZ(0deg) ;
+		-webkit-transform: translateX(0.6rem)  rotateZ(20deg);
+		
+	}
+	100% {
+		transform: translateX(0px)  rotateZ(0deg) ;
+		-webkit-transform: translateX(0px)  rotateZ(0deg);
+	}
+}
+
+.line {
+	position: absolute;
+	left: 50.2%;
+	top: 40%;
+	border: .07rem solid #fff;
+	border-radius: .045rem;
+	height: 0;
+	animation: c 1s ease-in both 1s;
+	-webkit-animation: c 1s ease-in both 1s;
+	
+}
+@-webkit-keyframes c {
+	0% {
+		height: 0;
+		opacity: 0;
+	}
+	100% {
+		height: 9rem;
+		opacity: .7;
+	}
+}
+
+.resume {
+	position: absolute;
+	right: 25%; 
+	top: 40%;
+	width: 2rem;
+	height: 8rem;
+	font: 1.6rem/2rem "微软雅黑";
+	color: #FFF;
+	animation: d 2s ease-in both ;
+	-webkit-animation: d 2s ease-in both ;
+}
+@-webkit-keyframes d {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.maxim {
+	padding: 10% 0 30%;
+	text-align: center;
+	font: .8rem/1.2rem "微软雅黑";
+	color: #fff;
+	
+}
+/* 第二屏  */
+.list li:nth-of-type(2) {
+	display: none;
+	background: url(../img/6-bg.gif) no-repeat;
+	background-size: 100% 100%;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 2;	
+	transform-style: preserve-3d;
+	perspective: 3000px;
+}
+.title {
+	padding: 20% 20% 30%;
+	text-align: center;
+	color: #fff;
+	font: 1.5rem/2rem "微软雅黑";
+	letter-spacing: .5rem;
+}
+.info {
+	margin-left: 3rem;
+	width: 12rem;
+	height: 2.5rem;
+	background: rgba(255,255,255,.2);
+	margin-bottom: .2rem;
+	font: .8rem/2.5rem "微软雅黑";
+	text-align: center;
+	color: #fff;
+	transform-style: preserve-3d;
+}
+.school {
+	animation: e 1s ease-in both ;
+	-webkit-animation: e 1s ease-in;
+	 
+}
+.academic {
+	animation: f 1.2s ease-in both ;
+	-webkit-animation: f 1.2s ease-in ;
+}
+.position {
+	animation: e 1.3s ease-in both ;
+	-webkit-animation: e 1.3s ease-in ;
+}
+.time {
+	animation: f 1.4s ease-in both ;
+	-webkit-animation: f 1.4s ease-in;
+}
+.tel {
+	animation: e 1.5s ease-in both ;
+	-webkit-animation: e 1.5s ease-in ;
+}
+.email {
+	animation: f 1.6s ease-in both ;
+	-webkit-animation: f 1.6s ease-in both ;
+	margin-bottom: 5rem;
+}
+@-webkit-keyframes e {
+	0% {
+		transform: translateX(15rem) rotateZ(0);
+	}
+	100% {
+		transform: translateX(0) rotateZ(360deg);
+	}
+}
+@-webkit-keyframes f {
+	0% {
+		transform: translateX(-15rem);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+.up {
+	position: absolute;
+	left: 50%;
+	bottom: 4%;
+	width: 1.16rem;
+	animation:1s up alternate infinite;
+	-webkit-animation:1s up alternate infinite;
+}
+.up img{
+	display: block;
+    width: 1.16rem;
+    height: 0.3666rem;
+	
+}
+@-webkit-keyframes up {
+	from{
+		transform: translateY(-0.7rem);  
+	}
+	to{
+		transform: translateY(0) ; 
+	}
+}
+/* 第3屏  */
+.list li:nth-of-type(3) {
+	display: none;
+	background: url(../img/4-bg.png) no-repeat;
+	background-size: 100% 100%;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 3;	
+	transform-style: preserve-3d;
+	perspective: 3000px;
+}
+.skill {
+	float: left;
+	padding: 20% 5% 20% 5%;
+	width: 2rem;
+	height: 70%;
+}
+.skill span {
+	display: block;
+	text-align: center;
+	font: .8rem/1.8rem "微软雅黑";
+	color: #fff;
+	width: 4rem;
+	height:1.8rem;
+	background: rgba(255,255,255,.3);
+	margin-bottom: 1rem;
+	text-shadow: 0 0 .1rem #000;
+}
+.percent {
+	padding: 20% 10% 20% 0;
+	float: right;
+}
+.percent p {
+	font: .8rem/1.7rem "微软雅黑";
+	color: #fff;
+	width: 10rem;
+	height:1.7rem;
+	border: .05rem solid #eee;
+	margin-bottom: 1rem;
+	text-shadow: 0 0 .1rem #000;
+	
+}
+.percent p {
+	position: relative;
+}
+.percent p span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 1.7rem;
+	z-index: -1;
+}
+.percent p:nth-of-type(1) span {
+	width: 9rem;
+	background: pink;
+}
+.percent p:nth-of-type(2) span {
+	width: 9rem;
+	background: palegreen;
+}
+.percent p:nth-of-type(3) span {
+	width: 7rem;
+	background: plum;
+}
+.percent p:nth-of-type(4) span {
+	width: 6rem;
+	background: deepskyblue;
+}
+.percent p:nth-of-type(4) span {
+	width: 6rem;
+	background: deepskyblue;
+}
+.percent p:nth-of-type(5) span {
+	width: 6rem;
+	background: yellow;
+}
+.percent p:nth-of-type(6) span {
+	width: 4rem;
+	background: orchid;
+}
+.percent p:nth-of-type(7) span {
+	width: 6rem;
+	background: deeppink;
+}
+.percent p:nth-of-type(8) span {
+	width: 4rem;
+	background: blue;
+}
+.percent p:nth-of-type(9) span {
+	width: 7rem;
+	background: lightseagreen;
+}
+.percent p:nth-of-type(1) {
+	animation:1s move ease-in ;
+	-webkit-animation:1s move ease-in ;
+}
+.percent p:nth-of-type(2) {
+	animation:1.1s move ease-in ;
+	-webkit-animation:1.1s move ease-in ;
+}
+.percent p:nth-of-type(3) {
+	animation:1.2s move ease-in ;
+	-webkit-animation:1.2s move ease-in ;
+}
+.percent p:nth-of-type(4) {
+	animation:1.3s move ease-in ;
+	-webkit-animation:1.3s move ease-in ;
+}
+.percent p:nth-of-type(5) {
+	animation:1.4s move ease-in ;
+	-webkit-animation:1.4s move ease-in ;
+}
+.percent p:nth-of-type(6) {
+	animation:1.5s move ease-in ;
+	-webkit-animation:1.5s move ease-in ;
+}
+.percent p:nth-of-type(7) {
+	animation:1.6s move ease-in ;
+	-webkit-animation:1.6s move ease-in ;
+}
+.percent p:nth-of-type(8) {
+	animation:1.7s move ease-in ;
+	-webkit-animation:1.7s move ease-in ;
+}
+.percent p:nth-of-type(9) {
+	animation:1.8s move ease-in ;
+	-webkit-animation:1.8s move ease-in ;
+}
+
+@-webkit-keyframes move {
+	from{
+		transform: translateX(13rem) translateY(2rem);  
+	}
+	to{
+		transform: translateX(0) translateY(0); 
+	}
+}
+/*第四屏*/
+.list li:nth-of-type(4) {
+	display: none;
+	background: url(../img/5-bg.png) no-repeat;
+	background-size: 100% 100%;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 4;	
+	transform-style: preserve-3d;
+	perspective: 3000px;
+}
+.me {
+	padding: 20% 10% 130% 8%;
+	color: #fff;
+	font: 3.5rem/5rem "微软雅黑";
+	animation: 1s me ease-in ;
+	-webkit-animation: 1s me ease-in ;
+}
+.meLine {
+	position: absolute;
+	left: 32%;
+	top: 20%;
+	height: 12rem;
+	border: .04rem solid #fff;
+}
+.introduce {
+	position: absolute;
+	top: 20%;
+	right: 8%;
+	width: 10rem;
+	color: #fff;
+	font: .8rem/1.8rem "微软雅黑";
+}
+@-webkit-keyframes me {
+	from{
+		transform: rotate(0);  
+	}
+	to{
+		transform: rotate(360deg); 
+	}
+}

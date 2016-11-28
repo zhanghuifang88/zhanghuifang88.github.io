@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="minimal-ui">
+		<script>
+		(function(){
+			document.addEventListener('touchstart', function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+			});
+		})();
+	
+		var scale = 1;
+		if(window.devicePixelRatio){
+			scale = scale / window.devicePixelRatio;
+		}
+		document.write('<meta name="viewport" content="initial-scale='+scale+',minimum-scale='+scale+',maximum-scale='+scale+',user-scalable=no" />');
+	</script>
+	<title>简历</title>
+	
+	<script>
+		toSize ();
+		function toSize () {
+			var html = document.getElementsByTagName("html")[0];
+			var screenW = html.getBoundingClientRect().width; 
+			html.style.fontSize = screenW/18 + "px";
+		}
+		window.addEventListener(
+			"orientationchange",
+			function(){
+				toSize ();
+			},
+			false
+		);
+		window.addEventListener(
+			"resize",
+			function(){
+				toSize ();
+			},
+			false
+		);
+	</script>
+	<link href="css/index.css"  rel="stylesheet" />
+	</head>
+	<body>
+		<section class="wrap">
+			<ul class="list">
+				<li id="li_a">
+					<div class="header">
+						<div class="headerWrap">
+							<img src="img/header.png" />
+						</div>
+					</div>
+					<div class="mane">张惠芳</div>
+					<div class="line"></div>
+					<div class="resume">个人简历</div>
+					<div class="maxim">给我一个平台，我将还您100分的满意</div>
+					<div class="up">
+						<img src="img/up.png"/>
+						<img src="img/up.png"/>
+					</div>
+				</li>
+				<li>
+					<h3 class="title">基本信息</h3>
+					<div class="info school">
+						毕业学校：保定学院
+					</div>
+					<div class="info academic">
+						学历：大专
+					</div>
+					<div class="info position">
+						职位：web前端开发
+					</div>
+					<div class="info time">
+						工作时间：1年半
+					</div>
+					<div class="info tel">
+						电话：18231057701
+					</div>
+					<div class="info email">
+						邮箱：1063152838@qq.com
+					</div>
+					<div class="up">
+						<img src="img/up.png"/>
+						<img src="img/up.png"/>
+					</div>
+				</li>
+				<li class="clearFix">
+					<div class="skill">
+						<span>javascript</span>
+						<span>Div+CSS</span>
+						<span>css3</span>
+						<span>ajax</span>
+						<span>ECMA6</span>
+						<span>git</span>
+						<span>html5</span>
+						<span>gulp</span>
+						<span>jquery</span>
+					</div>
+					<div class="percent">
+						<p>90%<span></span></p>
+						<p>90%<span></span></p>
+						<p>70%<span></span></p>
+						<p>60%<span></span></p>
+						<p>60%<span></span></p>
+						<p>40%<span></span></p>
+						<p>60%<span></span></p>
+						<p>40%<span></span></p>
+						<p>70%<span></span></p>
+					</div>
+					<div class="up">
+						<img src="img/up.png"/>
+						<img src="img/up.png"/>
+					</div>
+				</li>
+				<li>
+					<h3 class="me">我</h3>
+					<span class='meLine'></span>
+					<p class="introduce">
+						1、本人性格开朗、善于与他人沟通交流，有良好的团队意识和团队协作能力、责任感强、工作认真负责高效</br>
+						2、具有较强的学习能力和分析能力，对新事物始终饱有探索的精神，喜欢不断学习新知识、洞察能力强</br>
+						3、对WEB技术发展有强烈兴趣，学习、探索能力强
+					</p>
+					<div class="up">
+						<img src="img/up.png"/>
+						<img src="img/up.png"/>
+					</div>
+				</li>
+			</ul>
+		</section>
+		
+	</body>
+	<script src="js/m.touch.js"></script>
+	<script src="js/index.js"></script>
+</html>
