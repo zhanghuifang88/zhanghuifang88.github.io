@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>星空例子特效</title>
+</head>
+<body>
+  <canvas id="canvas" ></canvas>
+  <script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+	//保存粒子和边
+    var W, H, particles = [], edegs = [];
+    var mouse = {x: 0, y: 0}//鼠标的位置
+
+    window.onresize = function(){
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+      if(!particles.length){
+        createPatricles()
+      }
+    };
+	//创建粒子
+    function createPatricles(){
+      for(var i=0; i<120; i++){
+        var p = {
+          drawable: i == 0,
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 2,
+          vy: (Math.random() - 0.5) * 2,
+          r: Math.random() > 0.8 ? Math.random() * 2 + 2 : Math.random() * 2 + 0.1
+        };
+        particles.push(p)
+      }
+
+      var len = particles.length;
+
+      for(var i=0; i<len; i++){
+        for(var j=i+1; j<len; j++){
+          var edeg = {
+            start:particles[i],
+            end:particles[j]
+          }
+          edegs.push(edeg)
+        }
+      }
+      console.log(edegs);
+    };
+
+    function update(){
+      particles.forEach(function(item){
+        if(item.drawable) return false;
+
+        item.x += item.vx;
+        item.y += item.vy;
+
+        if(item.x - item.r < 0 || item.x + item.r > W){
+          item.vx *= -1;
+        }
+
+        if(item.y - item.r < 0 || item.y + item.r > H){
+          item.vy *= -1;
+        }
+      });
+    };
+
+    function draw(){
+      edegs.forEach(function(item){
+        var l = distance(item);
+        var w = W / 9;
+        if(l > w){
+          return false;
+        }
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255,255,255,1)';
+        ctx.lineWidth = (1 - l/w) * 2.5;
+        ctx.globalAlpha = 1 - l/w;
+        ctx.beginPath();
+        ctx.moveTo(item.start.x, item.start.y);
+        ctx.lineTo(item.end.x, item.end.y);
+        ctx.stroke();
+        ctx.restore();
+      });
+      particles.forEach(function(item){
+        if(item.drawable){
+          return false;
+        }
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(item.x, item.y, item.r, 0, 2*Math.PI);
+        ctx.fill();
+        ctx.restore();
+      });
+    };
+
+    function distance(item){
+      var x = Math.pow(item.start.x - item.end.x, 2);
+      var y = Math.pow(item.start.y - item.end.y, 2);
+      return Math.sqrt(x + y);
+    };
+
+    function renderFirstNodes(){
+      particles[0].x += (mouse.x - particles[0].x) / 10;
+      particles[0].y += (mouse.y - particles[0].y) / 10;
+    };
+
+    canvas.addEventListener('mousemove', function(e) {
+      mouse.x = e.offsetX;
+      mouse.y = e.offsetY;
+    });
+
+    function render(){
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+      ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
+      update();
+      renderFirstNodes();
+      draw();
+      requestAnimationFrame(arguments.callee);
+    };
+    window.onresize();
+    render();
+  </script>
+</body>
+</html>
