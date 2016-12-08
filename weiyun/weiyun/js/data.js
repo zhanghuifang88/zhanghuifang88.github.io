@@ -68,28 +68,28 @@ var data = {
 		{
 			id:3000,
 			pid:0,
-			title:"我们的课程",
+			title:"我的相册",
 			type:"file"
 		},
 		{
 			id:9000,
 			pid:3000,
-			title:"js初级课程"
+			title:"初中时代"
 		},
 		{
 			id:8000,
 			pid:3000,
-			title:"js初级课程"
+			title:"高中时代"
 		},
 		{
 			id:984744,
 			pid:3000,
-			title:"js中级课程"
+			title:"大学时代"
 		},
 		{
 			id:920485,
 			pid:3000,
-			title:"js高级课程"
+			title:"亲人"
 		}
 	]
 }

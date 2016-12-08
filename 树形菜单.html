@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#oUl li ul{
+				display: none;
+			}
+			#oUl li ul.show{
+				display: block;
+			}
+			#oUl li ul.hide{
+				display: none;
+			}
+			#oUl li h3 span{
+				padding: 0px 10px;
+			}
+			#oUl li h3.padL{
+				padding-left: 30px;
+			}
+			li{
+				list-style: none;
+			}
+		</style>
+		<script>
+
+			var arr = [
+			    {
+			        title : "第一级菜单",
+			        child : [
+			        	{title:"第二集菜单"},
+			            {title:"第二集菜单",
+			            child:[
+			            		{title:"第三集菜单"},
+			            		{title:"第三集菜单",
+			            		child:[
+			            			{title:"第四集菜单"},
+			            			{title:"第四集菜单"},
+			            			{title:"第四集菜单"}
+			            		]
+			            		},
+			            		{title:"第三集菜单"}
+			            	]
+			        	},
+			            {
+			            	title:"第二集菜单",
+			            	child:[
+			            		{title:"第三集菜单"},
+			            		{title:"第三集菜单"}
+			            	]
+			            }
+			        ]
+			    },
+			    {
+			        title : "第一级菜单",
+			        child : [
+			        	{title:"第二集菜单"},
+			            {title:"第二集菜单",
+			            child:[
+			            		{title:"第三集菜单"},
+			            		{title:"第三集菜单",
+			            		child:[
+			            			{title:"第四集菜单"},
+			            			{title:"第四集菜单"},
+			            			{title:"第四集菜单"}
+			            		]
+			            		},
+			            		{title:"第三集菜单"}
+			            	]
+			        	},
+			            {
+			            	title:"第二集菜单",
+			            	child:[
+			            		{title:"第三集菜单"},
+			            		{title:"第三集菜单"}
+			            	]
+			            }
+			        ]
+			    },
+			    {
+			    	title:"第一级菜单"
+			         
+			    }
+			];
+
+//先渲染第一层
+    window.onload = function(){
+    		var oUl = document.getElementById("oUl");//获取到大的ul
+    		
+    		fn(arr,oUl);
+    		function fn(arr,parent){
+    			for(var i = 0; i < arr.length; i++){
+	    			var newLi = document.createElement("li");//创建一个li
+	    			var newH2 = document.createElement("h2");//创建一个h2
+	    			var newSpan = document.createElement("span");
+	    			newLi.appendChild(newH2);
+	    			newSpan.innerHTML = "+";
+	    			
+	    			
+	    			if(arr[i].child){
+	    				var newUl = document.createElement("ul");//如果数组里的child存在,再创建一个ul结构
+	    				//同样也需要创建li和h2
+	    				fn(arr[i].child,newUl);
+	    				newLi.appendChild(newUl);
+	    				newH2.appendChild(newSpan);
+	    			}
+	    			
+	    			newH2.innerHTML += arr[i].title;
+	    			parent.appendChild(newLi);
+    			
+    			}
+    		}
+    		//点击h2的时候，显示隐藏下一个兄弟节点 ul
+    		var allH2 = document.getElementsByTagName("h2");
+    		for(var i = 0; i < allH2.length; i++){
+    			allH2[i].onclick = function(){
+    				var next = this.nextElementSibling;//获取h2的兄弟节点 ul
+    				var addSpan = this.firstElementChild;//span小图标
+    				
+    				//隐藏之前已经展开的ul  思维：要找到元素
+
+				  //要找到到当前这个h2的父级的父级下的所有的ul
+				var parentParent = this.parentNode.parentNode; //ul
+				var allUl = parentParent.getElementsByTagName("ul");//所有的ul
+				var allSpan = parentParent.getElementsByTagName("span");
+				    
+				for( var j = 0; j < allUl.length; j++ ){
+				        //要把当前ul排除掉
+					if( allUl[j] !== next ){
+					    allUl[j].style.display = "none";
+						allSpan[j].innerHTML = "+";
+					}
+				}
+    				
+    				if(next){
+    					if(next.style.display === "block"){
+    						next.style.display = "none";
+    						addSpan.innerHTML = "+";
+    					}else{
+    						next.style.display = "block";
+    						addSpan.innerHTML = "-";
+    						
+    					}
+    				}
+    			}
+    		}
+    		
+     }
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul id="oUl">
+           <!--  <li>
+                <h2><span>+</span>标题</h2>
+                <ul>
+                    <li><h2></h2></li>
+                </ul>
+            </li> -->
+        </ul>
+	</body>
+</html>

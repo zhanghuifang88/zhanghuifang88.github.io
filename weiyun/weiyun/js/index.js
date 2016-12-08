@@ -1211,6 +1211,7 @@ indexsWay.innerHTML = createPathNavConstruct(datas,initId);
  //找到所有的树形菜单的标题 div tree-title
 
    	var treeTitle = tools.$(".tree-title");
+   	
 
    	var prevObj = treeTitle[0];
    //树形菜单点击事件
@@ -1218,33 +1219,66 @@ indexsWay.innerHTML = createPathNavConstruct(datas,initId);
    	
 	function treeTitleClick(){
 		for( var i = 0; i < treeTitle.length; i++ ){
-	        tools.addEvent(treeTitle[i],"click",function (){
-	            var fileId = this.dataset.fileId;
-				//点击到里面没有内容的时候
-				if(!dataAction.hasChilds(datas,fileId)){
-					empty.style.display = "block";
-					
-			    }else {
-			    		empty.style.display = "none";
-			    }
-	         //点击导航区域渲染文件区域的内容
-	        		contentMuneFiles.innerHTML = createFilesHtml(datas,fileId);
-	            addEventFile();
-	            moveEvent();
-	         //点击导航区域渲染点击导航区域
-	            indexsWay.innerHTML = createPathNavConstruct(datas,fileId);
+	        tools.addEvent(treeTitle[i],"click",function (ev){
+	        	
+	        		if(ev.target.nodeName.toLowerCase() === "i"){
+	        			var i = ev.target;
+	        			var parentDiv = i.parentNode.parentNode;//获取到的是div
+	        			var parent = parentDiv.parentNode;//获取到li
+	        			
+	        			var parentUl = parentDiv.nextElementSibling;
+					if(parentUl){
+						if(parentUl.style.display === "none"){
+							console.log(1);
+							parentUl.style.display = "block";
+							var num = parseInt(getComputedStyle(i).backgroundPosition);
+							if(num === -999){
+								i.style.backgroundPosition = '-999px -99px';
+							}else {
+								i.style.backgroundPosition = '3px -92px';
+							}
+						}else {
+							console.log(2);
+							parentUl.style.display = "none";
+							var num = parseInt(getComputedStyle(i).backgroundPosition);
+							if(num === -999){
+								i.style.backgroundPosition = '-999px -99px';
+							}else {
+								i.style.backgroundPosition = '3px -42px';
+							}
+						}
+					}
 
-	            var tree = getTreeById("tree-title",fileId);
+	        		}else {
+		            var fileId = this.dataset.fileId;
+					//点击到里面没有内容的时候
+					if(!dataAction.hasChilds(datas,fileId)){
+						empty.style.display = "block";
+						
+				    }else {
+				    		empty.style.display = "none";
+				    }
+		            //点击导航区域渲染文件区域的内容
+		        		contentMuneFiles.innerHTML = createFilesHtml(datas,fileId);
+		            addEventFile();
+		            moveEvent();
+		            //点击导航区域渲染点击导航区域
+		            indexsWay.innerHTML = createPathNavConstruct(datas,fileId);
 	
-	                tools.removeClass(prevObj,"tree-nav");
-	                tools.addClass(tree,"tree-nav");
-	
-	                prevObj = tree;
+		            var tree = getTreeById("tree-title",fileId);
+		
+		                tools.removeClass(prevObj,"tree-nav");
+		                tools.addClass(tree,"tree-nav");
+		
+		                prevObj = tree;
+	            }   
+	            //ev.stopPropagation();
 	        })
 	    }
 	}
-      
-   
+     
+     
+	
     getTreeById("tree-title",2)
 
    //找到某一类class的元素，身上自定属性（格式：data-file-id），匹配到的元素
@@ -1264,56 +1298,29 @@ indexsWay.innerHTML = createPathNavConstruct(datas,initId);
    	
   //在文本区域点击右击的时候
   	var rightList = tools.$('#rightList');
-  	var contentMuneRight = tools.$('.contentMuneRight');//右侧容器
+  	var contentMuneRight = tools.$('.contentMuneRight')[0];//右侧容器
   	var contextmenuonOff = true;
+  	
 	document.addEventListener('contextmenu',function(ev){
-		
 		
 		
 		if(contextmenuonOff ){
 			var target = ev.target;
 			target = tools.parents(target,".listCot");
 			var li = tools.parents(target,".listCot");
-			
-//			for (var i = 0; i < allLi.length; i++) {
-//				
-//				if(allLi[i] === li){
-//					
-//					for (var i = 0; i < allLi.length; i++) {
-//						allMark[i].className = "";
-//						allStrong[i].className = "";
-//						allMark[i].Status = true;
-//						rightList.style.display = "none";
-//						
-//					}
-//					var checked = tools.$('mark',li)[0];//单选
-//			        var flieBg = tools.$('strong',li)[0];//背景
-//					
-//					checked.className = 'maskHover';
-//					flieBg.className = 'listCotBg';
-//					checked.Status = false;
-//					rightList.style.display = "block";
-//					rightList.style.left = ev.clientX + "px";
-//					rightList.style.top = ev.clientY + "px";
-//				}
-//
-//			}
-			
-			
-			if( target = tools.parents(target,".listCot") ){
+			if( target == li ){
 					
-					
-					var li = tools.parents(target,".listCot");
-					var checked = tools.$('mark',li)[0];//单选
-					var flieBg = tools.$('strong',li)[0];//背景
-					checked.className = 'maskHover';
-					flieBg.className = 'listCotBg';
-					checked.Status = false;
-					rightList.style.display = "block";
-					rightList.style.left = ev.clientX + "px";
-					rightList.style.top = ev.clientY + "px";
+				console.log(1);
+				//var li = tools.parents(target,".listCot");
+				var checked = tools.$('mark',li)[0];//单选
+				var flieBg = tools.$('strong',li)[0];//背景
+				checked.className = 'maskHover';
+				flieBg.className = 'listCotBg';
+				checked.Status = false;
+				rightList.style.display = "block";
+				rightList.style.left = ev.clientX + "px";
+				rightList.style.top = ev.clientY + "px";
 
-				
 			}
 			!contextmenuonOff;
 		}
@@ -1347,6 +1354,23 @@ indexsWay.innerHTML = createPathNavConstruct(datas,initId);
 	rightResetName.addEventListener('mousedown',function(ev){
 		ev.stopPropagation();
 	},false);
+	//全屏
+	var on = true;
+    var show = tools.$('.show')[0];
+    var contentMuneRight = tools.$('.contentMuneRight')[0];
+    show.addEventListener("click",function(){
+    		if(on){
+    			treeMenu.style.display = "none";
+    			contentMuneRight.style.marginLeft = 0;
+    		}else {
+    			treeMenu.style.display = "block";
+    			contentMuneRight.style.marginLeft = "-184px";
+    		}
+    		on = !on;
+    },false);
+    
+     
+	
 	
 	
 }());		

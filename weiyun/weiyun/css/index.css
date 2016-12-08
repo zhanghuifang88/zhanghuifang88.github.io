@@ -1130,4 +1130,8 @@ input {
  	font: 12px/32px "微软雅黑";
  	padding-left: 32px;
  }
-
+@media only screen and (max-width: 930px) {
+	.navMenuShow {
+		display: none;
+	}
+}
