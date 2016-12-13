@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#wrap {
+				width: 200px;
+				height: 300px;
+				perspective: 1500px;
+				margin: 100px auto;
+			}
+			#box {
+				width:200px;
+				height: 300px;
+				text-align: center;
+				position: relative;
+				transform-style: preserve-3d;
+			}
+			#box img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 200px;
+				height: 300px;
+				opacity: .8;
+			}
+		</style>
+		<script src="js/index.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="box">
+				<img src="img/1.png "/>				
+				<img src="img/2.png "/>	
+				<img src="img/3.png "/>	
+				<img src="img/4.png "/>	
+				<img src="img/5.png "/>	
+				<img src="img/6.png "/>	
+			</div>
+		</div>
+		<script>
+			var box = document.getElementById("box");
+			var allImg = box.getElementsByTagName("img");
+			//求出多边形的内角及内切圆的半径
+			var deg = 0;
+			var spanDeg = 360/allImg.length;
+			var w = css(allImg[0],"width");
+			var r = Math.round(Math.tan((180-spanDeg)/2*Math.PI/180)*w/2)
+			for (var i = 0; i < allImg.length; i++) {
+				//allImg[i].style.backgroundColor = "rgba(200,13,55,1)";
+				css(allImg[i],'rotateY',spanDeg*i)
+				css(allImg[i],'translateZ',r);
+			}
+			setInterval(function(){
+				deg--;
+				css(box,'rotateY',deg);
+			},20);
+			
+			
+		</script>
+	</body>
+</html>

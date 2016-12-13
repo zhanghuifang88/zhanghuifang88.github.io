@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#wrap {
+				width: 150px;
+				height: 300px;
+				margin:100px auto;
+				perspective: 1000px;
+			}
+			#box {
+				width: 150px;
+				height: 300px;
+				position: relative;
+				transform-style: preserve-3d;
+			}
+			#box img {
+				width: 150px;
+				height: 300px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: .9;
+			}
+		</style>
+		<script src="js/index.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="box">
+				<img src="img/1.png">
+				<img src="img/2.png">
+				<img src="img/3.png">
+				<img src="img/4.png">
+				<img src="img/5.png">
+				<img src="img/6.png">
+				<img src="img/7.png">
+				<img src="img/8.png">
+				<img src="img/9.png">
+				<img src="img/10.png">
+			</div>
+		</div>
+		<script>
+			var box = document.getElementById("box");
+			var allImg = box.getElementsByTagName("img");
+			var imgW = css(allImg[0],"width");
+			var imgDeg = 360/allImg.length;
+			var timer = 0;
+			var deg = 0;
+			var R = Math.round(Math.tan((180-imgDeg)/2*Math.PI/180)*imgW/2);
+			for (var i = 0; i < allImg.length; i++) {
+				css(allImg[i],"rotateY",imgDeg*i);
+				css(allImg[i],"translateZ",0);
+			}
+			setInterval(function(){
+				deg--;
+				css(box,"rotateY",deg);
+			},20);
+			var off = true;
+			
+			document.onclick = function(){
+				clearInterval(timer);
+				if(off){
+					var nub = 0;
+					timer = setInterval(function(){
+						MTween(allImg[nub],{translateZ:R},600,"backOut");
+						nub++;
+						if(nub >= allImg.length){
+							clearInterval(timer);
+						}
+					},100);
+				}else {
+					var nub = allImg.length-1;
+					timer = setInterval(function(){
+						MTween(allImg[nub],{translateZ:0},600,"easeOut");
+						nub--;
+						if(nub < 0){
+							clearInterval(timer);
+						}
+					},20);
+				}
+				off = !off;
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

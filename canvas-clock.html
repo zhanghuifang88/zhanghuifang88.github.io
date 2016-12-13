@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*
+			
+			*/
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<script>
+			var Clock = function(props){
+				this.canvas = props.canvas;
+				this.cxt = this.canvas.getContext("2d");
+				this.W = this.canvas.width;
+				this.H = this.canvas.height;
+				this.R = this.H * 0.45;
+				return this;
+			}
+			Clock.prototype.update = function() {
+				var _this = this;
+				setInterval(function(){
+					var timer = new Date();
+					var s = timer.getSeconds();
+					var m = timer.getMinutes() + s/60;
+					var h = timer.getHours() + m/60;
+					_this.cxt.clearRect(0,0,_this.W,_this.H);
+					_this.render(h,m,s);
+				}, 200);
+			};
+			Clock.prototype.render = function(h,m,s){
+				this.drawOuter();
+				this.drawNum();
+				this.drawPoint();
+				this.drawHours(h);
+				this.drawMins(m);
+				this.drawSecs(s)
+				this.drawCircle();
+			}
+			Clock.prototype.drawOuter = function(){
+				this.cxt.save();
+				this.cxt.translate(this.W/2,this.H/2);
+				this.cxt.lineWidth = 8;
+				this.cxt.beginPath();
+				this.cxt.arc(0,0,this.R,0,2*Math.PI);
+				this.cxt.stroke();
+				this.cxt.restore();
+				return this;
+			};
+			Clock.prototype.drawNum = function(){
+				var _this = this;
+				var num = [3,4,5,6,7,8,9,10,11,12,1,2];
+				this.cxt.save();
+				this.cxt.translate(this.W/2,this.H/2);
+				this.cxt.font = "18px Arial";
+				this.cxt.textAlign = "center";
+				this.cxt.textBaseline = "middle";
+				num.forEach((item,i)=>{
+					var angle = Math.PI /6*i;
+					var x = (_this.R - 32) * Math.cos(angle);
+					var y = (_this.R - 32) * Math.sin(angle);
+					_this.cxt.fillText(item,x,y);
+				});
+				this.cxt.restore();
+				return this;
+			};
+			Clock.prototype.drawPoint = function(){
+				var r;
+				this.cxt.save();
+				this.cxt.translate(this.W/2,this.H/2);
+				for(var i=0; i< 60;i++){
+					var angle = 2*Math.PI/60*i;
+					var x = (this.R - 16) *Math.cos(angle);
+					var y = (this.R - 16) *Math.sin(angle);
+					this.cxt.beginPath();
+					if(i%5 == 0){
+						r=4;
+						this.cxt.fillStyle = "#000";
+					}else {
+						r=2;
+						this.cxt.fillStyle = "#666";
+					}
+					this.cxt.arc(x,y,r,0,Math.PI * 2);
+					this.cxt.fill();
+				}
+				this.cxt.restore();
+				return this;
+			};
+			Clock.prototype.drawHours = function(h){
+				var angle = Math.PI/6*h;
+				this.cxt.save();
+				this.cxt.lineWidth = 8;
+				this.cxt.lineCap = "round";
+				this.cxt.translate(this.W/2,this.H/2);
+				this.cxt.rotate(angle);
+				this.cxt.beginPath();
+				this.cxt.moveTo(0,20);
+				this.cxt.lineTo(0,-(this.R - 100));
+				this.cxt.stroke();
+				this.cxt.restore();
+				return this;
+			};
+			Clock.prototype.drawMins = function(m){
+				var angle = Math.PI * 2 / 60 * m;
+				this.cxt.save();
+				this.cxt.lineWidth = 6;
+				this.cxt.lineCap = 'round';
+				this.cxt.translate(this.W/2,this.H/2);
+				this.cxt.rotate(angle);
+				this.cxt.beginPath();
+				this.cxt.moveTo(0,20);
+				this.cxt.lineTo(0,-(this.R - 60));
+				this.cxt.stroke();
+				this.cxt.restore();
+				return this;
+			};
+			Clock.prototype.drawSecs = function(s) {
+				var angle = Math.PI * 2 / 60 * s;
+				this.cxt.save();
+				this.cxt.fillStyle = '#FC0043';
+				this.cxt.lineCap = 'round';
+				this.cxt.translate(this.W/2,this.H/2);
+				this.cxt.rotate(angle);
+				this.cxt.beginPath();
+				this.cxt.moveTo(-3,20);
+				this.cxt.lineTo(3,20);
+				this.cxt.lineTo(1,-(this.R - 30));
+				this.cxt.lineTo(-1,-(this.R - 30));
+				this.cxt.fill();
+				this.cxt.restore();
+				return this;
+			};
+	
+			Clock.prototype.drawCircle = function() {
+				this.cxt.save();
+				this.cxt.fillStyle = '#3E00FF';
+				this.cxt.translate(this.W/2,this.H/2);
+				this.cxt.beginPath();
+				this.cxt.arc(0,0,10,0,2*Math.PI);
+				this.cxt.fill();
+				this.cxt.restore();
+				return this;
+			};
+			var c = new Clock({
+				canvas:document.getElementById("canvas")
+			});
+			c.update();
+		</script>
+	</body>
+</html>
