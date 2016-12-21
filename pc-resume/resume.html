@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+	</head>
+	<style>
+		body {
+			margin: 0;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		img {
+			vertical-align: top;
+		}
+		h2,h3,h4,p {
+			margin: 0;
+		}
+		.clearFix {
+			content: "";
+			display: block;
+			both: clear;
+		}
+		.wrap {
+			width: 100%;
+			-margin-left: 20%;
+			position: relative;
+		}
+		.left {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 260px;
+			background: pink;
+		}
+		.heads {
+			width: 120px;
+			height: 140px;
+			margin: 40px 70px;
+		}
+		.list {
+			color: #fff;
+			text-align: center;
+			padding-bottom: 50px;
+		}
+		.skill {
+			padding-left: 10px;
+			padding-bottom: 30px;
+		}
+		.skill  h4 {
+			font: 18px/22px "微软雅黑";
+			color: #fff;
+		}
+		.skillList  {
+			color: #fff;
+		}
+		.skillList li {
+			margin: 10px;
+		}
+		.skillList li div {
+			width: 200px;
+			height: 20px;
+			border: 1px solid #fff;
+			position: relative;
+			z-index: 1;
+		}
+		.skillList li div span {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 180px;
+			height: 20px;
+			display: inline-block;
+			background: skyblue;
+			color: #000;
+		}
+		.skillList li:nth-of-type(1) div span {
+			width: 190px;
+		}
+		.skillList li:nth-of-type(2) div span {
+			background: yellow;
+		}
+		.skillList li:nth-of-type(3) div span {
+			background: purple;
+		}
+		.skillList li:nth-of-type(4) div span {
+			background: blue;
+			width: 165px;
+		}
+		.skillList li:nth-of-type(5) div span {
+			background: palevioletred;
+			width: 165px;
+		}
+		.hobby {
+			padding-left: 10px;
+			padding-bottom: 30px;
+			height: 230px;
+		}
+		.hobby  h4 {
+			font: 18px/22px "微软雅黑";
+			color: #fff;
+		}
+		.bobbiesList  {
+			color: #fff;
+			padding: 10px 25px;
+		}
+		.bobbiesList li {
+			float: left;
+			width: 70px;
+			height: 70px;
+			background: greenyellow;
+			border-radius: 35px;
+			text-align: center;
+			line-height: 70px;
+			margin: 10px;
+		}
+		.right {
+			width: 100%;
+			margin-left: 260px;
+			-background: #eee;
+		}
+		.name {
+			padding: 25px 0 25px 50px;
+			font: 40px/40px "微软雅黑";
+			color: #DB7093;
+		}
+		.job {
+			padding-left: 50px;
+			font: 18px/20px "微软雅黑";
+		}
+		.content {
+			padding: 35px 50px;
+		}
+		.contentList {
+			width: 100%;
+			
+		}
+		.contentList .mune {
+			margin: 20px 0;
+			font: 16px/18px "宋体";
+		}
+		.contentList .mune h3 {
+			font: 22px/22px "微软雅黑";
+			color: #DB7093;
+			width: 100%;
+			border-bottom: 1px solid #DB7093;
+		}
+		.companyName {
+			font: 18px/40px "黑体";
+			
+		}
+		.dis {
+			text-indent: 2em;
+		}
+		.judge {
+			text-indent: 2em;
+			padding: 20px 0;
+		}
+	</style>
+	<body>
+		<section class="wrap">
+			<div class="left">
+				<img src="img/header.jpg" class="heads">
+				<ul class="list">
+					<li>邮箱：1063152838@qq.com</li>
+					<li>联系电话：18231057701</li>
+					<!--<li>学历：保定学院&nbsp;大专</li>-->
+					<li>籍贯：河北&nbsp;邯郸</li>
+					<li>住址：北京</li>
+				</ul>
+				<div class="skill">
+					<h4>技能</h4>
+					<ul class="skillList">
+						<li>
+							<span>html+css</span>
+							<div><span>90%</span></div>
+						</li>
+						<li>
+							<span>javascript</span>
+							<div><span>80%</span></div>
+						</li>
+						<li>
+							<span>word</span>
+							<div><span>80%</span></div>
+						</li>
+						<li>
+							<span>excel</span>
+							<div><span>70%</span></div>
+						</li>
+						<li>
+							<span>powerPoint</span>
+							<div><span>70%</span></div>
+						</li>
+					</ul>
+				</div>
+				<div class="hobby">
+					<h4>兴趣 爱好</h4>
+					<ul class="bobbiesList clearFix">
+						<li>阅读</li>
+						<li>旅行</li>
+						<li>影音</li>
+						<li>互联网</li>
+					</ul>
+				</div>
+					
+			</div>
+			<div class="right">
+				<h2 class="name">张惠芳</h2>
+				<div class="content">
+					<ul class="contentList">
+						<li class="mune">
+							<h3>求职意向</h3>
+							<p class="companyName">人事行政</p>
+							<p>工作性质：全职</p>
+							<p>工作地区：北京</p>
+							<p>期望月薪：5k+</p>
+							<p>目前状况：离职，可随时入职</p>
+						</li>
+						<li class="mune">
+							<h3>教育经历</h3>
+							<p class="companyName">保定学院&nbsp;大专</p>
+							<time>2011.9-2014.7</time>
+							<p>专业：文物鉴定与修复</p>
+						</li>
+						<li class="mune">
+							<h3>工作经验</h3>
+							<p class="companyName">苏州浩辰软件股份有限公司&nbsp;人事行政</p>
+							<time>2015.3-2016.11</time>
+							<p>工作描述：</p>
+							<ul class="dis">
+								<li>1、管理公司员工五险一金业务</li>
+								<li>2、统计公司员工考勤</li>
+								<li>3、负责办公用品及固定资产的管理</li>
+								<li>4、员工生日会等节目的办理</li>
+								<li>5、负责公司花名册及通讯录的更新</li>
+								<li>6、公司水电物业等各种费用报销</li>
+								<li>7、员工入离职手续办理</li>
+							</ul>
+							<p class="companyName">小米科技通讯&nbsp;客服专员</p>
+							<time>2014.2-2014.7</time>
+							<p>工作描述：</p>
+							<P class="dis">一线客服技术支持</P>
+						</li>
+						<li class="mune">
+							<h3>自我评价</h3>
+							<ul class="judge">
+								<li>1、我是一个做事认真，性格沉重、冷静，条理清楚，乐观开朗的人</li>
+								<li>2、对待工作态度认真，在工作中不断让自己学习成长</li>
+								<li>3、喜欢学习新鲜的互联网知识</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		
+	</body>
+</html>
